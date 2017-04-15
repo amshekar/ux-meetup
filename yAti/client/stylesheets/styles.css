@@ -368,6 +368,18 @@ ul {
   background-color: #29a34e;
 }
 
+.btn-dribble {
+    color: #fff;
+    background-color: #ea4c89;
+    border: 1px solid #ff1493;
+}
+
+    .btn-dribble:hover,
+    .btn-dribble:focus {
+        color: #fff;
+        background-color: #fe1492;
+    }
+
 /*********************
 * Animations
 *********************/
