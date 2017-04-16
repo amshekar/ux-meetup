@@ -17,6 +17,6 @@ module.exports = {
   SPOTIFY_SECRET: process.env.SPOTIFY_SECRET || 'YOUR_SPOTIFY_CLIENT_SECRET',
 
   // OAuth 1.0
-  TWITTER_KEY: process.env.TWITTER_KEY || 'vdrg4sqxyTPSRdJHKu4UVVdeD',
-  TWITTER_SECRET: process.env.TWITTER_SECRET || 'cUIobhRgRlXsFyObUMg3tBq56EgGSwabmcavQP4fncABvotRMA'
+  TWITTER_KEY: process.env.TWITTER_KEY || 'F4YuHgiHZoHK37nKvU5OP2x1M2',
+  TWITTER_SECRET: process.env.TWITTER_SECRET || 'cFNVJcnI2znkmFqJbWD4xtLj0qrCS3CQOeFbiKR0zfbFHGB1Cu2'
 };
