@@ -2,6 +2,7 @@
 <html ng-app="MyApp">
 <head>
     <meta charset="utf-8">
+    <base href="/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Satellizer</title>
     <link href="favicon.png" rel="shortcut icon">
@@ -10,9 +11,9 @@
     <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
-    <link href="/yAti/client/stylesheets/angular-toastr.css" rel="stylesheet">
-    <link href="/yAti/client/stylesheets/rotating-card.css" rel="stylesheet" />
-    <link href="/yAti/client/stylesheets/styles.css" rel="stylesheet">
+    <link href="/client/stylesheets/angular-toastr.css" rel="stylesheet">
+    <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />
+    <link href="/client/stylesheets/styles.css" rel="stylesheet">
     
 </head>
 <body>
@@ -37,32 +38,33 @@
     <div ui-view></div>
 
     <!-- Third-party Libraries -->
-    <script src="/yAti/client//vendor/angular.js"></script>
-    <script src="/yAti/client/vendor/angular-animate.js"></script>
-    <script src="/yAti/client/vendor/angular-messages.js"></script>
-    <script src="/yAti/client/vendor/angular-resource.js"></script>
-    <script src="/yAti/client/vendor/angular-sanitize.js"></script>
-    <script src="/yAti/client/vendor/angular-ui-router.js"></script>
-    <script src="/yAti/client/vendor/angular-toastr.tpls.js"></script>
-    <script src="/yAti/client/vendor/satellizer.js"></script>
+    <script src="/client//vendor/angular.js"></script>
+    <script src="/client/vendor/angular-animate.js"></script>
+    <script src="/client/vendor/angular-messages.js"></script>
+    <script src="/client/vendor/angular-resource.js"></script>
+    <script src="/client/vendor/angular-sanitize.js"></script>
+    <script src="/client/vendor/angular-ui-router.js"></script>
+    <script src="/client/vendor/angular-toastr.tpls.js"></script>
+    <script src="/client/vendor/satellizer.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- Application Code -->
-    <script src="/yAti/client/app.js"></script>
-    <script src="/yAti/client/directives/passwordStrength.js"></script>
-    <script src="/yAti/client/directives/passwordMatch.js"></script>
-    <script src="/yAti/client/controllers/home.js"></script>
-    <script src="/yAti/client/controllers/login.js"></script>
-    <script src="/yAti/client/controllers/signup.js"></script>
-    <script src="/yAti/client/controllers/logout.js"></script>
-    <script src="/yAti/client/controllers/profile.js"></script>
-    <script src="/yAti/client/controllers/navbar.js"></script>
-    <script src="/yAti/client/services/account.js"></script>
+    <script src="/client/app.js"></script>
+    <script src="/client/directives/passwordStrength.js"></script>
+   
+    <script src="/client/directives/passwordMatch.js"></script>
+    <script src="/client/controllers/home.js"></script>
+    <script src="/client/controllers/login.js"></script>
+    <script src="/client/controllers/signup.js"></script>
+    <script src="/client/controllers/logout.js"></script>
+    <script src="/client/controllers/profile.js"></script>
+    <script src="/client/controllers/navbar.js"></script>
+    <script src="/client/services/account.js"></script>
     <script type="text/javascript">
-        $().ready(function () {
-            $('[rel="tooltip"]').tooltip();
+        //$().ready(function () {
+        //    $('[rel="tooltip"]').tooltip();
 
-        });
+        //});
 
         function rotateCard(btn) {
             var $card = $(btn).closest('.card-container');

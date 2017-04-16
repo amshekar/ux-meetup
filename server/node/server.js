@@ -538,7 +538,8 @@ app.post('/auth/live', function(req, res) {
  | Login with Facebook
  |--------------------------------------------------------------------------
  */
-app.post('/auth/facebook', function(req, res) {
+app.post('/auth/facebook', function (req, res) {
+    console.log(res);
   var fields = ['id', 'email', 'first_name', 'last_name', 'link', 'name'];
   var accessTokenUrl = 'https://graph.facebook.com/v2.5/oauth/access_token';
   var graphApiUrl = 'https://graph.facebook.com/v2.5/me?fields=' + fields.join(',');
