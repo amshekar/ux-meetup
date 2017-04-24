@@ -12,7 +12,7 @@
 
     var Config = (function () {
         function Config() {
-            this.baseUrl = '/';
+            this.baseUrl = 'http://localhost:3000';
             this.loginUrl = '/auth/login';
             this.signupUrl = '/auth/signup';
             this.unlinkUrl = '/auth/unlink/';
@@ -150,7 +150,20 @@
                     oauthType: '2.0',
                     popupOptions: { width: 500, height: 530 },
                     state: function () { return encodeURIComponent(Math.random().toString(36).substr(2)); }
-                }
+                },
+                dribble: {
+                    name: 'dribble',
+                    url: '/auth/dribble',
+                    authorizationEndpoint: 'https://dribbble.com/oauth/authorize',
+                    redirectUri:window.location.origin,
+                    requiredUrlParams: ['scope','state'],
+                    scope: ['public','write'],
+                    scopeDelimiter: '+',
+                    oauthType: '2.0',
+                    popupOptions: { width: 480, height: 450 },
+                    state: function () { return encodeURIComponent(Math.random().toString(36).substr(2)); }
+                },
+
             };
             this.httpInterceptor = function () { return true; };
         }
@@ -280,6 +293,9 @@
         };
         AuthProvider.prototype.spotify = function (options) {
             angular.extend(this.SatellizerConfig.providers.spotify, options);
+        };
+        AuthProvider.prototype.dribble = function (options) {
+            angular.extend(this.SatellizerConfig.providers.dribble, options);
         };
         AuthProvider.prototype.oauth1 = function (options) {
             this.SatellizerConfig.providers[options.name] = angular.extend(options, {

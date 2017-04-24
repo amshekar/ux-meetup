@@ -72,8 +72,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
          */
         $authProvider.facebook({
             /*clientId: '603122136500203'*/
-            clientId: '2780820659667612',
-            url: 'http://localhost:3000/auth/facebook'
+            clientId: '278082065966761',
+            url: 'auth/facebook'
 
         });
 
@@ -116,6 +116,13 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         $authProvider.twitter({
             //url: '/auth/twitter'
             url: 'http://localhost:3000/auth/twitter'
+        });
+         $authProvider.dribble({
+             //url: '/auth/dribble/api/v2/connections',
+             clientId:'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
+             url: 'http://localhost:3000/auth/dribble/callback',
+             redirectUri:'http://localhost:3000'// window.location.origin || window.location.protocol + '//' + window.location.host,
+            //authorizationEndpoint: 'https://dribbble.com/oauth/authorize'
         });
 
         $authProvider.oauth2({
