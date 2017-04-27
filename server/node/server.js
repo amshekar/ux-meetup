@@ -37,6 +37,7 @@ var userSchema = new mongoose.Schema({
       type: String, default: 'To be or not to be, this is my awesome motto!' },
   jobdescription: {
       type: String, default: 'I m a creative geek from India.I enjoy creating eye candy solutions for web and mobile app'},
+
   bitbucket: String,
   facebook: String,
   foursquare: String,
@@ -49,7 +50,11 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   twitch: String,
   spotify: String,
-  dribble:String
+  dribble: String,
+  created_by: String,
+  created_at: { type: Date, default: Date.now },  
+  updated_by:String,
+  updated_at: { type: Date, default: Date.now }
 });
 
 userSchema.pre('save', function(next) {
