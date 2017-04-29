@@ -12,9 +12,13 @@
 
 [**Live Demo**](https://satellizer-sahat.rhcloud.com)
 
-Clone the application
-Run the mongo server with mongod command
-Navigate to server folder run the node server.js
+[**Steps To Run**]
+Clone the application,
+
+Run the mongo server with mongod command,
+
+Navigate to server folder run the node server.js,
+
 browse the application 
 
 ---
