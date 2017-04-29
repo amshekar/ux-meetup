@@ -12,7 +12,13 @@
 
 [**Live Demo**](https://satellizer-sahat.rhcloud.com)
 
+Clone the application
+Run the mongo server with mongod command
+Navigate to server folder run the node server.js
+browse the application 
+
 ---
+
 
 **Satellizer** is a simple to use, end-to-end, token-based authentication module
 for [AngularJS](http://angularjs.org) with built-in support for Google, Facebook,
