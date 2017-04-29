@@ -20,42 +20,8 @@ var mongoose = require('mongoose');
 var request = require('request');
 
 var config = require('./config');
+var userSchema = require('./userSchema');
 
-var userSchema = new mongoose.Schema({
-  email: { type: String, unique: true, lowercase: true },
-  password: { type: String, select: false },
-  displayName: String,
-  location: String,
-  website:String,
-  picture: String,
-  font: {type: String, default:'Gotham , Avenir Next'},
-  color: ['red', 'blue'],
-  followers: { type: Number, default: 0 },
-  following: { type: Number, default: 0 },
-  projects: { type: Number, default: 0 },
-  status: {
-      type: String, default: 'To be or not to be, this is my awesome motto!' },
-  jobdescription: {
-      type: String, default: 'I m a creative geek from India.I enjoy creating eye candy solutions for web and mobile app'},
-
-  bitbucket: String,
-  facebook: String,
-  foursquare: String,
-  google: String,
-  github: String,
-  instagram: String,
-  linkedin: String,
-  live: String,
-  yahoo: String,
-  twitter: String,
-  twitch: String,
-  spotify: String,
-  dribble: String,
-  created_by: String,
-  created_at: { type: Date, default: Date.now },  
-  updated_by:String,
-  updated_at: { type: Date, default: Date.now }
-});
 
 userSchema.pre('save', function(next) {
   var user = this;
@@ -75,9 +41,9 @@ userSchema.methods.comparePassword = function(password, done) {
     done(err, isMatch);
   });
 };
-
-var User = mongoose.model('User', userSchema);
-var Project = mongoose.model('Project', userSchema);
+//required collections/entities or schemas
+var User = mongoose.model('User', userSchema,'users');
+var Project = mongoose.model('Project', userSchema,'projects');
 
 mongoose.connect(config.MONGO_URI);
 mongoose.connection.on('error', function(err) {
@@ -167,7 +133,7 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
     user.email = req.body.email || user.email;
     user.location = req.body.location || user.location;
     user.status = req.body.status || user.status;
-    user.jobdescription = req.body.jobdescription || user.jobdescription;
+    user.jobdescription = req.body.jobDescription || user.jobDescription;
     user.font = req.body.font || user.font;
     user.save(function(err) {
       res.status(200).end();
