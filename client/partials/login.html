@@ -2,7 +2,7 @@
     <div class="row">
         <div class="center-form panel">
             <div class="panel-body">
-                <h2 class="text-center">Log in</h2>
+                <h2 class="text-center">Login with</h2>
                 <form method="post" ng-submit="login()" name="loginForm">
                     <div class="form-group has-feedback">
                         <input class="form-control input-lg" type="text" name="email" ng-model="user.email" placeholder="Email" required autofocus>
@@ -23,13 +23,13 @@
                     </div>
                 </form>
                 <button class="btn btn-block btn-dribble" ng-click="authenticate('dribble')">
-                    <i class="fa fa-dribbble"></i> Sign in with Dribble
+                    <i class="fa fa-dribbble"></i>Dribble
                 </button>
                 <button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">
-                    <i class="ion-social-facebook"></i> Sign in with Facebook
+                    <i class="ion-social-facebook"></i>Facebook
                 </button>
                 <button class="btn btn-block btn-twitter" ng-click="authenticate('twitter')">
-                    <i class="ion-social-twitter"></i> Sign in with Twitter
+                    <i class="ion-social-twitter">&nbsp;</i>Twitter
                 </button>
                 <!--<button class="btn btn-block btn-instagram" ng-click="authenticate('instagram')">
                     <i class="ion-social-instagram"></i> Sign in with Instagram

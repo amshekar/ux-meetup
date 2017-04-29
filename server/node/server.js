@@ -20,7 +20,7 @@ var mongoose = require('mongoose');
 var request = require('request');
 
 var config = require('./config');
-var userSchema = require('./userSchema');
+var userSchema = require('./user');
 
 
 userSchema.pre('save', function(next) {

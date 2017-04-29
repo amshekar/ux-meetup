@@ -12,7 +12,7 @@
 
 [**Live Demo**](https://satellizer-sahat.rhcloud.com)
 
-[**Steps To Run**]
+## Steps To Run
 Clone the application,
 
 Run the mongo server with mongod command,

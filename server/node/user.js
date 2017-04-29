@@ -1,13 +1,14 @@
 ﻿var mongoose = require('mongoose');
 
-module.exports = new mongoose.Schema({
-
+//User Schema
+var userSchema = {
     email: { type: String, unique: true, lowercase: true },
     password: { type: String, select: false },
     displayName: String,
     location: String,
     website: String,
     picture: String,
+    //picture:[{type:String,match:/^http:\/\//i}],
     font: { type: String, default: 'Gotham , Avenir Next' },
     color: ['red', 'blue'],
     followers: { type: Number, default: 0 },
@@ -38,4 +39,10 @@ module.exports = new mongoose.Schema({
     updated_by: String,
     updated_at: { type: Date, default: Date.now },
     loggedInCount: { type: Number, default: 0 }
-});
+    //want to link other schema first import that schema with require and link like below
+   // ,complextype:ComplexTypeSchema
+};
+
+
+module.exports = new mongoose.Schema(userSchema);
+module.exports.userSchema = userSchema;
