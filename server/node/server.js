@@ -18,6 +18,7 @@ var jwt = require('jwt-simple');
 var moment = require('moment');
 var mongoose = require('mongoose');
 var request = require('request');
+var status = require('http-status');
 
 var config = require('./config');
 var userSchema = require('./user');
@@ -108,6 +109,28 @@ function createJWT(user) {
   return jwt.encode(payload, config.TOKEN_SECRET);
 }
 
+
+/*
+ |--------------------------------------------------------------------------
+ | GET /api/ping/:Hello  Ping isAlive test method without Authentication
+ |--------------------------------------------------------------------------
+ */
+app.get('/api/ping/:greeting', function (req, res) {
+    res.send("Pong from your Designe mate!   " + req.params.greeting );
+
+});
+
+
+/*
+ |--------------------------------------------------------------------------
+ | GET /api/  Ping isAlive test method
+ |--------------------------------------------------------------------------
+ */
+app.get('/api', ensureAuthenticated, function (req, res) {
+    res.send("Pong from Yati");
+
+});
+
 /*
  |--------------------------------------------------------------------------
  | GET /api/me
@@ -136,7 +159,8 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
     user.jobdescription = req.body.jobDescription || user.jobDescription;
     user.font = req.body.font || user.font;
     user.save(function(err) {
-      res.status(200).end();
+      //res.status(200).end();
+        res.status(status.OK).end();
     });
   });
 });
