@@ -18,6 +18,8 @@ var jwt = require('jwt-simple');
 var moment = require('moment');
 var mongoose = require('mongoose');
 var request = require('request');
+var json = require('json-file');
+var file = './fonts.json'
 
 var config = require('./config');
 var userSchema = require('./user');
@@ -118,6 +120,18 @@ app.get('/api/me', ensureAuthenticated, function(req, res) {
     res.send(user);
   });
 });
+
+/*
+ |--------------------------------------------------------------------------
+ | GET /api/fonts
+ |--------------------------------------------------------------------------
+ */
+app.get('/api/fonts', function(req, res) {
+  console.log(file);
+    var fileData = json.read(file);
+    res.send(fileData.data);
+});
+
 
 /*
  |--------------------------------------------------------------------------
