@@ -1,4 +1,4 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer'])
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer','color.picker.core','angucomplete-alt'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
 
         /**
@@ -54,6 +54,16 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 url: '/logout',
                 template: null,
                 controller: 'LogoutCtrl'
+            })
+            .state('font',{
+                url: '/font',
+                templateUrl: '/client/partials/font.html',
+                controller: 'FontCtrl'
+            })
+            .state('color',{
+                url: '/color',
+                templateUrl: '/client/partials/color.html',
+                controller: 'ColorCtrl'
             })
             .state('profile', {
                 url: '/profile',
