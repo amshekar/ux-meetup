@@ -63,7 +63,11 @@
     "tslint-loader": "^2.1.5",
     "typescript": "^2.0.3",
     "uglify-js": "^2.7.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "angucomplete-alt": "^3.0.0",
+    "angular-radial-color-picker": "^2.1.0"
+   
+
   },
   "tags": [
     "authentication",
@@ -90,10 +94,6 @@
     "twitch"
   ],
   "dependencies": {
-    "angucomplete-alt": "^3.0.0",
-    "angular": "^1.6.4",
-    "angular-animate": "^1.6.4",
-    "angular-radial-color-picker": "^2.1.0",
-    "angular-ui-router": "^0.4.2"
+    
   }
 }
