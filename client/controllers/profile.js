@@ -8,7 +8,8 @@ angular.module('MyApp')
         .catch(function(response) {
           toastr.error(response.data.message, response.status);
         });
-    };
+      };
+    
     $scope.updateProfile = function() {
       Account.updateProfile($scope.user)
         .then(function() {

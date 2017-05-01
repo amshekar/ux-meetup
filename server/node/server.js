@@ -19,9 +19,8 @@ var moment = require('moment');
 var mongoose = require('mongoose');
 var request = require('request');
 var json = require('json-file');
-var file = './fonts.json'
 var status = require('http-status');
-
+var file = require('./fonts.json');
 var config = require('./config');
 var userSchema = require('./user');
 
@@ -142,6 +141,21 @@ app.get('/api/me', ensureAuthenticated, function(req, res) {
   User.findById(req.user, function(err, user) {
     res.send(user);
   });
+});
+
+
+/*
+ |--------------------------------------------------------------------------
+ | GET All /api/me
+ |--------------------------------------------------------------------------
+ */
+app.get('/api/users',function (req, res) {
+    User.find(function (err, users) {
+        if (err) {
+            res.send(err);
+        }
+        res.send(users);
+    });
 });
 
 /*
