@@ -164,8 +164,15 @@ app.get('/api/users',function (req, res) {
  |--------------------------------------------------------------------------
  */
 app.get('/api/fonts', function(req, res) {
-  console.log(file);
-    var fileData = json.read(file);
+  //console.log(file);
+    var fileData = json.read('./fonts.json');
+    // var response = [];
+    // fileData.data.items.forEach(function(element) {
+    //   var prop = {
+    //     'name':element.family,
+    //   }
+    //   response.push(prop);
+    // }, this);
     res.send(fileData.data);
 });
 

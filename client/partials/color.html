@@ -5,10 +5,10 @@
         </div>
         <div class="col-md-6 col-sm-6" style="float: right;">
             <div style="float: left;">
-                <button type="button" class="color col-md-3" ng-style="font1Style"  ng-click="font1Select()" ></button>
+                <button type="button" class="btn btn-md btn-danger"  ng-click="$ctrl.onColorSelClick();font1Select()" ></button>
             </div>
             <div style="padding-left:20px;float: right;">
-                <button type="button" class="color col-md-3" ng-style="font2Style"  ng-click="font2Select()" ></button>
+                <button type="button" class="btn btn-md"  ng-click="font2Select()" ></button>
             </div>
         </div>
         </div>
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-12">
             <div style="align-content: center">
-                <color-picker on-select="onSelect(color)" ></color-picker>
+                <color-picker on-select="onSelect(color)" only-display="false" ></color-picker>
             </div> 
         </div>
          <div class="col-md-12">
