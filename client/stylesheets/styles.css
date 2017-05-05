@@ -440,3 +440,23 @@ ul {
     opacity: 1;
   }
 }
+
+.fav-color {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.favcolor-first {
+    float: left;
+    width: 50%;
+    height: 40px;
+    background: #2874A6;
+}
+
+.favcolor-second {
+    float: right;
+    width: 50%;
+    height: 40px;
+    background-color: #2ECC71;
+}
