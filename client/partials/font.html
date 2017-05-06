@@ -7,17 +7,17 @@
     <div class="row">
         &nbsp;
     </div>
-
     <div class="row">
-        <angucomplete-alt id="ex1"
-                          placeholder="Search font"
-                          pause="100"
-                          selected-object="selectedFont"
-                          local-data="Fonts"
-                          search-fields="name"
-                          title-field="name"
-                          minlength="0"
-                          input-class="form-control form-control-small">
-        </angucomplete-alt>
+        &nbsp;
     </div>
+    <div class="row">
+       <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 300px;">
+            <ui-select-match placeholder="Select fonts...">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="font in Fonts | filter:$select.search">
+            {{font}}
+            </ui-select-choices>
+        </ui-select>
+          <p>Selected: {{selectedItem.fonts}}</p>
+    </div>
+</div>
 </div>

@@ -19,4 +19,6 @@ angular.module('MyApp')
         });
    };
   $scope.getFont();
+  $scope.selectedItem ={};
+  $scope.selectedItem.fonts = ['ABeeZee'];
   });
