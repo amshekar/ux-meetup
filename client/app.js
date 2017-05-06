@@ -1,4 +1,4 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer','ui.select', 'ngSanitize'])
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer','ui.select', 'ngSanitize','ui.bootstrap'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
 
         /**

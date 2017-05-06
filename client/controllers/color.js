@@ -1,56 +1,23 @@
 angular.module('MyApp')
   .controller('ColorCtrl', function($scope, $auth, toastr, Account) {
 
-       $scope.font1Selected = true;
-            $scope.font2Selected = false;
-            $scope.fonts = [{'name':'test'},{'name':'test1'},{'name':'test2'}];
-            $scope.selectedFont = {};
+        $scope.selectColor1 = function (color)
+        {
+            $scope.color1 = color;
+        }
 
+        $scope.color1 = "#ffffff";
 
-            $scope.font1Color = '';
-            $scope.font1Color = '';
-            $scope.font1Style = {
-                        'background-color':'white',
-                        'box-shadow': '0 0 1px 2px #fff, 0 0 0 1px #101010'
-                    }
-            $scope.font2Style = {
-                        'background-color':'white',
-                        'box-shadow': '0 0 1px 2px #fff, 0 0 0 1px #101010'
-                    }
+        $scope.selectColor2 = function (color)
+        {
+            $scope.color2 = color;
+        }
 
-            $scope.font1Clicked =  false;
-            $scope.font2Clicked = false;
+        $scope.color2 = "#ffffff";
+            
+            $scope.style ={};
+            $scope.style.colors = ['#f54337','#e91d62','#9c28b1','#673bb7','#3f51b5','#2196f3','#03a9f5','#00bbd4','#009788','#4cb050','#8bc24a','#cddc39','#ffeb3c','#fec107'];
 
-            $scope.font1Select = function(){
-                $scope.font1Clicked = true;
-            }
-
-             $scope.font2Select = function(){
-                $scope.font2Clicked = true;
-            } 
-
-            var $ctrl = this;
-
-            $ctrl.color = {};
-            $scope.onSelect = function(color) {
-                // do smth with the color
-                if($scope.font1Clicked)
-                {
-                    $scope.font1Color = color.hex;
-                    $scope.font1Style = {  'background-color':       color.hex};
-                        //'box-shadow': '0 0 1px 2px #fff, 0 0 0 1px #101010'
-                    $scope.font1Clicked = false;
-                }
-                if($scope.font2Clicked)
-                {
-                    $scope.font2Color = color.hex;
-                    $scope.font2Style = {
-                        'background-color':color.hex
-                    }
-                    $scope.font2Clicked = false;
-                }
-                $ctrl.color = color;
-            }
       $scope.updateProfile = function() {
       Account.updateProfile($scope.user)
         .then(function() {
