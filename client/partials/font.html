@@ -1,6 +1,6 @@
 <div class="container-fluid bg-gray">
     <div class="container" style="font-size:25px;">
-        <p class="text-muted">Enter your fav fonts</p>
+        <p class="text-muted">Select your fav fonts</p>
     </div>
 </div>
 <div class="container">
@@ -11,14 +11,18 @@
         &nbsp;
     </div>
     <div class="row">
-       <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 300px;">
-            <ui-select-match placeholder="Select fonts...">{{$item}}</ui-select-match>
-            <ui-select-choices repeat="font in Fonts | filter:$select.search">
-            {{font}}
-            </ui-select-choices>
-        </ui-select>
-          <p>Selected: {{selectedItem.fonts}}</p>
-          <a ui-sref="setting.color" class="btn btn-success btn-lg">Next</a>
+
+        <div class="col-sm-8 col-sm-offset-2">
+
+            <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 400px;">
+                <ui-select-match placeholder="Select fonts...">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="font in Fonts | filter:$select.search">
+                    {{font}}
+                </ui-select-choices>
+            </ui-select>
+            <p>Selected: {{selectedItem.fonts}}</p>
+            <a ui-sref="setting.color" class="btn btn-success btn-lg" style="float:right;border-radius:20px;width:150px;height:50px">Next</a>
+            
+        </div>
     </div>
-</div>
 </div>
