@@ -1,9 +1,9 @@
 module.exports = {
   // App Settings
     //local mongodb connetion 
-   MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/font',
+   //MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/font',
    //mlab connetion 
-   // MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
+   MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
   TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
 
   // OAuth 2.0
