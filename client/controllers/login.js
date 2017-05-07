@@ -1,15 +1,30 @@
 angular.module('MyApp')
-  .controller('LoginCtrl', function($scope, $location, $auth, toastr) {
+  .controller('LoginCtrl', function($scope, $location, $auth, toastr,$state) {
     $scope.login = function() {
       $auth.login($scope.user)
         .then(function() {
+          if($scope.hasSettingUpdated()){
+            // $state.go('setting');
+            $location.path('/setting');
+          }else{
+            // $state.go('home');
+            $location.path('/home');
+          }
+          
           toastr.success('You have successfully signed in!');
-          $location.path('/');
+          // $state.go('setting');
         })
         .catch(function(error) {
           toastr.error(error.data.message, error.status);
         });
     };
+
+    $scope.hasSettingUpdated = function()
+    {
+      //TODO Check Setting updated or not.
+      return true;
+    };
+
     $scope.authenticate = function(provider) {
       $auth.authenticate(provider)
         .then(function() {

@@ -41,6 +41,17 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 resolve: {
                     skipIfLoggedIn: skipIfLoggedIn
                 }
+            }).state('setting', {
+                url: '/setting',
+                templateUrl: '/client/partials/setting.html',
+                controller: 'SettingCtrl',
+                abstract : true,
+            }).state('setting.font', {
+                url: '',
+                templateUrl: '/client/partials/font.html',
+            }).state('setting.color', {
+                url: '/color',
+                templateUrl: '/client/partials/color.html',
             })
             .state('signup', {
                 url: '/signup',
