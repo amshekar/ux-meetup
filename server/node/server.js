@@ -193,6 +193,7 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
     user.status = req.body.status || user.status;
     user.jobdescription = req.body.jobDescription || user.jobDescription;
     user.font = req.body.font || user.font;
+    user.color = req.body.color || user.color;
     user.save(function(err) {
       //res.status(200).end();
         res.status(status.OK).end();

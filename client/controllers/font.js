@@ -10,6 +10,7 @@ angular.module('MyApp')
         });
     };
     $scope.updateProfile = function() {
+      $scope.user = {'font':[$scope.selectedItem.fonts]};
       Account.updateProfile($scope.user)
         .then(function() {
           toastr.success('Profile has been updated');
@@ -19,6 +20,7 @@ angular.module('MyApp')
         });
    };
   $scope.getFont();
-  $scope.selectedItem ={};
-  $scope.selectedItem.fonts = ['ABeeZee'];
+  $scope.selectedItem = {};
+  $scope.selectedItem.fonts = [];
+
   });
