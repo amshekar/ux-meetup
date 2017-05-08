@@ -55,7 +55,8 @@ mongoose.connection.on('error', function(err) {
 var app = express();
 
 app.set('port', process.env.NODE_PORT || 3000);
-app.set('host', process.env.NODE_IP || 'localhost');
+//app.set('host', process.env.NODE_IP || 'localhost');http://favfont.azurewebsites.net
+app.set('host', process.env.NODE_IP || 'http://favfont.azurewebsites.net'); 
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
