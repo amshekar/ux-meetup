@@ -36,6 +36,14 @@
         <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
             <li><a href="/#!/logout">Logout</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!--<li ng-if="isAuthenticated() && currentUser.username">-->
+            <li ng-if="isAuthenticated()">
+                <a href="http://instagram.com/{{user.username}}">
+                    <img class="img-circle" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><span>@{{user.displayName || 'test'}}</span>                    
+                </a>
+            </li>
+        </ul>
     </div>
    
 
