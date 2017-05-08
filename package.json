@@ -65,7 +65,12 @@
     "uglify-js": "^2.7.3",
     "webpack": "^1.13.2",
     "angucomplete-alt": "^3.0.0",
-    "angular-radial-color-picker": "^2.1.0"
+    "angular-radial-color-picker": "^2.1.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "gulp-uglify": "^2.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0"
    
 
   },
