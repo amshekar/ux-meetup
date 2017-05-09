@@ -5,12 +5,7 @@
   "main": "dist/satellizer.js",
   "scripts": {
     "start": "node ./server/node/server.js",
-    "test": "karma start",
-    "build": "npm run clean && tsc && rollup -c && uglifyjs dist/satellizer.js -o dist/satellizer.min.js && npm run copy",
-    "clean": "rimraf build dist",
-    "copy": "npm-run-all copy:*",
-    "copy:angular": "cp dist/satellizer.js client/vendor",   
-    "bump": "npm version patch"
+    "test": "karma start"
    
   },
   "author": {
