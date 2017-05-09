@@ -40,7 +40,7 @@
             <!--<li ng-if="isAuthenticated() && currentUser.username">-->
             <li ng-if="isAuthenticated()">
                 <a href="http://instagram.com/{{user.username}}">
-                    <img class="img-circle" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><span>@{{user.displayName || 'test'}}</span>                    
+                    <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->                    
                 </a>
             </li>
         </ul>
