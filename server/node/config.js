@@ -27,7 +27,7 @@ module.exports = {
   DRIBBLE_KEY: process.env.DRIBBLE_KEY || 'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
   DRIBBLE_SECRET: process.env.DRIBBLE_SECRET || '50babf348ae40d291d2fa43fa2801292fa190b77284b1714c360e55d6c18c63c',
   //BaseURI: 'http://localhost:3000'
-  BaseURI:'http://favfont.azurewebsites.net'
+  BaseURI:'http://fontservice.azurewebsites.net'
 
 
 };
