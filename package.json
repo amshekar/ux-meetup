@@ -4,7 +4,7 @@
   "version": "0.15.5",
   "main": "dist/satellizer.js",
   "scripts": {
-    "start": "node ./server/node/server.js",
+    "start": "node ../server/node/server.js",
     "test": "karma start"
    
   },
