@@ -21,6 +21,16 @@ angular.module('MyApp')
         });
    };
 
+   $scope.init = function()
+   {
+      var picker = new KellyHlPicker({
+                            place: 'picker',
+                            input: ['search-color','search-color1'],
+                            size : 530,
+                            chunks : 20,
+                        });
+   }
+
     $scope.selectColor1 = function (color)
         {
             $scope.color1 = color;
