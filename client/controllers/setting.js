@@ -28,7 +28,7 @@ angular.module('MyApp')
       var picker = new KellyHlPicker({
                             place: 'picker',
                             input: ['search-color','search-color1'],
-                            size : 530,
+                            size : 450,
                             chunks : 20,
                             chunkPadding: -1
                         });

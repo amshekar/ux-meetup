@@ -1,19 +1,18 @@
 <style>
-.search-color {
-            width: 70px;
-            height: 70px;
-            text-decoration: none;
-            color: transparent;
-            background-color: transparent;
-            cursor: default;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 50%;
-            border: 1px solid gray;
-        }
-
-    </style>
+    .search-color {
+        width: 70px;
+        height: 70px;
+        text-decoration: none;
+        color: transparent;
+        background-color: transparent;
+        cursor: default;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid gray;
+    }
+</style>
 
 
 <div class="container-fluid bg-gray" ng-init="init()">
@@ -23,28 +22,19 @@
 </div>
 <div class="container">
     <div class="row">
-        
-
-         <div class="col-md-6">
-            <canvas id="picker"></canvas><br>
-        
-    </div>
-    <div class="col-md-6">
-            <input class="search-color" ng-model="cl1" id="search-color" name="color[]" value="" autocomplete="off" >
-            <input class="search-color" ng-model="cl2" id="search-color1" name="color[]" value="" autocomplete="off" >
-        </div> 
-    </div>
-</div>
-
+        <div class="col-md-6">
+            <canvas id="picker"></canvas>
         </div>
-        <div class="col-md-2">
-            &nbsp;
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-            <button style="float:right;border-radius:20px;width:150px;height:50px" ng-click="updateProfile()">Submit</button>
+        <div class="col-md-6">
+            <input class="search-color" ng-model="cl1" id="search-color" name="color[]" value="" autocomplete="off" readonly>
+            <input class="search-color" ng-model="cl2" id="search-color1" name="color[]" value="" autocomplete="off" readonly>
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <button style="float:right;border-radius:20px;width:125px;height:50px" ng-click="updateProfile()">Submit</button>
+    </div>
+</div>
+

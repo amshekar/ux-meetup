@@ -1,0 +1,55 @@
+﻿body {
+}
+
+/*body {
+    background: #d4d4d4;
+    font-family: Calibri;
+    padding-top: 12px;
+    text-align: center;
+}*/
+
+input {
+    border: 0px;
+}
+
+.saturation div {
+    display: inline-block;
+    line-height: 36px;
+}
+
+#saturation {
+    font-size: 16px;
+}
+
+.saturation-controll {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+    .saturation-controll a {
+        display: inline-block;
+        text-decoration: none;
+        color: #555;
+        padding-bottom: 0px;
+        font-weight: bold;
+        font-size: 24px;
+        width: 32px;
+        height: 32px;
+    }
+
+.search-color {
+    width: 120px;
+    height: 120px;
+    text-decoration: none;
+    color: transparent;
+    background-color: transparent;
+    cursor: default;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .search-color:focus, .search-color:focus {
+        outline: none;
+    }
