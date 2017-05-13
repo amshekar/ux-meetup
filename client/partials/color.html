@@ -1,3 +1,21 @@
+<style>
+.search-color {
+            width: 70px;
+            height: 70px;
+            text-decoration: none;
+            color: transparent;
+            background-color: transparent;
+            cursor: default;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid gray;
+        }
+
+    </style>
+
+
 <div class="container-fluid bg-gray" ng-init="init()">
     <div class="container" style="font-size:25px;">
         <p>Select your fav colors</p>
@@ -15,34 +33,9 @@
             <input class="search-color" ng-model="cl1" id="search-color" name="color[]" value="" autocomplete="off" >
             <input class="search-color" ng-model="cl2" id="search-color1" name="color[]" value="" autocomplete="off" >
         </div> 
-        </div>
-        <div class="col-md-4">
-            <div class="btn-group" uib-dropdown>
-                <button type="button"
-                        class="btn btn-lg btn-primary uib-dropdown-toggle"
-                        uib-dropdown-toggle style="width:250px" ng-style="{'background-color':color1}">
-                    {{color1}} <span class="caret"></span>
-                </button>
-                <ul uib-dropdown-menu role="menu">
-                    <li role="menuitem" ng-repeat="item in style.colors" ng-style="{'background-color':item}">
-                        <a href="" ng-click="selectColor1(item)">{{item}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="btn-group" uib-dropdown>
-                <button type="button"
-                        class="btn btn-lg btn-primary uib-dropdown-toggle"
-                        uib-dropdown-toggle style="width:250px" ng-style="{'background-color':color2}">
-                    {{color2}} <span class="caret"></span>
-                </button>
-                <ul uib-dropdown-menu role="menu">
-                    <li role="menuitem" ng-repeat="item in style.colors" ng-style="{'background-color':item}">
-                        <a href="" ng-click="selectColor2(item)">{{item}}</a>
-                    </li>
-                </ul>
-            </div>
+    </div>
+</div>
+
         </div>
         <div class="col-md-2">
             &nbsp;

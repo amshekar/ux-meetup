@@ -10,7 +10,9 @@ angular.module('MyApp')
         });
     };
     $scope.updateProfile = function() {
-      $scope.user = {'font':$scope.selectedItem.fonts, 'color':[$scope.color1,$scope.color2]};
+      var color1Value = window.document.getElementById('search-color');
+      var color2Value = window.document.getElementById('search-color1');
+      $scope.user = {'font':$scope.selectedItem.fonts, 'color':[color1Value.value,color2Value.value]};
       Account.updateProfile($scope.user)
         .then(function() {
           toastr.success('Profile has been updated');
@@ -28,6 +30,7 @@ angular.module('MyApp')
                             input: ['search-color','search-color1'],
                             size : 530,
                             chunks : 20,
+                            chunkPadding: -1
                         });
    }
 
