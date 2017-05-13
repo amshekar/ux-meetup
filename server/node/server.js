@@ -56,6 +56,7 @@ var app = express();
 
 app.set('port', process.env.NODE_PORT || 3000);
 app.set('host', process.env.NODE_IP || 'localhost');
+//app.set('host', process.env.NODE_IP || 'http://favfont.azurewebsites.net'); 
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -68,7 +69,7 @@ if (app.get('env') === 'production') {
     protocol == 'https' ? next() : res.redirect('https://' + req.hostname + req.url);
   });
 }
-app.use(express.static(path.join(__dirname, '../../client')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 /*
  |--------------------------------------------------------------------------

@@ -1,15 +1,16 @@
 angular.module('MyApp')
     .factory('Account', function ($http) {
-        var API_URL = 'http://localhost:3000';
+        //var API_URL = 'http://localhost:3000';
+        var API_URL = 'http://fontservice.azurewebsites.net';
     return {
       getProfile: function() {
           return $http.get(API_URL+'/api/me');
       },
       updateProfile: function(profileData) {
-          return $http.put('http://localhost:3000' +'/api/me', profileData);
+          return $http.put(API_URL +'/api/me', profileData);
       },
       getFont:function(){
-        return $http.get('http://localhost:3000'+ '/api/fonts');
+          return $http.get(API_URL+ '/api/fonts');
       },
       getAllProfiles: function () {
           return $http.get(API_URL + '/api/users')

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <base href="/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Satellizer</title>
+    <title>favfont</title>
     <link href="favicon.png" rel="shortcut icon">
 
     <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
@@ -15,8 +15,8 @@
     <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />
     <link href="/client/stylesheets/styles.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="node_modules/angucomplete-alt/angucomplete-alt.css">
-    <link rel="stylesheet" type="text/css" href="node_modules/angular-radial-color-picker/dist/css/color-picker.min.css" >
+    <link rel="stylesheet" type="text/css" href="/client/stylesheets/angucomplete-alt.css">
+    <link rel="stylesheet" type="text/css" href="/client/stylesheets/color-picker.min.css" >
    
   
 </head>
@@ -36,6 +36,14 @@
         <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
             <li><a href="/#!/logout">Logout</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <!--<li ng-if="isAuthenticated() && currentUser.username">-->
+            <li ng-if="isAuthenticated()">
+                <a href="http://instagram.com/{{user.username}}">
+                    <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->                    
+                </a>
+            </li>
+        </ul>
     </div>
    
 
@@ -52,19 +60,19 @@
 
     <!-- Third-party Libraries -->
     <!--<script src="/bower_components/angular/angular.js"></script>    -->
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>    
+    <script src="/client/vendor/angular-animate.js"></script>    
     <script src="/client/vendor/angular-messages.js"></script>
     <script src="/client/vendor/angular-resource.js"></script>
     <!--<script src="/client/vendor/angular-sanitize.js"></script>-->
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>   
+    <script src="/client/vendor/angular-ui-router.js"></script>   
     <script src="/client/vendor/angular-toastr.tpls.js"></script>
     <script src="/client/vendor/satellizer.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- Color and Font Libs -->
-    <script src="node_modules/angucomplete-alt/dist/angucomplete-alt.min.js"></script>
-     <script src="node_modules/Propeller/dist/propeller.min.js"></script>
-     <script src="node_modules/angular-radial-color-picker/dist/js/color-picker.min.js"></script>
+    <script src="/client/vendor/angucomplete-alt.min.js"></script>
+     <script src="/client/vendor/propeller.min.js"></script>
+     <script src="/client/vendor/color-picker.min.js"></script>
 
     <!-- Application Code -->
     <script src="/client/app.js"></script>

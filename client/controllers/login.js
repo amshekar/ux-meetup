@@ -21,7 +21,7 @@ angular.module('MyApp')
 
     $scope.hasSettingUpdated = function()
     {
-      //TODO Check Setting updated or not.
+      //TODO Check Setting updated or not need to movie this into service and has to use in both signup and login scenario.
       return true;
     };
 

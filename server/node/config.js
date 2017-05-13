@@ -1,9 +1,9 @@
 module.exports = {
   // App Settings
     //local mongodb connetion 
-   MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/font',
+   //MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/font',
    //mlab connetion 
-   // MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
+   MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
   TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
 
   // OAuth 2.0
@@ -26,7 +26,8 @@ module.exports = {
    // OAuth 1.0
   DRIBBLE_KEY: process.env.DRIBBLE_KEY || 'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
   DRIBBLE_SECRET: process.env.DRIBBLE_SECRET || '50babf348ae40d291d2fa43fa2801292fa190b77284b1714c360e55d6c18c63c',
-  BaseURI: 'http://localhost:3000'
+  //BaseURI: 'http://localhost:3000'
+  BaseURI:'http://fontservice.azurewebsites.net'
 
 
 };

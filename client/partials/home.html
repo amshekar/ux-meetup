@@ -5,7 +5,7 @@
 </div>
 <div class="container">
     <!--start-->
-    <p>Dynamic start - need to remove later this text and below static panels</p>
+    <!--<p>Dynamic start - need to remove later this text and below static panels</p>-->
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="col-md-4 col-sm-6" ng-repeat="profile in vm.profiles">
@@ -17,12 +17,12 @@
                                 <!--<img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg" />-->
                             </div>
                             <div class="user">
-                                <img class="img-circle" src="{{profile.picture?profile.picture:'http://www.carolthompsonbeautysecrets.com/images/colorwheel.jpg'}}" />
+                                <img class="img-circle" src="{{profile.picture?profile.picture:'http://2.gravatar.com/avatar/bfa3b4b436992e91d1ab59cbc59e3ead?s=256&d=mm&r=g'}}" />
                             </div>
                             <div class="content">
                                 <div class="main">
                                     <h3 class="name">{{profile.displayName}}</h3>
-                                    <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;<span class="profession">{{profile.location?profile.location:"update your location"}}</span></p>
+                                    <p>&nbsp;<span class="profession">{{profile.location?profile.location:"update your location"}}</span></p>
                                     <div class="fav-color">
                                         <div class="favcolor-first" ng-style="{'background-color':profile.color[0]}"></div>
                                         <div class="favcolor-second" ng-style="{'background-color':profile.color[1]}"></div>
@@ -85,7 +85,7 @@
 
         </div> <!-- end col-sm-10 -->
     </div> <!-- end row -->
-    <p>Dynamic end - need to remove later</p>
+    <!--<p>Dynamic end - need to remove later</p>-->
     <!--end-->
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
@@ -102,7 +102,7 @@
                             <div class="content">
                                 <div class="main">
                                     <h3 class="name">Shekar </h3>
-                                    <p><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>&nbsp;<span class="profession">Hyderabad, INDIA</span></p>
+                                    <p>&nbsp;<span class="profession">Hyderabad, INDIA</span></p>
                                     
                                     <p class="text-center">{{true?"Gotham , Avenir Next":"select your font" }}</p>
                                     <div class="fav-color">

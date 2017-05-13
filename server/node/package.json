@@ -1,6 +1,9 @@
 {
-  "name": "satellizer-server",
+  "name": "uxmeetup-server",
   "version": "0.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
   "main": "server.js",
   "dependencies": {
     "async": "^1.5.2",
