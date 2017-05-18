@@ -23,7 +23,7 @@
 <body>
     <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> yAti</a>
+            <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"></a>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/#!/">About us</a></li>
@@ -39,7 +39,7 @@
         <ul class="nav navbar-nav navbar-right">
             <!--<li ng-if="isAuthenticated() && currentUser.username">-->
             <li ng-if="isAuthenticated()">
-                <a href="http://instagram.com/{{user.username}}">
+                <a href="">
                     <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->                    
                 </a>
             </li>
