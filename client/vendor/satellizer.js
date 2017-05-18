@@ -12,7 +12,10 @@
 
     var Config = (function () {
         function Config() {
-            this.baseUrl = 'http://localhost:3000';
+            //local
+            //this.baseUrl = 'http://localhost:3000';
+            //server
+            this.baseUrl = 'http://fontservice.azurewebsites.net'; 
             this.loginUrl = '/auth/login';
             this.signupUrl = '/auth/signup';
             this.unlinkUrl = '/auth/unlink/';
