@@ -135,8 +135,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
         });
 
         $authProvider.twitter({
-            //url: '/auth/twitter'
-            url: 'http://localhost:3000/auth/twitter'
+            url: '/auth/twitter'
+            //url: 'http://localhost:3000/auth/twitter'
         });
          $authProvider.dribble({
              //url: '/auth/dribble/api/v2/connections',

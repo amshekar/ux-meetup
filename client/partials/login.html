@@ -2,7 +2,25 @@
     <div class="row">
         <div class="center-form panel">
             <div class="panel-body">
-                <h2 class="text-center">Login with</h2>
+                <h4 class="text-center">Login with</h4>
+                <div class="signup-or-separator">
+                    &nbsp;
+                </div>
+                <div class="text-center">
+                    <button class=" btn-dribble smGlobalBtn dribbleBtn" ng-click="authenticate('dribble')">
+                        <i class="fa fa-dribbble"></i>
+                    </button>
+                    <button class=" btn-facebook smGlobalBtn facebookBtn" ng-click="authenticate('facebook')">
+                        <i class="ion-social-facebook"></i>
+                    </button>
+                    <button class="  btn-twitter  smGlobalBtn twitterBtn" ng-click="authenticate('twitter')">
+                        <i class="ion-social-twitter"></i>
+                    </button>
+                </div>
+                <div class="signup-or-separator">
+                    <h6 class="texts">OR</h6>
+                </div>
+                <hr>
                 <form method="post" ng-submit="login()" name="loginForm">
                     <div class="form-group has-feedback">
                         <input class="form-control input-lg" type="text" name="email" ng-model="user.email" placeholder="Email Address" required autofocus>
@@ -17,20 +35,9 @@
                     <p class="text-center text-muted">
                         <small>Don't have an account yet? <a href="/#!/signup">Sign up</a></small>
                     </p>
-                    <div class="signup-or-separator">
-                        <h6 class="text">OR</h6>
-                        <hr>
-                    </div>
+
                 </form>
-                <button class="btn btn-block btn-dribble" ng-click="authenticate('dribble')">
-                    <i class="fa fa-dribbble fa-2x"></i>
-                </button>
-                <button class="btn btn-block btn-facebook" ng-click="authenticate('facebook')">
-                    <i class="ion-social-facebook fa-3x"></i>
-                </button>
-                <button class="btn btn-block btn-twitter" ng-click="authenticate('twitter')">
-                    <i class="ion-social-twitter fa-3x">&nbsp;</i>
-                </button>
+
                 <!--<button class="btn btn-block btn-instagram" ng-click="authenticate('instagram')">
                     <i class="ion-social-instagram"></i> Sign in with Instagram
                 </button>
