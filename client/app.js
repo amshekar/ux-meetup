@@ -1,4 +1,4 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer','ui.select', 'ngSanitize','ui.bootstrap'])
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
 
         /**
@@ -45,7 +45,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 url: '/setting',
                 templateUrl: '/client/partials/setting.html',
                 controller: 'SettingCtrl',
-                abstract : true,
+                abstract: true,
             }).state('setting.font', {
                 url: '/font',
                 templateUrl: '/client/partials/font.html',
@@ -65,16 +65,6 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 url: '/logout',
                 template: null,
                 controller: 'LogoutCtrl'
-            })
-            .state('font',{
-                url: '/font',
-                templateUrl: '/client/partials/font.html',
-                controller: 'FontCtrl'
-            })
-            .state('color',{
-                url: '/color',
-                templateUrl: '/client/partials/color.html',
-                controller: 'ColorCtrl'
             })
             .state('profile', {
                 url: '/profile',
@@ -138,11 +128,11 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
             url: '/auth/twitter'
             //url: 'http://localhost:3000/auth/twitter'
         });
-         $authProvider.dribble({
-             //url: '/auth/dribble/api/v2/connections',
-             clientId:'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
-             url: 'http://localhost:3000/auth/dribble/callback',
-             redirectUri:'http://localhost:3000'// window.location.origin || window.location.protocol + '//' + window.location.host,
+        $authProvider.dribble({
+            //url: '/auth/dribble/api/v2/connections',
+            clientId: 'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
+            url: 'http://localhost:3000/auth/dribble/callback',
+            redirectUri: 'http://localhost:3000'// window.location.origin || window.location.protocol + '//' + window.location.host,
             //authorizationEndpoint: 'https://dribbble.com/oauth/authorize'
         });
 

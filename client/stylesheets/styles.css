@@ -466,14 +466,14 @@ ul {
     float: left;
     width: 50%;
     height: 40px;
-    background: #2874A6;
+    /*background: #2874A6;*/
 }
 
 .favcolor-second {
     float: right;
     width: 50%;
     height: 40px;
-    background-color: #2ECC71;
+    /*background-color: #2ECC71;*/
 }
 .smGlobalBtn { /* global button class */
     display: inline-block;
