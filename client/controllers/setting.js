@@ -9,10 +9,19 @@ angular.module('MyApp')
           toastr.error(response.data.message, response.status);
         });
     };
-    $scope.updateProfile = function() {
+    $scope.cl1 = '';
+    $scope.cl2 = '';
+
+    $scope.setColor = function (){
       var color1Value = window.document.getElementById('search-color');
       var color2Value = window.document.getElementById('search-color1');
-      $scope.user = {'font':$scope.selectedItem.fonts, 'color':[color1Value.value,color2Value.value]};
+      $scope.cl1 = color1Value.value;
+      $scope.cl2 = color2Value.value;
+    };
+
+    $scope.updateProfile = function() {
+     
+      $scope.user = {'font':$scope.selectedItem.fonts, 'color':[$scope.cl1,$scope.cl2]};
       Account.updateProfile($scope.user)
         .then(function() {
           toastr.success('Profile has been updated');
@@ -25,34 +34,9 @@ angular.module('MyApp')
 
    $scope.init = function()
    {
-      var picker = new KellyHlPicker({
-                            place: 'picker',
-                            input: ['search-color','search-color1'],
-                            //size : 450,
-                            //chunks : 20,
-                            size: 480,
-                            chunks: 12,
-                            chunkPadding: -1
-                        });
+     
    }
 
-    $scope.selectColor1 = function (color)
-        {
-            $scope.color1 = color;
-        }
-
-        $scope.color1 = "#ffffff";
-
-        $scope.selectColor2 = function (color)
-        {
-            $scope.color2 = color;
-        }
-
-        $scope.color2 = "#ffffff";
-            
-            $scope.style ={};
-            $scope.style.colors = ['#f54337','#e91d62','#9c28b1','#673bb7','#3f51b5','#2196f3','#03a9f5','#00bbd4','#009788','#4cb050','#8bc24a','#cddc39','#ffeb3c','#fec107'];
-      
   $scope.getFont();
   $scope.selectedItem = {};
   $scope.selectedItem.fonts = [];

@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp">
+
 <head>
     <meta charset="utf-8">
     <base href="/">
@@ -14,13 +15,14 @@
     <link href="/client/stylesheets/angular-toastr.css" rel="stylesheet">
     <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />
     <link href="/client/stylesheets/styles.css" rel="stylesheet">
+    <link href="/client/stylesheets/color.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="/client/stylesheets/angucomplete-alt.css">
-    <link rel="stylesheet" type="text/css" href="/client/stylesheets/color-picker.min.css" >
     <!--<link href="client/stylesheets/favcolorstyles.css" rel="stylesheet" />-->
-   
-  
+
+
 </head>
+
 <body>
     <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
         <div class="navbar-header">
@@ -47,7 +49,7 @@
             </li>
         </ul>
     </div>
-   
+
 
     <div ui-view></div>
 
@@ -62,24 +64,24 @@
 
     <!-- Third-party Libraries -->
     <!--<script src="/bower_components/angular/angular.js"></script>    -->
-    <script src="/client/vendor/angular-animate.js"></script>    
+    <script src="/client/vendor/angular-animate.js"></script>
     <script src="/client/vendor/angular-messages.js"></script>
     <script src="/client/vendor/angular-resource.js"></script>
     <!--<script src="/client/vendor/angular-sanitize.js"></script>-->
-    <script src="/client/vendor/angular-ui-router.js"></script>   
+    <script src="/client/vendor/angular-ui-router.js"></script>
     <script src="/client/vendor/angular-toastr.tpls.js"></script>
     <script src="/client/vendor/satellizer.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- Color and Font Libs -->
     <script src="/client/vendor/angucomplete-alt.min.js"></script>
-     <script src="/client/vendor/propeller.min.js"></script>
-     <script src="/client/vendor/color-picker.min.js"></script>
+    <script src="/client/vendor/propeller.min.js"></script>
+    <script src="/client/vendor/color-picker.min.js"></script>
 
     <!-- Application Code -->
     <script src="/client/app.js"></script>
     <script src="/client/directives/passwordStrength.js"></script>
-   
+
     <script src="/client/directives/passwordMatch.js"></script>
     <script src="/client/controllers/home.js"></script>
     <script src="/client/controllers/login.js"></script>
@@ -88,8 +90,8 @@
     <script src="/client/controllers/profile.js"></script>
     <script src="/client/controllers/navbar.js"></script>
     <script src="/client/services/account.js"></script>
-     <script src="/client/controllers/setting.js"></script>
-     <script src="/client/vendor/html5kellyhlpicker.js"></script>
+    <script src="/client/controllers/setting.js"></script>
+    <script src="/client/vendor/html5kellyhlpicker.js"></script>
     <script type="text/javascript">
         //$().ready(function () {
         //    $('[rel="tooltip"]').tooltip();
@@ -106,5 +108,63 @@
             }
         }
     </script>
+    <script>
+        $(document).ready(function () {
+
+            var color = '';
+
+            $(document).on('click', '.js-color', function (e) {
+
+                var x = $(this).css('backgroundColor');
+                var color = hexc(x);
+                var assigned = false;
+
+                var input1 = $('.favcolor-first');
+                var input2 = $('.favcolor-second');
+
+                if (input1.val() != "" && input2.val() != "") {
+                    if (input1.val() == color) {
+                        input1.val("");
+                        $('.favcolor-first').css('backgroundColor', '#ffffff');
+                        assigned = true;
+                    }
+
+                    if (input2.val() == color) {
+                        input2.val("");
+                        $('.favcolor-second').css('backgroundColor', '#ffffff');
+                        assigned = true;
+                    }
+                }
+
+                if (!assigned) {
+                    if (input1.val() == "") {
+                        input1.val(color);
+                        $('.favcolor-first').css('backgroundColor', color);
+                        assigned = true;
+                    }
+                }
+                if (!assigned) {
+                    if (input2.val() == "") {
+                        input2.val(color);
+                        $('.favcolor-second').css('backgroundColor', color);
+                        assigned = true;
+                    }
+                }
+            });
+
+        });
+
+        function hexc(colorval) {
+            var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            delete (parts[0]);
+            for (var i = 1; i <= 3; ++i) {
+                parts[i] = parseInt(parts[i]).toString(16);
+                if (parts[i].length == 1) parts[i] = '0' + parts[i];
+            }
+            color = '#' + parts.join('');
+            return color;
+        }
+    </script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@ angular.module('MyApp')
           return $http.get(API_URL+ '/api/fonts');
       },
       getAllProfiles: function () {
-          return $http.get(API_URL + '/api/users')
-      }
+          return $http.get(API_URL + '/api/users');
+      },
     };
   });

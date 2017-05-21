@@ -21,6 +21,11 @@ angular.module('MyApp')
 
     $scope.hasSettingUpdated = function()
     {
+       Account.getProfile()
+        .then(function(response) {
+          $scope.user = response.data;
+          
+        })
       //TODO Check Setting updated or not need to movie this into service and has to use in both signup and login scenario.
       return true;
     };

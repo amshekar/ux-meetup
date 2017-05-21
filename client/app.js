@@ -47,10 +47,10 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 controller: 'SettingCtrl',
                 abstract : true,
             }).state('setting.font', {
-                url: '',
+                url: '/font',
                 templateUrl: '/client/partials/font.html',
             }).state('setting.color', {
-                url: '/color',
+                url: '',
                 templateUrl: '/client/partials/color.html',
             })
             .state('signup', {
