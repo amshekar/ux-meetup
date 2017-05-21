@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+/*a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
+
+.home-header {
+  /*padding: 3rem 1.5rem;*/
+/*  text-align: center;
+}
+
+.navbar{
+  margin-top: 20px;
+}*/
+
+
+
+/*!
+ * Start Bootstrap - Modern Business (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+    background-color: #fbfafa;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+}
+
+.intro-section {
+    height: 100%;
+    /*padding-top: 150px;*/
+    text-align: center;
+}
+.introTxt{
+  color: #757575;
+}
+.btn{
+  color: black;
+}
+.fontsTxt{
+  text-align: left;
+  padding-top: 80px;
+}
+.loginIcon{
+  padding-top: 10px;
+}
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.thumbnail{
+  padding: 20px;
+  border:none;
+}
+.caption{
+      text-align: left;
+      color: #3c3b3b;
+}
+.caption small{
+  color: #b1b0b0;
+}
+
+.aboutBtn{
+  padding: 10px 30px 10px 30px !important;
+  background-color: #fbfafa;
+  border-radius: 29px;
+  /*color: white;*/
+      margin-right: 12px;
+}
+.logo2{
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.loginBtn{
+  padding: 10px 30px 10px 30px !important;
+  background-color: #000;
+  border-radius: 29px;
+  color: white;
+      margin-right: 12px;
+}
+.registerBtn{
+  padding: 10px 30px 10px 30px !important;
+
+  background-color: #00bfd8;
+  border-radius: 29px;
+  color: white;
+}
+.fav{
+  /*float: left;*/
+}
+.fav1{
+  /*padding: 25px;  */
+  background-color: #0097fa;
+  height: 80px;
+  width:50%;
+  float: left;
+}
+
+.fav2{
+  width:50%;
+  height: 80px;
+  background-color: #ffbf00;
+  float: left;
+}
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
