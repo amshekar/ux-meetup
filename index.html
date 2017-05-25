@@ -44,16 +44,17 @@
             <!--<li ng-if="isAuthenticated() && currentUser.username">-->
             <li ng-if="isAuthenticated()">
                 <a href="">
-                    <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->                    
+                    <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->
                 </a>
             </li>
         </ul>
     </div>
-
+    
 
     <div ui-view></div>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="/client/vendor/jquery.js"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>    
+    <script src="/client/vendor/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
@@ -80,7 +81,8 @@
 
     <!-- Application Code -->
     <script src="/client/app.js"></script>
-    <script src="/client/directives/passwordStrength.js"></script>
+    
+    <script src="/client/directives/passwordStrength.js"></script>  
 
     <script src="/client/directives/passwordMatch.js"></script>
     <script src="/client/controllers/home.js"></script>
@@ -92,6 +94,7 @@
     <script src="/client/services/account.js"></script>
     <script src="/client/controllers/setting.js"></script>
     <script src="/client/vendor/html5kellyhlpicker.js"></script>
+    <script src="client/directives/ifLoading.directive.js"></script>
     <script type="text/javascript">
         //$().ready(function () {
         //    $('[rel="tooltip"]').tooltip();
