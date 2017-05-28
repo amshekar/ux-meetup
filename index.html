@@ -1,13 +1,11 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp">
-
 <head>
     <meta charset="utf-8">
     <base href="/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>favfont</title>
     <link href="favicon.png" rel="shortcut icon">
-
     <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
@@ -16,29 +14,23 @@
     <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />
     <link href="/client/stylesheets/styles.css" rel="stylesheet">
     <link href="/client/stylesheets/color.css" rel="stylesheet" />
-
     <link rel="stylesheet" type="text/css" href="/client/stylesheets/angucomplete-alt.css">
-    <!--<link href="client/stylesheets/favcolorstyles.css" rel="stylesheet" />-->
-
-
+    <link href="client/stylesheets/favcolorstyles.css" rel="stylesheet" />
 </head>
-
 <body>
-    <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
+    <div ng-controller="NavbarCtrl" class="navbar navbar-font  navbar-static-top">
         <div class="navbar-header">
-            <a class="navbar-brand" style="margin-top: -25px;" href="#">  <img src="client/images/color_wheel_730 copy.png" width="60px" alt=""></a>
+            <a class="navbar-brand" style="margin-top: -10px;" href="#">  <img src="client/images/color_wheel_730 copy.png" width="60px" alt=""></a>
             <!--<a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"></a>-->
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/#!/">About us</a></li>
-            <li ng-if="isAuthenticated()"><a href="/#!/profile">Profile</a></li>
-        </ul>
-        <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-            <li><a href="/#!/login">Login</a></li>
-            <!--<li><a href="/#/signup">Sign up</a></li>-->
-        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="home" class="aboutBtn">About us</a></li>
+            <li ng-if="!isAuthenticated()"><a ui-sref="login" class="loginBtn">Login</a></li>
+            <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="registerBtn">Sign up</a></li>
+
+        </ul>        
         <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-            <li><a href="/#!/logout">Logout</a></li>
+            <li><a ui-sref="logout" class="loginBtn">Logout</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <!--<li ng-if="isAuthenticated() && currentUser.username">-->
@@ -47,13 +39,12 @@
                     <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->
                 </a>
             </li>
+            <li ng-if="isAuthenticated()"><a ui-sref="profile"  class="registerBtn">Edit Profile</a></li>
         </ul>
     </div>
-    
-
-    <div ui-view></div>
-    <script src="/client/vendor/jquery.js"></script>    
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>    
+    <div ui-view></div>    
+    <script src="/client/vendor/jquery.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="/client/vendor/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
@@ -81,8 +72,8 @@
 
     <!-- Application Code -->
     <script src="/client/app.js"></script>
-    
-    <script src="/client/directives/passwordStrength.js"></script>  
+
+    <script src="/client/directives/passwordStrength.js"></script>
 
     <script src="/client/directives/passwordMatch.js"></script>
     <script src="/client/controllers/home.js"></script>

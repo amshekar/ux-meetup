@@ -1,33 +1,35 @@
-<div class="container-fluid bg-gray">
-    <div class="container" style="font-size:30px;">
-        <p class="text-center">Deisgners favourite colors & fonts</p>
-    </div>
-</div>
 <div class="container">
-    <!--start-->
-    <!--<p>Dynamic start - need to remove later this text and below static panels</p>-->
-    <div class="row">
-        <p class="text-center"><u><strong> Submit your fav color & font</strong></u></p>
+    <section id="intro" class="intro-section">
+        <div class="container" style="padding:50px;">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <h1 class="introTxt">Deisgners favourite colors & fonts</h1>
+                    <a class="btn" ui-sref="home"><u><b>Submit you fav colors & fonts</b></u></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
 
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
     <div class="row">
         <div class="col-lg-12">
             <img class="img-responsive" src="client/images/18077155_1867408986834305_3339422281253607258_o.png" alt="">
         </div>
+    </div>    
+    <div class="row">      
+ &nbsp;
     </div>
     <div class="row">
         &nbsp;
-    </div>
+    </div>    
     <div class="row">
         <p class="text-center text-muted" if-loading>
-            <span class="fa fa-spinner fa-spin fa-4x"></span>            
+            <span class="fa fa-spinner fa-spin fa-5x"></span>            
         </p>
     </div>
     <div class="row">        
-        <div class="col-sm-10 col-sm-offset-1">
+        <!--<div class="col-sm-10 col-sm-offset-1">-->
             <div class="col-md-4 col-sm-6" ng-repeat="profile in vm.profiles">
 
                 <div class="card-container manual-flip">
@@ -37,7 +39,7 @@
                                 <!--<img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg" />-->
                             </div>
                             <div class="user">
-                                <img class="img-circle" src="{{profile.picture?profile.picture:'http://2.gravatar.com/avatar/bfa3b4b436992e91d1ab59cbc59e3ead?s=256&d=mm&r=g'}}" />
+                                <img class="img-circle" src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" />
                             </div>
                             <div class="content">
                                 <div class="main">
@@ -103,7 +105,7 @@
                 </div> <!-- end card-container -->
             </div> <!-- end col sm 3 -->
 
-        </div> <!-- end col-sm-10 -->
+        <!--</div>--> <!-- end col-sm-10 -->
     </div> <!-- end row -->
     <!--<p>Dynamic end - need to remove later</p>-->
     <!--end-->
@@ -113,7 +115,6 @@
     <div class="space-200"></div>
 </div>
 <!--<div class="text-center">
-  <a class="btn btn-default" href="https://github.com/sahat/satellizer"><i class="ion-social-github"></i> GitHub project</a>
-  <a class="btn btn-default" href="https://github.com/sahat/satellizer/issues/new"><i class="ion-bug"></i> Report issue</a>
+  <a class="btn btn-default" href=""><i class="ion-social-github"></i> powered by</a>
 </div>
 </div>-->

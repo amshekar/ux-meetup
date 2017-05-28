@@ -14,7 +14,7 @@
 
         <div class="col-sm-8 col-sm-offset-2">
 
-            <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 450px;height:30px">
+            <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 450px;height:35px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 2px;">
                 <ui-select-match  placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
                 <ui-select-choices repeat="font in Fonts | filter:$select.search">
                     {{font}}

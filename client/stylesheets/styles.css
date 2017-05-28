@@ -34,7 +34,7 @@ ul {
 
 .navbar {
     border: 0;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);*/
 }
 
 .navbar-header {
@@ -55,10 +55,14 @@ ul {
             padding: 15px;
         }
 
-.navbar-default {
+/*.navbar-default {
     color: #fff;
     background: #fff;
     min-height: 60px;
+}*/
+.navbar-font {
+    background-color: #fff;
+    border-color: #fff;
 }
 
     .navbar-default .navbar-brand {
