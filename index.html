@@ -11,39 +11,47 @@
     <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
     <link href="/client/stylesheets/angular-toastr.css" rel="stylesheet">
-    <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />
+    <link href="/client/stylesheets/rotating-card.css" rel="stylesheet" />    
+    <link rel="stylesheet" type="text/css" href="/client/stylesheets/angucomplete-alt.css">
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+     
     <link href="/client/stylesheets/styles.css" rel="stylesheet">
     <link href="/client/stylesheets/color.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/client/stylesheets/angucomplete-alt.css">
     <link href="client/stylesheets/favcolorstyles.css" rel="stylesheet" />
+   
+
 </head>
 <body>
-    <div ng-controller="NavbarCtrl" class="navbar navbar-font  navbar-static-top">
+    <div ng-controller="NavbarCtrl" class="navbar navbar-font  navbar-static-top" ng-cloak>
         <div class="navbar-header">
             <a class="navbar-brand" style="margin-top: -10px;" href="#">  <img src="client/images/color_wheel_730 copy.png" width="60px" alt=""></a>
             <!--<a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"></a>-->
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" ng-cloak>
             <li><a ui-sref="home" class="aboutBtn">About us</a></li>
-            <li ng-if="!isAuthenticated()"><a ui-sref="login" class="loginBtn">Login</a></li>
+            <li ng-if="!isAuthenticated()" ><a ui-sref="login" class="loginBtn">Login</a></li>
             <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="registerBtn">Sign up</a></li>
 
         </ul>        
-        <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+        <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right" ng-cloak>
             <li><a ui-sref="logout" class="loginBtn">Logout</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" ng-cloak> 
             <!--<li ng-if="isAuthenticated() && currentUser.username">-->
             <li ng-if="isAuthenticated()">
                 <a href="">
                     <img class="img-rounded" ng-src="{{user.picture || 'https://placehold.it/30x30'}}"><!--<span>@{{user.displayName || 'test'}}</span>-->
                 </a>
             </li>
-            <li ng-if="isAuthenticated()"><a ui-sref="profile"  class="registerBtn">Edit Profile</a></li>
+            <li ng-if="isAuthenticated()"><a ui-sref="profile"  class="registerBtn">Profile</a></li>
         </ul>
     </div>
     <div ui-view></div>    
-    <script src="/client/vendor/jquery.js"></script>
+    <!--<script src="/client/vendor/jquery.js"></script>-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="/client/vendor/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
@@ -63,7 +71,11 @@
     <script src="/client/vendor/angular-ui-router.js"></script>
     <script src="/client/vendor/angular-toastr.tpls.js"></script>
     <script src="/client/vendor/satellizer.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>   -->
+    <!--Import jQuery before materialize.js-->
+      
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+       
 
     <!-- Color and Font Libs -->
     <script src="/client/vendor/angucomplete-alt.min.js"></script>
