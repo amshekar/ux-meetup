@@ -1,4 +1,36 @@
-<div class="container-fluid bg-gray">
+<div class="grid-continer">
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <h1 class="login-with text-lg-left">Select your fav fonts</h1>
+    <div class="login-directly">
+        <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled">
+            <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
+            <ui-select-choices repeat="font in Fonts | filter:$select.search">
+                {{font}}
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <div class="input-field">
+        <a class="waves-effect waves-light btn login-button" ng-click="updateProfile()">Submit</a>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+</div>
+
+
+
+
+
+
+<!--<div class="container-fluid bg-gray">
     <div class="container" style="font-size:25px;">
         <p class="text-muted">Select your fav fonts</p>
     </div>
@@ -15,14 +47,14 @@
         <div class="col-sm-8 col-sm-offset-2">
 
             <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 450px;height:35px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 2px;">
-                <ui-select-match  placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
+                <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
                 <ui-select-choices repeat="font in Fonts | filter:$select.search">
                     {{font}}
                 </ui-select-choices>
             </ui-select>
-            <!--<p>Selected: {{selectedItem.fonts}}</p>-->
-           <button style="float:right;border-radius:20px;width:125px;height:50px;color:white;background-color: black;" ng-click="updateProfile()">Submit</button>
-         
+            <p>Selected: {{selectedItem.fonts}}</p>
+            <button style="float:right;border-radius:20px;width:125px;height:50px;color:white;background-color: black;" ng-click="updateProfile()">PrSubmitut</button>
+
         </div>
     </div>
-</div>
+</div>-->

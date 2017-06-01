@@ -1,4 +1,142 @@
-<div class="container">
+<div class="body-container">
+
+    <h1 class="fav-color-font-head">Designers favourite colors & fonts</h1>
+    <div class="center-align">
+        <a href="" class="submit-color-font">Submit your fav color &amp; font</a>
+    </div>
+    <div class="progress" if-loading>
+        <div class="indeterminate"></div>
+    </div>
+    <div class="banner">
+        <div class="carousel carousel-slider">
+            <a class="carousel-item responsive-img" href="#one!"><img src="client/assets/images/banner.png"></a>
+            <a class="carousel-item responsive-img" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
+            <a class="carousel-item responsive-img" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+            <a class="carousel-item responsive-img" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+        </div>
+    </div>
+
+    <div class="grid-continer">
+        <div class="box" ng-repeat="profile in vm.profiles">
+            <div class="box-dp">
+                <img src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" alt="Palle" class="responsive-img">
+            </div>
+            <div class="box-name">{{profile.displayName}}</div>
+            <div class="box-location">{{profile.location?profile.location:" location"}}</div>
+            <div class="box-colors">
+                <div class="color-one" ng-style="{'background-color':profile.color[0]}"></div>
+                <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
+            </div>
+            <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>
+            <div class="box-social">
+                <a class="box-social-dribble"><i></i></a>
+            </div>
+        </div>
+
+        <!--<div class="box">
+            <div class="box-dp">
+                <img src="client/assets/images/rajan.jpg" alt="Rajan" class="responsive-img">
+            </div>
+            <div class="box-name">Sowmya Rajan Palle</div>
+            <div class="box-location">Kesinga</div>
+            <div class="box-colors">
+                <div class="color-one" style="background-color: greenyellow;"></div>
+                <div class="color-two" style="background-color: darkcyan;"></div>
+            </div>
+            <div class="box-fonts">Century, Avenir Next</div>
+            <div class="box-social">
+                <a class="box-social-dribble"><i></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-dp">
+                <img src="client/assets/images/rahul-bhosale.png" alt="Rahul" class="responsive-img">
+            </div>
+            <div class="box-name">Rahul Bhosale</div>
+            <div class="box-location">Mumbai</div>
+            <div class="box-colors">
+                <div class="color-one" style="background-color: violet;"></div>
+                <div class="color-two" style="background-color: red;"></div>
+            </div>
+            <div class="box-fonts">Century, Avenir Next</div>
+            <div class="box-social">
+                <a class="box-social-facebook"><i></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-dp">
+                <img src="client/assets/images/palle.png" alt="Palle" class="responsive-img">
+            </div>
+            <div class="box-name">Srinivas Palle</div>
+            <div class="box-location">Hyderabad</div>
+            <div class="box-colors">
+                <div class="color-one" style="background-color: blue;"></div>
+                <div class="color-two" style="background-color: orange;"></div>
+            </div>
+            <div class="box-fonts">Gotham, Avenir Next</div>
+            <div class="box-social">
+                <a class="box-social-dribble"><i></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-dp">
+                <img src="client/assets/images/rajan.png" alt="Rajan" class="responsive-img">
+            </div>
+            <div class="box-name">Sowmya Rajan Palle</div>
+            <div class="box-location">Kesinga</div>
+            <div class="box-colors">
+                <div class="color-one" style="background-color: greenyellow;"></div>
+                <div class="color-two" style="background-color: darkcyan;"></div>
+            </div>
+            <div class="box-fonts">Century, Avenir Next</div>
+            <div class="box-social">
+                <a class="box-social-dribble"><i></i></a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-dp">
+                <img src="client/assets/images/rahul-bhosale.png" alt="Rahul" class="responsive-img">
+            </div>
+            <div class="box-name">Rahul Bhosale</div>
+            <div class="box-location">Mumbai</div>
+            <div class="box-colors">
+                <div class="color-one" style="background-color: violet;"></div>
+                <div class="color-two" style="background-color: red;"></div>
+            </div>
+            <div class="box-fonts">Century, Avenir Next</div>
+            <div class="box-social">
+                <a class="box-social-facebook"><i></i></a>
+            </div>
+        </div>-->
+    </div>
+    <script>
+        $(function () {
+            $('.carousel.carousel-slider').carousel({ fullWidth: true });
+        });
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
     <section id="intro" class="intro-section">
         <div class="container" style="padding:50px;">
             <div class="row">
@@ -16,105 +154,92 @@
         <div class="col-lg-12">
             <img class="img-responsive" src="client/images/18077155_1867408986834305_3339422281253607258_o.png" alt="">
         </div>
-    </div>    
-    <div class="row">      
- &nbsp;
     </div>
     <div class="row">
         &nbsp;
-    </div>    
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
     <div class="row">
         <p class="text-center text-muted" if-loading>
-            <span class="fa fa-spinner fa-spin fa-5x"></span>            
+            <span class="fa fa-spinner fa-spin fa-5x"></span>
         </p>
     </div>
-    <div class="row">        
-        <!--<div class="col-sm-10 col-sm-offset-1">-->
-            <div class="col-md-4 col-sm-6" ng-repeat="profile in vm.profiles">
+    <div class="row">
 
-                <div class="card-container manual-flip">
-                    <div class="card">
-                        <div class="front">
-                            <div class="cover">
-                                <!--<img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg" />-->
-                            </div>
-                            <div class="user">
-                                <img class="img-circle" src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" />
-                            </div>
-                            <div class="content">
-                                <div class="main">
-                                    <h3 class="name">{{profile.displayName}}</h3>
-                                    <p>&nbsp;<span  class="profession">{{profile.location?profile.location:" location"}}</span></p>
-                                    <div class="fav-color">
-                                        <div class="favcolor-first" ng-style="{'background-color':profile.color[0]}"></div>
-                                        <div class="favcolor-second" ng-style="{'background-color':profile.color[1]}"></div>
-                                    </div>
-                                    <p class="text-center">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</p>
+        <div class="col-md-4 col-sm-6" ng-repeat="profile in vm.profiles">
+
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" />
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">{{profile.displayName}}</h3>
+                                <p>&nbsp;<span class="profession">{{profile.location?profile.location:" location"}}</span></p>
+                                <div class="fav-color">
+                                    <div class="favcolor-first" ng-style="{'background-color':profile.color[0]}"></div>
+                                    <div class="favcolor-second" ng-style="{'background-color':profile.color[1]}"></div>
                                 </div>
+                                <p class="text-center">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</p>
+                            </div>
 
-                                <!--<div class="footer">
-                                    <button class="btn btn-simple" title="Tap me" onclick="rotateCard(this)">
-                                        <i class="fa fa-mail-forward fa-lg"></i>
-                                        
-                                    </button>
-                                </div>-->
-                            </div>
-                        </div> <!-- end front panel -->
-                        <div class="back">
-                            <div class="header">
-                                <h5 class="motto">{{profile.status}}</h5>
-                            </div>
-                            <div class="content">
-                                <div class="main">
-                                    <h4 class="text-center">Job Description</h4>
-                                    <p class="text-center">{{profile.jobDescription}}</p>
-                                    <div class="stats-container">
-                                        <div class="stats">
-                                            <h4>{{profile.followers}}</h4>
-                                            <p>
-                                                Followers
-                                            </p>
-                                        </div>
-                                        <div class="stats">
-                                            <h4>{{profile.following}}</h4>
-                                            <p>
-                                                Following
-                                            </p>
-                                        </div>
-                                        <div class="stats">
-                                            <h4>{{profile.projects}}</h4>
-                                            <p>
-                                                Projects
-                                            </p>
-                                        </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">{{profile.status}}</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Job Description</h4>
+                                <p class="text-center">{{profile.jobDescription}}</p>
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>{{profile.followers}}</h4>
+                                        <p>
+                                            Followers
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>{{profile.following}}</h4>
+                                        <p>
+                                            Following
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>{{profile.projects}}</h4>
+                                        <p>
+                                            Projects
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer">
-                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                    <i class="fa fa-reply"></i> Back
-                                </button>
-                                <div class="social-links text-center">
-                                    <a href="http://www.bytes2bots.com/" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                                    <a href="http://www.bytes2bots.com/" class="google" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                    <a href="http://www.bytes2bots.com/" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                                </div>
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                            <div class="social-links text-center">
+                                <a href="http://www.bytes2bots.com/" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+                                <a href="http://www.bytes2bots.com/" class="google" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                                <a href="http://www.bytes2bots.com/" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
                             </div>
-                        </div> <!-- end back panel -->
-                    </div> <!-- end card -->
-                </div> <!-- end card-container -->
-            </div> <!-- end col sm 3 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!--</div>--> <!-- end col-sm-10 -->
-    </div> <!-- end row -->
-    <!--<p>Dynamic end - need to remove later</p>-->
-    <!--end-->
-    
-   
+
+    </div>
+
 
     <div class="space-200"></div>
-</div>
-<!--<div class="text-center">
-  <a class="btn btn-default" href=""><i class="ion-social-github"></i> powered by</a>
-</div>
 </div>-->
