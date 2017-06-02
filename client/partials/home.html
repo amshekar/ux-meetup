@@ -4,15 +4,18 @@
     <div class="center-align">
         <a href="" class="submit-color-font">Submit your fav color &amp; font</a>
     </div>
-    
-    <div class="progress" if-loading>       
+
+    <div class="progress" if-loading>
         <div class="indeterminate"></div>
     </div>
     <div class="banner">
-        <div class="carousel carousel-slider">
-            <a class="carousel-item responsive-img" href="#one!"><img src="client/assets/images/banner.png"></a>
+        <div class="carousel carousel-slider " data-indicators="true">
+            <div class="carousel-fixed-item center">
+                <!--<a class="btn waves-effect white grey-text darken-text-2"></a>-->
+            </div>
+            <a class="carousel-item responsive-img" href="#one!"><img src="/client/assets/images/banner.png"></a>
             <a class="carousel-item responsive-img" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item responsive-img" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+            <a class="carousel-item responsive-img" href="#three!"><img src="/client/assets/images/banner.png"></a>
             <a class="carousel-item responsive-img" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
         </div>
     </div>
@@ -20,13 +23,13 @@
         <div class="input-field col s4 offset-s4" if-loading>
             <img src="client/assets/images/balls.gif" />
             <!--<img src="client/assets/images/pie.gif" />-->
-            
+
         </div>
     </div>
     <div class="grid-continer">
         <div class="box" ng-repeat="profile in vm.profiles">
             <div class="box-dp">
-                <img src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" alt="Palle" class="responsive-img">
+                <img src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" alt="favepic" class="responsive-img">
             </div>
             <div class="box-name">{{profile.displayName}}</div>
             <div class="box-location">{{profile.location?profile.location:" location"}}</div>
@@ -122,6 +125,7 @@
         });
     </script>
 </div>
+
 
 
 
