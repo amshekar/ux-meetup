@@ -1,3 +1,53 @@
+<div class="site-container">
+
+    <div class="nav-wrapper">
+        <a href="index.html" class="login-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
+    </div>
+    <div class="clear"></div>
+    <div class="body-container">
+        <h1 class="login-with">Login with</h1>
+        <div class="center-align">
+            <a class="login-with-social" ng-click="authenticate('dribble')"> <i class="dribble"></i></a>
+            <a class="login-with-social" ng-click="authenticate('facebook')"> <i class="facebook"></i></a>
+            <a class="login-with-social" ng-click="authenticate('twitter')"> <i class="twitter"></i></a>
+        </div>
+        <div class="or-text">OR</div>
+        <div class="login-directly">
+            <form class="login-form" method="post" ng-submit="login()" name="loginForm">
+                <div class="input-field">
+                    <input id="email" type="email" class="validate" name="email" ng-model="user.email" required autofocus>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="input-field">
+                    <input id="password" type="password" class="validate" name="password" ng-model="user.password"  required>
+                    <label for="password">Password</label>
+                    <a href="" class="forgot-password">Forgot?</a>
+                </div>
+                <div class="input-field">
+                    <button class="waves-effect waves-light btn login-button" type="submit"  ng-disabled="loginForm.$invalid">Login</button>
+                </div>
+
+                <div class="input-field sign-up-link">
+                    Dont have an account yet? <a ui-sref="signup" class="waves-effect waves-light">Sign Up</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<div class="grid-continer">
+
+
+</div>
+
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="center-form panel">
@@ -7,9 +57,9 @@
                     &nbsp;
                 </div>
                 <div class="text-center">
-                    <!--<button class=" btn-dribble smGlobalBtn dribbleBtn" ng-click="authenticate('dribble')">
+                    <button class=" btn-dribble smGlobalBtn dribbleBtn" ng-click="authenticate('dribble')">
                         <i class="fa fa-dribbble"></i>
-                    </button>-->
+                    </button>
                     <button class=" btn-facebook smGlobalBtn facebookBtn" ng-click="authenticate('facebook')">
                         <i class="ion-social-facebook"></i>
                     </button>
@@ -38,7 +88,7 @@
 
                 </form>
 
-                <!--<button class="btn btn-block btn-instagram" ng-click="authenticate('instagram')">
+                <button class="btn btn-block btn-instagram" ng-click="authenticate('instagram')">
                     <i class="ion-social-instagram"></i> Sign in with Instagram
                 </button>
                 <button class="btn btn-block btn-google-plus" ng-click="authenticate('google')">
@@ -71,8 +121,9 @@
                 </button>
                 <button class="btn btn-block btn-spotify" ng-click="authenticate('spotify')">
                     <i class="fa fa-spotify"></i> Sign in with Spotify
-                </button>-->
+                </button>
             </div>
         </div>
     </div>
 </div>
+-->
