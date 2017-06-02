@@ -1,22 +1,23 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp">
 <head>
-    <!--color Picker-->
-    <link href="/client/stylesheets/color.css" rel="stylesheet" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <title>favfont</title>
+    <link href="/favicon.ico" rel="shortcut icon">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->    
+    <!--Import materialize.css-->
+    <!--color Picker-->
+    <link href="/client/stylesheets/color.css" rel="stylesheet" />
     <link rel="stylesheet" href="client/assets/css/materialize.min.css">
     <link rel="stylesheet" href="client/assets/css/fav.css">
     <link rel="stylesheet" href="client/assets/css/login.css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/">   
-    <title>favfont</title>
-    <link href="favicon.png" rel="shortcut icon">
+
 </head>
 <body>
-    <div class="site-container" ng-controller="NavbarCtrl" >
+    <div class="site-container" ng-controller="NavbarCtrl">
         <nav>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo fav-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
@@ -31,8 +32,8 @@
             </div>
         </nav>
         <div class="clear"></div>
-        <div ui-view></div>   
-        
+        <div ui-view></div>
+
         <div class="footer">
             All rights reserved 2017
         </div>
@@ -44,12 +45,11 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
     <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">-->
-    
     <!-- ui-select files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
 
-    <!-- Third-party Libraries -->    
+    <!-- Third-party Libraries -->
     <script src="/client/vendor/angular-animate.js"></script>
     <script src="/client/vendor/angular-messages.js"></script>
     <script src="/client/vendor/angular-resource.js"></script>
@@ -75,12 +75,8 @@
     <script src="/client/controllers/navbar.js"></script>
     <script src="/client/services/account.js"></script>
     <script src="/client/controllers/setting.js"></script>
-    <script src="/client/vendor/html5kellyhlpicker.js"></script>
+    <!--<script src="/client/vendor/html5kellyhlpicker.js"></script>-->
     <script src="client/directives/ifLoading.directive.js"></script>
-
-
-   
-    
 </body>
 </html>
 
