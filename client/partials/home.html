@@ -4,7 +4,8 @@
     <div class="center-align">
         <a href="" class="submit-color-font">Submit your fav color &amp; font</a>
     </div>
-    <div class="progress" if-loading>
+    
+    <div class="progress" if-loading>       
         <div class="indeterminate"></div>
     </div>
     <div class="banner">
@@ -15,7 +16,13 @@
             <a class="carousel-item responsive-img" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
         </div>
     </div>
-
+    <div class="row">
+        <div class="input-field col s4 offset-s4" if-loading>
+            <img src="client/assets/images/balls.gif" />
+            <!--<img src="client/assets/images/pie.gif" />-->
+            
+        </div>
+    </div>
     <div class="grid-continer">
         <div class="box" ng-repeat="profile in vm.profiles">
             <div class="box-dp">

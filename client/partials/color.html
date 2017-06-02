@@ -677,11 +677,68 @@
         </div>
         <div class="row">
             <div class="col-md-2 col-sm-offset-10">
-                <a ui-sref="setting.font" ng-click="setColor()" class="btn btn-lg" style="float:right;border-radius:10px;width:150px;height:50px;color:white;background-color: black;">Next</a>
+                <a ui-sref="setting.font" ng-click="setColor()" class="waves-effect waves-light btn login-button" style="float:right;">Next</a>
             </div>
         </div>
            <div class="row">
             &nbsp;
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+
+            var color = '';
+
+            $(document).on('click', '.js-color', function (e) {
+
+                var x = $(this).css('backgroundColor');
+                var color = hexc(x);
+                var assigned = false;
+
+                var input1 = $('.favcolor-first');
+                var input2 = $('.favcolor-second');
+
+                if (input1.val() != "" && input2.val() != "") {
+                    if (input1.val() == color) {
+                        input1.val("");
+                        $('.favcolor-first').css('backgroundColor', '#ffffff');
+                        assigned = true;
+                    }
+
+                    if (input2.val() == color) {
+                        input2.val("");
+                        $('.favcolor-second').css('backgroundColor', '#ffffff');
+                        assigned = true;
+                    }
+                }
+
+                if (!assigned) {
+                    if (input1.val() == "") {
+                        input1.val(color);
+                        $('.favcolor-first').css('backgroundColor', color);
+                        assigned = true;
+                    }
+                }
+                if (!assigned) {
+                    if (input2.val() == "") {
+                        input2.val(color);
+                        $('.favcolor-second').css('backgroundColor', color);
+                        assigned = true;
+                    }
+                }
+            });
+
+        });
+
+        function hexc(colorval) {
+            var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+            delete (parts[0]);
+            for (var i = 1; i <= 3; ++i) {
+                parts[i] = parseInt(parts[i]).toString(16);
+                if (parts[i].length == 1) parts[i] = '0' + parts[i];
+            }
+            color = '#' + parts.join('');
+            return color;
+        }
+    </script>
 </div>

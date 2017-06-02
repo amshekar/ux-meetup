@@ -71,7 +71,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
                 templateUrl: '/client/partials/profile.html',
                 controller: 'ProfileCtrl',
                 resolve: {
-                   // loginRequired: loginRequired
+                    loginRequired: loginRequired
                 }
             });
         $urlRouterProvider.otherwise('/');
