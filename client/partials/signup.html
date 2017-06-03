@@ -41,11 +41,11 @@
                     </div>
                 </div>
                 <div class="input-field terms-conditions">
-                    <input type="checkbox" ng-model="conditions" id="test5" />
+                    <input type="checkbox" ng-model="conditions" id="test5" required/>
                     <label for="test5">Agree to <a data-target="terms" class="modal-trigger waves-effect waves-light">terms &amp; conditions</a>  and <a data-target="privacy" class="waves-effect waves-light">privacy policy</a></label>
                 </div>
                 <div class="input-field">
-                    <button type="submit" class="waves-effect waves-light btn signup-button" ng-disabled="signupForm.$invalid || !conditions">Register</button>
+                    <button type="submit" class="waves-effect waves-light btn signup-button">Register</button>
                 </div>
                 <div class="input-field sign-up-link">
                     Already have an account? <a ui-sref="login" class="waves-effect waves-light">Login</a>

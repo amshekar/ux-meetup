@@ -8,7 +8,7 @@
     <link href="/favicon.ico" rel="shortcut icon">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->    
+    <!--Import materialize.css-->
     <link rel="stylesheet" href="/client/assets/css/materialize.min.css">
     <link rel="stylesheet" href="/client/assets/css/fav.css">
     <link rel="stylesheet" href="/client/assets/css/login.css">
@@ -16,6 +16,9 @@
 </head>
 <body>
     <div class="site-container" ng-controller="NavbarCtrl">
+        <div class="progress" if-loading>
+            <div class="indeterminate"></div>
+        </div>
         <nav>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo fav-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
@@ -23,10 +26,10 @@
                 <ul class="">
                     <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
-                    <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>                    
+                    <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()">
                         <a class="waves-effect waves-light profile-dp-box">
-                            <img src="client/assets/images/pie.gif" class="responsive-img dp" alt="profile"> <span>Srinivas</span>
+                            <img src="client/images/gravtar.PNG" class="responsive-img dp" alt="profile"> <span>Srinivas</span>
                         </a>
                         <div class="edit-profile-div">
                             <i class="material-icons">&#xE5C7;</i>
@@ -43,7 +46,7 @@
         <div ui-view></div>
 
         <div class="footer">
-           &copy;All rights reserved 2017
+            &copy;All rights reserved 2017
         </div>
     </div>
     <!--<script src="/client/vendor/jquery.js"></script>-->
@@ -67,7 +70,7 @@
     <script src="/client/vendor/angular-toastr.tpls.js"></script>
     <script src="/client/vendor/satellizer.js"></script>
     <script src="/client/vendor/ng-image-input-with-preview.js"></script>
-    
+
     <!--Import jQuery before materialize.js-->
     <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
     <script src="/client/assets/js/materialize.min.js"></script>

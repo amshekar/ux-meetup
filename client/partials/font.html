@@ -1,43 +1,49 @@
-
-<div class="site-container">
-    <div class="container" style="font-size:25px;">
-        <p class="text-muted">Select your fav fonts</p>
+<div class="body-container">
+    <div class="row">
+        &nbsp;
     </div>
+    <div class="row">
+        &nbsp;
+    </div>
+    <div>
+        <div class="container" style="font-size:25px;">
+            <p class="text-muted">Select your fav fonts</p>
+        </div>
 
-    <div class="grid-continer">
+        <div class="grid-continer">
 
 
-        <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
-        <div class="row">
-            <div class="input-field col s8 offset-s2">
-                <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled">
-                    <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
-                    <ui-select-choices repeat="font in Fonts | filter:$select.search">
-                        {{font}}
-                    </ui-select-choices>
-                </ui-select>
+            <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled">
+                        <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
+                        <ui-select-choices repeat="font in Fonts | filter:$select.search">
+                            {{font}}
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="input-field">
-            <a class="waves-effect waves-light btn login-button" style="float:right;" ng-click="updateProfile()">Submit</a>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="input-field">
+                <a class="waves-effect waves-light btn login-button" style="float:right;" ng-click="updateProfile()">Submit</a>
+            </div>
+
         </div>
 
     </div>
-
 </div>
-
 
 
 
