@@ -1,4 +1,3 @@
-
 <div class="site-container">
 
     <div class="clear"></div>
@@ -9,9 +8,21 @@
         <div class="or-text">OR</div>
         <div class="login-directly">
             <form class="login-form" method="post" ng-submit="updateProfile()" name="editprofileform">
+                <p>
+                    <span class="error" ng-show="login-form.myImage.$error.image">
+                        Not a JPEG or a PNG!
+                    </span>
+                    <span class="error" ng-show="login-form.myImage.$error.dimensions">
+                        Image height should be smaller than 400!
+                    </span>
+                </p>
                 <div class="form-group input-field">
+
                     <label class="control-label">Profile Picture</label>
-                    <img class="profile-picture" ng-src="{{user.picture || 'https://placehold.it/100x100'}}">
+                    <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
+                        accept="image/jpeg,image/png" dimensions="height < 400">
+                    <img class="profile-picture" ng-src="{{user.picture || 'https://placehold.it/100x100'}}" onclick="document.getElementById('myFile').click();">
+
                 </div>
                 <div class="form-group input-field">
                     <input id="displayname" type="text" class="form-control" ng-model="user.displayName" />

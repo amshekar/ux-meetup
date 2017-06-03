@@ -22,8 +22,8 @@
     "angular-ui-select": "^0.19.8",
     "angular-sanitize": "^1.6.4",
     "angular-resource": "^1.6.4",
-    "jquery": "*"
-    
+    "jquery": "*",
+    "ng-image-input-with-preview": "^0.0.6"
   },
   "resolutions": {
     "angular": "^1.0.8"

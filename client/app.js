@@ -1,4 +1,5 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap'])
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 
+                        'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap','ngImageInputWithPreview'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
 
         /**
