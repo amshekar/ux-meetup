@@ -1,6 +1,6 @@
 <div class="body-container">
 
-    <h1 class="fav-color-font-head">Designers favourite colors & fonts</h1>
+    <h1 class="fav-color-font-head">Creative Designers favourite colors & fonts</h1>
     <div class="center-align">
         <a href="" class="submit-color-font">Submit your fav color &amp; font</a>
     </div>    
@@ -9,18 +9,19 @@
             <div class="carousel-fixed-item center">
                 <!--<a class="btn waves-effect white grey-text darken-text-2"></a>-->
             </div>
-            <a class="carousel-item responsive-img" href="#one!"><img src="/client/assets/images/banner.png"></a>
-            <a class="carousel-item responsive-img" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-            <a class="carousel-item responsive-img" href="#three!"><img src="/client/assets/images/banner.png"></a>
-            <a class="carousel-item responsive-img" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+            <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/client/assets/images/banner2.png"></a>            
+            <a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/client/assets/images/banner1.png"></a>            
+            <a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/client/assets/images/banner3.png"></a>
+
         </div>
     </div>
-    <div class="row">        
+    <div class="row">     
+       
     </div>
     <div class="grid-continer">
         <div class="box" ng-repeat="profile in vm.profiles">
             <div class="box-dp">
-                <img src="{{profile.picture?profile.picture:'client/images/gravtar.PNG'}}" alt="favepic" class="responsive-img">
+                <img src="{{profile.picture?profile.picture:'client/assets/images/image.png'}}" alt="favepic" class="responsive-img">
             </div>
             <div class="box-name">{{profile.displayName}}</div>
             <div class="box-location">{{profile.location?profile.location:" location"}}</div>

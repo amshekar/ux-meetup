@@ -15,10 +15,10 @@
 
             <form class="login-form" method="post" ng-submit="updateProfile()" name="editprofileform">
                 <p>
-                    <span class="error" ng-show="login-form.myImage.$error.image">
+                    <span class="error" ng-show="editprofileform.myImage.$error.image">
                         Not a JPEG or a PNG!
                     </span>
-                    <span class="error" ng-show="login-form.myImage.$error.dimensions">
+                    <span class="error" ng-show="editprofileform.myImage.$error.dimensions">
                         Image height should be smaller than 400!
                     </span>
                 </p>
@@ -26,7 +26,7 @@
                     <!--<label class="control-label">Profile Picture</label>-->
                     <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
                            accept="image/jpeg,image/png" dimensions="height < 400">
-                    <img class="responsive-img" ng-src="{{user.picture || 'client/assets/images/profile-default.jpg'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
+                    <img class="responsive-img" ng-src="{{user.picture || 'client/assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
 
                 </div>
                 <div class="row">
