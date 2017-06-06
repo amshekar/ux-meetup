@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 @font-face{font-family:"Avenir Next";src:url(../fonts/AvenirNextLTPro-Regular.otf) format("woff")}
 @font-face{font-family:"Avenir Next Bold";src:url(../fonts/AvenirNextLTPro-Bold.otf) format("woff")}
 @font-face{font-family:"Avenir Next Italic";src:url(../fonts/AvenirNextLTPro-It.otf) format("woff")}
@@ -66,4 +66,16 @@ nav{height: auto;}
 }
 @media (min-width: 601px) and (max-width: 992px) {
 nav .brand-logo{left:5%}
+}
+.editprofilebox {
+    padding: 20px;
+    margin: 15px 10px;
+    width: 800px;
+    background-color: #fff;
+    height: 1000px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 1px;
 }

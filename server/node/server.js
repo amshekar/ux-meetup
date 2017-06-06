@@ -196,6 +196,10 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
     user.font = req.body.font || user.font;
     user.color = req.body.color || user.color;
     user.picture = req.body.picture || user.picture;
+    user.website = req.body.website || user.website;
+    user.book = req.body.book || user.book;
+    user.favdesigner = req.body.favdesigner || user.favdesigner;
+    
     user.save(function(err) {
       //res.status(200).end();
         res.status(status.OK).end();

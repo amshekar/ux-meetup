@@ -8,6 +8,8 @@ var userSchema = {
     location: String,
     website: String,
     picture: String,
+    book: String,
+    favdesigner:String,
     //picture:[{type:String,match:/^http:\/\//i}],
     font: { type : Array, default: [] },
     color: { type : Array, default : [] },

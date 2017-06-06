@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 @font-face{font-family:"Avenir Next";src:url(../fonts/AvenirNextLTPro-Regular.otf) format("woff")}
 @font-face{font-family:"Avenir Next Bold";src:url(../fonts/AvenirNextLTPro-Bold.otf) format("woff")}
 @font-face{font-family:"Avenir Next Italic";src:url(../fonts/AvenirNextLTPro-It.otf) format("woff")}
@@ -32,3 +32,9 @@ html,body{font-family:"Avenir Next","Roboto",sans-serif;font-size:12px;color:#2b
 .input-field input.valid{border-bottom:1px solid #000!important;box-shadow:0 1px 0 0 #000!important}
 .input-field input.invalid{border-bottom:1px solid red!important;box-shadow:0 1px 0 0 red!important}
 .input-field .prefix.active{color:#000}
+.edit-profile .profile-form{
+    max-width: 690px;
+    margin: 0 auto;
+    display: inline-block;
+    width: 90%
+}
