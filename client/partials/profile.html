@@ -27,7 +27,7 @@
                     <div class="box-dp form-group input-field col s6 offset-s3">
                         <!--<label class="control-label">Profile Picture</label>-->
                         <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
-                               accept="image/jpeg,image/png" dimensions="height < 400">
+                               accept="image/jpeg,image/png" dimensions="height < 600">
                         <img class="responsive-img" ng-src="{{user.picture || 'client/assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
 
                     </div>

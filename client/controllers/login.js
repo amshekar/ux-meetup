@@ -1,10 +1,12 @@
 angular.module('MyApp')
-  .controller('LoginCtrl', function ($scope, $location, $auth, toastr, $state, Account) {
+    .controller('LoginCtrl', function ($scope, $location, $auth, toastr, $state, $window, $rootScope, Account) {
     $scope.login = function () {
       $auth.login($scope.user)
         .then(function () {
           Account.getProfile()
-            .then(function (response) {
+              .then(function (response) {
+                  $window.localStorage.currentUser = JSON.stringify(response.data);
+                  $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
               $scope.user = response.data;
               if ($scope.user.font.length == 0 && $scope.user.color.length == 0) {
                 //$location.path('/setting');
@@ -27,7 +29,9 @@ angular.module('MyApp')
 
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
-        .then(function () {
+          .then(function (response) {
+              $window.localStorage.currentUser = JSON.stringify(response.data);
+              $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
           toastr.success('You have successfully signed in with ' + provider + '!');
           $location.path('/');
         })

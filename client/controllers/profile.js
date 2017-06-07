@@ -17,9 +17,13 @@ angular.module('MyApp')
 
     $scope.updateProfile = function () {
       Account.updateProfile($scope.user)
-        .then(function () {
+        .then(function (response) {
             toastr.success('Profile has been updated');
-            $state.go('home');
+            //shekar need to relook
+           // delete $window.localStorage.currentUser;
+            //$window.localStorage.currentUser = JSON.stringify($scope.user);
+           // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);            
+            //$state.go('about');
         })
         .catch(function (response) {
           toastr.error(response.data.message, response.status);
