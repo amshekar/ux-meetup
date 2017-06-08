@@ -144,8 +144,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
             authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate'
         });
-    }).run(function ($rootScope, $window, $auth) {
-        if ($auth.isAuthenticated()) {
+   // }).run(function ($rootScope, $window, $auth) {
+      //  if ($auth.isAuthenticated()) {
             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-        }
+        //}
     });
