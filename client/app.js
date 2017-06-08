@@ -146,6 +146,6 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
         });
    // }).run(function ($rootScope, $window, $auth) {
       //  if ($auth.isAuthenticated()) {
-            $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+           // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
         //}
     });
