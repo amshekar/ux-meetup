@@ -18,7 +18,7 @@ angular.module('MyApp')
     $scope.updateProfile = function () {
       Account.updateProfile($scope.user)
         .then(function (response) {
-            toastr.success('Profile has been updated');
+            //toastr.success('Profile has been updated');
             //shekar need to relook
            // delete $window.localStorage.currentUser;
             //$window.localStorage.currentUser = JSON.stringify($scope.user);

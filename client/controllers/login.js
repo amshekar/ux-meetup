@@ -12,8 +12,7 @@ angular.module('MyApp')
                 //$location.path('/setting');
                 $state.go('setting.color');
               }
-              else
-                //$location.path('/home');
+              else                
                 $state.go('home');
               toastr.success('You have successfully signed in!');
             })
