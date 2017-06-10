@@ -12,6 +12,11 @@
         border-radius: 50%;
         border: 1px solid gray;
     }
+    
+    .blueRectangle {
+        border-style:solid;
+        border-color:#4679BD;
+    }
 </style>
 <!--color Picker-->
 <link href="/client/stylesheets/color.css" rel="stylesheet" />
@@ -672,6 +677,7 @@
                 &nbsp;
             </div>
         </div>
+ 
         <script>
         $(document).ready(function () {
 
@@ -680,6 +686,7 @@
             $(document).on('click', '.js-color', function (e) {
 
                 var x = $(this).css('backgroundColor');
+
                 var color = hexc(x);
                 var assigned = false;
 
@@ -689,12 +696,14 @@
                 if (input1.val() != "" && input2.val() != "") {
                     if (input1.val() == color) {
                         input1.val("");
+                         $(this).toggleClass("blueRectangle");
                         $('.favcolor-first').css('backgroundColor', '#ffffff');
                         assigned = true;
                     }
 
                     if (input2.val() == color) {
                         input2.val("");
+                         $(this).toggleClass("blueRectangle");
                         $('.favcolor-second').css('backgroundColor', '#ffffff');
                         assigned = true;
                     }
@@ -703,6 +712,7 @@
                 if (!assigned) {
                     if (input1.val() == "") {
                         input1.val(color);
+                         $(this).toggleClass("blueRectangle");
                         $('.favcolor-first').css('backgroundColor', color);
                         assigned = true;
                     }
@@ -710,6 +720,7 @@
                 if (!assigned) {
                     if (input2.val() == "") {
                         input2.val(color);
+                         $(this).toggleClass("blueRectangle");
                         $('.favcolor-second').css('backgroundColor', color);
                         assigned = true;
                     }
