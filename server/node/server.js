@@ -199,6 +199,7 @@ app.put('/api/me', ensureAuthenticated, function(req, res) {
     user.website = req.body.website || user.website;
     user.book = req.body.book || user.book;
     user.favdesigner = req.body.favdesigner || user.favdesigner;
+    user.updated_at = new Date();
     
     user.save(function(err) {
       //res.status(200).end();
