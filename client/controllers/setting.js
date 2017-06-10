@@ -24,7 +24,7 @@ angular.module('MyApp')
       $scope.user = {'font':$scope.selectedItem.fonts, 'color':[$scope.cl1,$scope.cl2]};
       Account.updateProfile($scope.user)
         .then(function() {
-          toastr.success('Profile has been updated');
+          //toastr.success('Profile has been updated');
           $state.go('home');
         })
         .catch(function(response) {

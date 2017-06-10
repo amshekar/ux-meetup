@@ -59,7 +59,7 @@ app.set('host', process.env.NODE_IP || 'localhost');
 //app.set('host', process.env.NODE_IP || 'http://favfont.azurewebsites.net'); 
 app.use(cors());
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Force HTTPS on Heroku
@@ -238,7 +238,8 @@ app.post('/auth/signup', function(req, res) {
       return res.status(409).send({ message: 'Email is already taken' });
     }
     var user = new User({
-      displayName: req.body.displayName,
+        displayName: req.body.displayName,
+        location: req.body.location,
       email: req.body.email,
       password: req.body.password
     });

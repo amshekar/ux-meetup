@@ -14,7 +14,7 @@ angular.module('MyApp')
               }
               else                
                 $state.go('home');
-              toastr.success('You have successfully signed in!');
+              //toastr.success('You have successfully signed in!');
             })
         })
         .catch(function (error) {

@@ -23,7 +23,7 @@ angular.module('MyApp')
            // delete $window.localStorage.currentUser;
             //$window.localStorage.currentUser = JSON.stringify($scope.user);
            // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);            
-            //$state.go('about');
+            $state.go('home');
         })
         .catch(function (response) {
           toastr.error(response.data.message, response.status);
