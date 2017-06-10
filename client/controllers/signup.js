@@ -1,19 +1,19 @@
 angular.module('MyApp')
-    .controller('SignupCtrl', function ($scope, $location, $auth, toastr) {
+    .controller('SignupCtrl', function ($scope, $location, $auth, $state, toastr) {
         $scope.signup = function () {
             $auth.signup($scope.user)
                 .then(function (response) {
                     $auth.setToken(response);
                     if ($scope.hasSettingUpdated()) {
-                        // $state.go('setting');
-                        $location.path('/setting');
+                         //$state.go('setting');
+                       $location.path('/setting');
                     } else {
-                        // $state.go('home');
-                        $location.path('/home');
+                        //$state.go('home');
+                        $location.path('/');
                     }
 
 
-                    toastr.info('You have successfully created a new account and have been signed-in');
+                    //toastr.info('You have successfully created a new account and have been signed-in');
                 })
                 .catch(function (response) {
                     toastr.error(response.data.message);

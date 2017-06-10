@@ -15,6 +15,14 @@
                         <div ng-message="required">You must enter your name.</div>
                     </div>
                 </div>
+                <div class="input-field" ng-class="{ 'has-error' : signupForm.location.$invalid && signupForm.location.$dirty }">
+                    <input id="location" type="text" class="validate" name="location" ng-model="user.location" required autofocus>
+                    <label for="location">Location</label>
+                    <span class="ion-person form-control-feedback"></span>
+                    <div class="help-block text-danger" ng-if="signupForm.location.$dirty" ng-messages="signupForm.location.$error">
+                        <div ng-message="required">You must enter your location.</div>
+                    </div>
+                </div>
                 <div class="input-field" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
                     <input id="email" type="email" class="validate" name="email" ng-model="user.email" required>
                     <label for="email">Email Address</label>

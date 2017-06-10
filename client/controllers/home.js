@@ -9,7 +9,7 @@
             //return result.data;
         }
         function HandleSaveFailure(result) {
-            toastr.error(result.data.message, result.status);
+            toastr.error(result.message, result.status);
             //need to remove alert or implent logging
             window.alert("error" + result);
         }

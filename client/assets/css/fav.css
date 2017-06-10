@@ -79,3 +79,10 @@ nav .brand-logo{left:5%}
     text-align: center;
     border-radius: 1px;
 }
+.edit-font {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    font-size: 16px;
+    color: #9a9a9a
+}
