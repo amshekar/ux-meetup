@@ -151,12 +151,13 @@ app.get('/api/me', ensureAuthenticated, function(req, res) {
  |--------------------------------------------------------------------------
  */
 app.get('/api/users',function (req, res) {
-    User.find().sort({updated_at:-1}).exec(function (err, users) {
+   var pageSize = 9;
+    User.find().sort({updated_at:-1}).skip(pageSize * req.query.pagesize).limit(pageSize).exec(function (err, users) {
         if (err) {
             res.send(err);
         }
         res.send(users);
-    }).sort({updated_at:-1});
+    });
 });
 
 /*

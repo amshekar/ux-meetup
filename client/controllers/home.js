@@ -1,11 +1,23 @@
 (function (angular) {
     function HomeCtrl($scope, $http, $auth, toastr, Account) {
+        angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
         var vm = this;
         init();  
-
+        vm.profiles =[];
         function HandleSaveSuccess(result) {
-            ResetForm();
-            vm.profiles = result.data;
+            //ResetForm();
+            debugger;
+            if(result.data.length == 0 )
+            {
+                vm.noMorePossibleResults = true;
+                return;
+            }
+            for(i=0;i<result.data.length;i++)
+            {
+                vm.profiles.push(result.data[i]);
+            }
+            
+            vm.noMorePossibleResults = false;
             //return result.data;
         }
         function HandleSaveFailure(result) {
@@ -13,10 +25,17 @@
             //need to remove alert or implent logging
             window.alert("error" + result);
         }
-        vm.getAllProfiles = function () {
-            Account.getAllProfiles().then(HandleSaveSuccess, HandleSaveFailure);          
 
+        vm.currentPage = 0;
+        vm.noMorePossibleResults = false;
+        vm.getAllProfiles = function () {
+            vm.noMorePossibleResults = true;
+            Account.getAllProfiles(vm.currentPage).then(HandleSaveSuccess, HandleSaveFailure);   
+            vm.currentPage += 1;       
         };
+        
+
+
         function ResetForm() {
             vm.profiles = [];            
         }
