@@ -31,7 +31,7 @@ angular.module('MyApp')
           .then(function (response) {
               $window.localStorage.currentUser = JSON.stringify(response.data);
               $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-          toastr.success('You have successfully signed in with ' + provider + '!');
+          //toastr.success('You have successfully signed in with ' + provider + '!');
           $location.path('/');
         })
         .catch(function (error) {

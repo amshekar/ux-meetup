@@ -34,7 +34,7 @@ nav{color:inherit;background-color:transparent;width:100%;box-shadow:none;margin
 .banner{margin:50px auto 20px;text-align:center;height:250px;overflow:hidden}
 .banner .carousel.carousel-slider{max-width: 1022px;height:100%!important;margin:0 auto;}
 .grid-continer{position:relative;max-width:1042px;margin:0 auto 100px;text-align:center}
-.box{padding:20px;margin:15px 10px;width:325px;background-color:#fff;height:480px;display:inline-block;vertical-align:top;cursor:pointer;text-align:left;border-radius: 1px;}
+.box{padding:20px;margin:15px 10px;width:325px;background-color:#fff;height:460px;display:inline-block;vertical-align:top;cursor:pointer;text-align:left;border-radius: 1px;}
 .box:hover,.box.active{box-shadow:0 0 7px 0 #bbb;}
 .box-dp{overflow:hidden;text-align:center;width:285px;height:156px}
 .box-dp img{-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */filter: grayscale(100%);}
@@ -70,9 +70,9 @@ nav .brand-logo{left:5%}
 .editprofilebox {
     padding: 20px;
     margin: 15px 10px;
-    width: 800px;
+    width: 500px;
     background-color: #fff;
-    height: 1050px;
+    height: 850px;
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
