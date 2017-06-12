@@ -15,7 +15,7 @@
 
 </head>
 <body>
-    <div class="site-container" ng-controller="NavbarCtrl">
+    <div class="site-container" ng-controller="NavbarCtrl" id="top">
         <div class="progress" if-loading>
             <div class="indeterminate"></div>
         </div>
@@ -43,7 +43,11 @@
             </div>
         </nav>
         <div class="clear"></div>
-        <div ui-view></div>
+        <div ui-view autoscroll="true"></div>
+        <!-- material-scrolltop button -->
+        <button class="material-scrolltop" type="button">
+            <!--<span>↑</span>-->
+        </button>
 
         <div class="footer">
             &copy;All rights reserved 2017
@@ -60,6 +64,7 @@
     <!-- ui-select files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
+    <link href="/client/stylesheets/material-scrolltop.css" rel="stylesheet" />
 
     <!-- Third-party Libraries -->
     <script src="/client/vendor/angular-animate.js"></script>
@@ -71,7 +76,7 @@
     <script src="/client/vendor/satellizer.js"></script>
     <script src="/client/vendor/ng-image-input-with-preview.js"></script>
     <script src="/client/vendor/infinite-scroll.js"></script>
-
+    <script src="/client/vendor/material-scrolltop.js"></script>
     <!--Import jQuery before materialize.js-->
     <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
     <script src="/client/assets/js/materialize.min.js"></script>
@@ -92,6 +97,9 @@
     <script src="/client/controllers/setting.js"></script>
     <!--<script src="/client/vendor/html5kellyhlpicker.js"></script>-->
     <script src="/client/directives/ifLoading.directive.js"></script>
+    <script>
+        $('body').materialScrollTop();
+    </script>
 </body>
 </html>
 

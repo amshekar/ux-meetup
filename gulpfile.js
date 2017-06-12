@@ -22,10 +22,12 @@ gulp.task('copy', function () {
     gulp.src('./node_modules/angucomplete-alt/dist/angucomplete-alt.min.js').pipe(gulp.dest('./client/vendor'));
     gulp.src('./bower_components/jquery/dist/jquery.js').pipe(gulp.dest('./client/vendor'));
     gulp.src('./bower_components/angular-resource/angular-resource.js').pipe(gulp.dest('./client/vendor'));
+    gulp.src('./bower_components/material-scrolltop/src/material-scrolltop.js').pipe(gulp.dest('./client/vendor'));
 
     //CSS
     gulp.src('./node_modules/angucomplete-alt/angucomplete-alt.css').pipe(gulp.dest('./client/stylesheets'));
     gulp.src('./node_modules/angular-radial-color-picker/dist/css/color-picker.min.css').pipe(gulp.dest('./client/stylesheets'));
+    gulp.src('./bower_components/material-scrolltop/src/material-scrolltop.css').pipe(gulp.dest('./client/stylesheets'));
 
     
 });

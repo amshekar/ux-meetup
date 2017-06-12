@@ -6,7 +6,7 @@
         vm.profiles =[];
         function HandleSaveSuccess(result) {
             //ResetForm();
-            debugger;
+            //debugger;
             if(result.data.length == 0 )
             {
                 vm.noMorePossibleResults = true;
@@ -23,7 +23,7 @@
         function HandleSaveFailure(result) {
             toastr.error(result.message, result.status);
             //need to remove alert or implent logging
-            window.alert("error" + result);
+            //window.alert("error" + result);
         }
 
         vm.currentPage = 0;

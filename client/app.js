@@ -1,6 +1,7 @@
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
-    'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 'ngImageInputWithPreview','infinite-scroll'])
-    .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
+    'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 'ngImageInputWithPreview', 'infinite-scroll'])
+    .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $uiViewScrollProvider) {
+        $uiViewScrollProvider.useAnchorScroll();
 
         /**
          * Helper auth functions
@@ -144,8 +145,16 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
             authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate'
         });
-   // }).run(function ($rootScope, $window, $auth) {
-      //  if ($auth.isAuthenticated()) {
-           // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-        //}
+    })
+    .run(function ($rootScope, $window, $auth, $location, $stateParams, $anchorScroll) {
+        $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+            if ($stateParams.scrollTo) {
+                $location.hash($stateParams.scrollTo);
+                $anchorScroll('top');
+            }
+        });
+        if ($auth.isAuthenticated()) {
+            $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+        }
+       
     });
