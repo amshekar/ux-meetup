@@ -1,72 +1,423 @@
 ﻿@charset "utf-8";
-@font-face{font-family:"Avenir Next";src:url(../fonts/AvenirNextLTPro-Regular.otf) format("woff")}
-@font-face{font-family:"Avenir Next Bold";src:url(../fonts/AvenirNextLTPro-Bold.otf) format("woff")}
-@font-face{font-family:"Avenir Next Italic";src:url(../fonts/AvenirNextLTPro-It.otf) format("woff")}
-html,body{font-family:"Avenir Next","Roboto",sans-serif;font-size:12px;color:#2b2b2b;font-weight:400}
-.clear{clear:both}
-.site-container{width:100%;height:100%;margin:0;padding:0;position:relative;min-height:100vh;background-color:#fbfbfb}
-nav{color:inherit;background-color:transparent;width:100%;box-shadow:none;margin:0 auto}
-.site-container nav ul{margin:50px 0;float:right}
-.site-container nav ul li > a{text-transform:capitalize;margin:0 5px;width:120px;font-family:"Avenir Next Bold","Roboto",sans-serif;font-size:14px;box-shadow: none;}
-.site-container nav ul li a.profile-dp-box{width:auto; color: #2b2b2b;font-family: "Avenir Next","Roboto",sans-serif;font-size: 18px;}
-.site-container nav ul li > a.profile-dp-box:hover{background-color: transparent;}
-.profile-edit-li{position:relative;}
-.edit-profile-div{display:none;position: absolute;top:-10px; width:100%;background-color: transparent;padding: 100px 0 15px;}
-.edit-profile-div i{position: absolute;top: 67px;left: 10px;color: #fff;font-size: 58px !important;line-height: 60px !important;height:auto  !important;}
-.edit-profile-div div{background-color: #fff;box-shadow: 0 3px 7px 0 #ddd;padding: 5px 0;}
-.profile-edit-li:hover .edit-profile-div{display: block;}
-.edit-profile-div div a{background-color: #fff;width: 100%;padding:7px 20px;margin: 0;color: #2b2b2b;height: auto;line-height: 24px;font-family: "Avenir Next Bold","Roboto",sans-serif;font-size: 14px;}
-.edit-profile-div a:hover{background-color: transparent;}
-.site-container nav ul img, .site-container nav ul span{display: inline-block;vertical-align: middle;}
-.site-container nav ul span{margin:0 15px;}
-.dp{width:60px;height: 60px;border-radius: 50%;}
-.site-container .nav-wrapper{margin:0 auto;width:90%}
-.fav-brand-logo img{width:75px;margin:40px 0 0}
-.about-button{color:#000;font-size:20px}
-.about-button:hover{background-color:transparent}
-.login-button{border-radius:25px;padding:0 20px;background-color:#000;font-size:12px;color:#fff}
-.login-button:hover{background-color:#393939;box-shadow: none;}
-.signup-button{border-radius:25px;padding:0 20px;background-color:#00bfd8;font-size:12px;color:#fff}
-.signup-button:hover{background-color:#09d9f4;box-shadow: none;}
-.body-container{max-width:1100px;width:98%;margin:0 auto}
-.fav-color-font-head{font-size:48px;text-align:center}
-.submit-color-font{font-family:"Avenir Next Bold","Roboto",sans-serif;color:#000;display:inline-block;text-decoration:underline;font-size:22px}
-.banner{margin:50px auto 20px;text-align:center;height:250px;overflow:hidden}
-.banner .carousel.carousel-slider{max-width: 1022px;height:100%!important;margin:0 auto;}
-.grid-continer{position:relative;max-width:1042px;margin:0 auto 100px;text-align:center}
-.box{padding:20px;margin:15px 10px;width:325px;background-color:#fff;height:460px;display:inline-block;vertical-align:top;cursor:pointer;text-align:left;border-radius: 1px;}
-.box:hover,.box.active{box-shadow:0 0 7px 0 #bbb;}
-.box-dp{overflow:hidden;text-align:center;width:285px;height:156px}
-.box-dp img{-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */filter: grayscale(100%);}
-.box-name{font-size:18px;line-height:24px;padding-left:15px;color:#000;margin-top:20px;font-weight:500}
-.box-location{color:#A09B9B;font-size:16px;padding-left:15px}
-.box-colors{margin:20px 0;float:left}
-.box-colors div{height:60px;width:142px;float:left}
-.box-fonts{font-size:22px;font-weight:500}
-.box-social{text-align:center;padding:5px}
-.box-social a{margin:30px 0 0;display:inline-block;cursor:pointer}
-.box-social a i{width:33px;height:33px;display:inline-block}
-.box-social-dribble i{width:33px;height:33px;background:url(../images/login-with-dribble.png) no-repeat center center transparent;background-size:contain;}
-.box-social-facebook i{background:url(../images/facebook.png) no-repeat center center transparent}
-.footer{padding:30px 0 100px;text-align:center;color:#000;font-size:18px}
-nav a.button-collapse{display:none}
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url(../fonts/AvenirNextLTPro-Regular.otf) format("woff")
+}
+
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url(../fonts/AvenirNextLTPro-Bold.otf) format("woff")
+}
+
+@font-face {
+    font-family: "Avenir Next Italic";
+    src: url(../fonts/AvenirNextLTPro-It.otf) format("woff")
+}
+
+html, body {
+    font-family: "Avenir Next","Roboto",sans-serif;
+    font-size: 12px;
+    color: #2b2b2b;
+    font-weight: 400;
+    background-color: #fbfbfb;
+}
+
+.clear {
+    clear: both
+}
+
+.site-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    background-color: #fbfbfb
+}
+
+nav {
+    color: inherit;
+    background-color: #fbfbfb;
+    width: 100%;
+    box-shadow: none;
+    margin: 0 auto;
+    background-color: #fbfbfb;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.site-container nav ul {
+    margin: 10px 0;
+    float: right
+}
+
+    .site-container nav ul li > a {
+        text-transform: capitalize;
+        margin: 0 5px;
+        width: 120px;
+        font-family: "Avenir Next Bold","Roboto",sans-serif;
+        font-size: 14px;
+        box-shadow: none;
+    }
+
+    .site-container nav ul li a.profile-dp-box {
+        width: auto;
+        color: #2b2b2b;
+        font-family: "Avenir Next","Roboto",sans-serif;
+        font-size: 18px;
+    }
+
+    .site-container nav ul li > a.profile-dp-box:hover {
+        background-color: transparent;
+    }
+
+.profile-edit-li {
+    position: relative;
+}
+
+.edit-profile-div {
+    display: none;
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    background-color: transparent;
+    padding: 80px 0 15px;
+    z-index: 2;
+}
+
+    .edit-profile-div i {
+        position: absolute;
+        top: 67px;
+        left: 10px;
+        color: #fff;
+        font-size: 58px !important;
+        line-height: 60px !important;
+        height: auto !important;
+    }
+
+    .edit-profile-div div {
+        background-color: #fff;
+        box-shadow: 0 3px 7px 0 #ddd;
+        padding: 5px 0;
+        z-index: 99;
+    }
+
+.profile-edit-li:hover .edit-profile-div {
+    display: block;
+}
+
+.edit-profile-div div a {
+    background-color: #fff;
+    width: 100%;
+    padding: 7px 20px;
+    margin: 0;
+    color: #2b2b2b;
+    height: auto;
+    line-height: 24px;
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    font-size: 14px;
+}
+
+.edit-profile-div a:hover {
+    background-color: transparent;
+}
+
+.site-container nav ul img, .site-container nav ul span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}
+
+.site-container nav ul span {
+    margin: 0 15px;
+    width: auto;
+    vertical-align: top;
+}
+
+.dp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.site-container .nav-wrapper {
+    margin: 0 auto;
+    width: 90%;
+    height: 70px;
+    background-color: #fbfbfb;
+}
+
+.fav-brand-logo img {
+    width: 50px;
+    margin: 10px 0 0
+}
+
+.about-button {
+    color: #000;
+    font-size: 20px
+}
+
+    .about-button:hover {
+        background-color: transparent
+    }
+
+.login-button {
+    border-radius: 25px;
+    padding: 0 20px;
+    background-color: #000;
+    font-size: 12px;
+    color: #fff
+}
+
+    .login-button:hover {
+        background-color: #393939 !important;
+        box-shadow: none;
+    }
+
+.signup-button {
+    border-radius: 25px;
+    padding: 0 20px;
+    background-color: #00bfd8;
+    font-size: 12px;
+    color: #fff
+}
+
+    .signup-button:hover {
+        background-color: #09d9f4;
+        box-shadow: none;
+    }
+
+.body-container {
+    max-width: 1100px;
+    width: 98%;
+    margin: 0 auto;
+    margin: 150px auto 0;
+}
+
+.design-fav {
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #000;
+    font-weight: bolder;
+    text-align: center;
+}
+
+    .design-fav span {
+        color: green;
+    }
+
+.fav-color-font-head {
+    font-size: 28px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.submit-color-font {
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    color: #000;
+    display: inline-block;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+.banner {
+    margin: 50px auto 20px;
+    text-align: center;
+    height: 250px;
+    overflow: hidden
+}
+
+    .banner .carousel.carousel-slider {
+        max-width: 1022px;
+        height: 100% !important;
+        margin: 0 auto;
+    }
+
+.grid-continer {
+    position: relative;
+    max-width: 1042px;
+    margin: 0 auto 100px;
+    text-align: center
+}
+
+.box {
+    padding: 20px;
+    margin: 15px 10px;
+    width: 325px;
+    background-color: #fff;
+    height: 400px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 1px;
+}
+
+    .box:hover, .box.active {
+        box-shadow: 0 0 7px 0 #bbb;
+    }
+
+.box-dp {
+    overflow: hidden;
+    text-align: center;
+    width: 285px;
+    height: 156px;
+    background-color: #e0e0e0;
+}
+
+    .box-dp img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+.box-name {
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 15px;
+    color: #000;
+    margin-top: 20px;
+    font-weight: 500
+}
+
+.box-location {
+    color: #A09B9B;
+    font-size: 16px;
+    padding-left: 15px
+}
+
+.box-colors {
+    margin: 20px 0;
+    float: left
+}
+
+    .box-colors div {
+        height: 60px;
+        width: 142px;
+        float: left
+    }
+
+.box-fonts {
+    font-size: 18px;
+    font-weight: 500
+}
+
+.box-social {
+    text-align: center;
+    padding: 5px
+}
+
+    .box-social a {
+        margin: 30px 0 0;
+        display: inline-block;
+        cursor: pointer
+    }
+
+        .box-social a i {
+            width: 33px;
+            height: 33px;
+            display: inline-block
+        }
+
+.box-social-dribble i {
+    width: 33px;
+    height: 33px;
+    background: url(../images/login-with-dribble.png) no-repeat center center transparent;
+    background-size: contain;
+}
+
+.box-social-facebook i {
+    background: url(../images/facebook.png) no-repeat center center transparent
+}
+
+.footer {
+    padding: 30px 0 100px;
+    text-align: center;
+    color: #000;
+    font-size: 18px
+}
+
+nav a.button-collapse {
+    display: none
+}
+
+input.search-header, input.search-header:hover, input.search-header:focus {
+    padding: 3px 25px;
+    margin: 15px 0 0 80px;
+    background-color: #fff;
+    width: 600px;
+    border-radius: 25px;
+    box-shadow: none !important;
+    border: 1px solid #eae5e5 !important;
+}
+
 @media only screen and (max-width: 600px) {
-.site-container nav ul{float:none;display:block;width:400px;clear:both;margin:20px auto 0}
-.site-container nav ul li{float:none;display: inline-block}
-nav .brand-logo{text-align:center;width:100%;position:relative}
-.body-container{margin-top:50px}
-nav{height: auto;}
+    .site-container nav ul {
+        float: none;
+        display: block;
+        width: 400px;
+        clear: both;
+        margin: 20px auto 0
+    }
+
+        .site-container nav ul li {
+            float: none;
+            display: inline-block
+        }
+
+    nav .brand-logo {
+        text-align: center;
+        width: 100%;
+        position: relative
+    }
+
+    .body-container {
+        margin-top: 50px
+    }
+
+    nav {
+        height: auto;
+        position: relative;
+    }
 }
+
 @media (min-width: 601px) and (max-width: 722px) {
-.box{width:46%;height:auto}
-.box-dp{width:100%;height:140px}
-.box-name{margin-top:15px}
-.box-colors{float:none}
-.box-colors div{height:60px;width:49%;float:left;margin-bottom:15px}
+    .box {
+        width: 46%;
+        height: auto
+    }
+
+    .box-dp {
+        width: 100%;
+        height: 140px
+    }
+
+    .box-name {
+        margin-top: 15px
+    }
+
+    .box-colors {
+        float: none
+    }
+
+        .box-colors div {
+            height: 60px;
+            width: 49%;
+            float: left;
+            margin-bottom: 15px
+        }
 }
+
 @media (min-width: 601px) and (max-width: 992px) {
-nav .brand-logo{left:5%}
+    nav .brand-logo {
+        left: 5%
+    }
 }
+
 .editprofilebox {
     padding: 20px;
     margin: 15px 10px;
@@ -79,6 +430,7 @@ nav .brand-logo{left:5%}
     text-align: center;
     border-radius: 1px;
 }
+
 .edit-font {
     position: absolute;
     top: 5px;

@@ -1,6 +1,6 @@
 <div class="site-container">
     <div class="nav-wrapper">
-        <a href="index.html" class="login-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
+        <!--<a href="index.html" class="login-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>-->
     </div>
     <div class="clear"></div>
     <div class="body-container">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="input-field terms-conditions">
-                    <input type="checkbox" ng-model="conditions" id="test5" required/>
+                    <input type="checkbox" ng-model="conditions" id="test5" required />
                     <label for="test5">Agree to <a data-target="terms" class="modal-trigger waves-effect waves-light">terms &amp; conditions</a>  and <a data-target="privacy" class="waves-effect waves-light">privacy policy</a></label>
                 </div>
                 <div class="input-field">
@@ -62,8 +62,9 @@
         </div>
         <div class="center-align">
             <!--<a class="login-with-social" ng-click="authenticate('dribble')"> <i class="dribble"></i></a>-->
-            <a class="login-with-social" ng-click="authenticate('facebook')"> <i class="facebook"></i></a>
-            <a class="login-with-social" ng-click="authenticate('twitter')"> <i class="twitter"></i></a>
+            <!--<a class="login-with-social" ng-click="authenticate('facebook')"> <i class="facebook"></i></a>-->
+            <a class="login-with-social btn fb-button" ng-click="authenticate('facebook')"><i class="facebook"></i> <span>Login with Facebook</span></a>
+            <!--<a class="login-with-social" ng-click="authenticate('twitter')"> <i class="twitter"></i></a>-->
         </div>
     </div>
 </div>
@@ -75,14 +76,14 @@
     <div class="modal-content">
         <h4>Terms & Conditions !</h4>
         <p>
-            The following terms and conditions govern all use of the favfont website and all content, services and products available at or through the website. The Website is owned and operated by Test123 Ltd (pallette). The Website is offered subject to your acceptance without modification of all of the terms and conditions contained herein and all other operating rules, policies (including, without limitation, Test123’s Privacy Policy) and procedures that may be published from time to time on this Site by Test123(collectively, the Agreement).
+            The following terms and conditions govern all use of the Designerfav website and all content, services and products available at or through the website. The Website is owned and operated by Designerfav Ltd . The Website is offered subject to your acceptance without modification of all of the terms and conditions contained herein and all other operating rules, policies (including, without limitation, Designerfav Privacy Policy) and procedures that may be published from time to time on this Site by Designerfav(collectively, the Agreement).
 
-            Please read this Agreement carefully before accessing or using the Website. By accessing or using any part of the web site, you agree to become bound by the terms and conditions of this agreement. If you do not agree to all the terms and conditions of this agreement, then you may not access the Website or use any services. If these terms and conditions are considered an offer by Test123, acceptance is expressly limited to these terms. The Website is available only to individuals who are at least 13 years old.
+            Please read this Agreement carefully before accessing or using the Website. By accessing or using any part of the web site, you agree to become bound by the terms and conditions of this agreement. If you do not agree to all the terms and conditions of this agreement, then you may not access the Website or use any services. If these terms and conditions are considered an offer by Designerfav, acceptance is expressly limited to these terms. The Website is available only to individuals who are at least 13 years old.
 
         </p>
 
         <p>This Privacy Policy was crafted from Wordpress.com's version, which is available under a Creative Commons Sharealike license.</p>
-        
+
     </div>
     <div class="modal-footer">
         <a href="" class="modal-action modal-close waves-effect waves-green btn-flat ">Ok</a>
@@ -93,10 +94,7 @@
     <div class="modal-content">
         <h4>Privacy Policy</h4>
         <p>
-            Your privacy is critically important to us. At Test123 we have a few fundamental principles:
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            Your privacy is critically important to us. At Designerfav we have a few fundamental principles:
         </p>
     </div>
     <div class="modal-footer">
@@ -112,49 +110,3 @@
     });
 
 </script>
-
-
-<!--<div class="container">
-  <div class="row">
-    <div class="center-form panel">
-      <div class="panel-body">
-        <h2 class="text-center">Sign up</h2>
-        <form method="post" ng-submit="signup()" name="signupForm">
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-            <input class="form-control input-lg" type="text" name="displayName" ng-model="user.displayName" placeholder="Name" required autofocus>
-            <span class="ion-person form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
-              <div ng-message="required">You must enter your name.</div>
-            </div>
-          </div>
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
-            <input class="form-control input-lg" type="email" id="email" name="email" ng-model="user.email" placeholder="Email" required>
-            <span class="ion-at form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
-              <div ng-message="required">Your email address is required.</div>
-              <div ng-message="pattern">Your email address is invalid.</div>
-            </div>
-          </div>
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
-            <input password-strength class="form-control input-lg" type="password" name="password" ng-model="user.password" placeholder="Password" required>
-            <span class="ion-key form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
-              <div ng-message="required">Password is required.</div>
-            </div>
-          </div>
-          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-            <input password-match="user.password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="confirmPassword" placeholder="Confirm Password">
-            <span class="ion-key form-control-feedback"></span>
-            <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
-              <div ng-message="compareTo">Password must match.</div>
-            </div>
-          </div>
-          <p class="text-center text-muted"><small>By clicking on Sign up, you agree to <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></small></p>
-          <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block" style="color:white;background-color: black;">Sign up</button>
-          <br/>
-          <p class="text-center text-muted">Already have an account? <a href="/#!/login">Log in now</a></p>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>-->

@@ -23,8 +23,9 @@
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo fav-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <input type="text" class="search-header hide-on-med-and-down" placeholder="Search">
                 <ul class="">
-                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>
+                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>                    
                     <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
@@ -32,7 +33,7 @@
                             <img src="{{currentUser.picture?currentUser.picture:'client/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
                         </a>
                         <div class="edit-profile-div">
-                            <i class="material-icons">&#xE5C7;</i>
+                            <!--<i class="material-icons">&#xE5C7;</i>-->
                             <div>
                                 <a ui-sref="profile">Profile</a>
                                 <a ui-sref="logout">Logout</a>
@@ -43,11 +44,12 @@
             </div>
         </nav>
         <div class="clear"></div>
-        <div ui-view autoscroll="true"></div>
+        <div ui-view></div>
         <!-- material-scrolltop button -->
         <button class="material-scrolltop" type="button">
             <!--<span>↑</span>-->
         </button>
+
 
         <div class="footer">
             &copy;All rights reserved 2017
@@ -79,14 +81,15 @@
     <script src="/client/vendor/ng-image-input-with-preview.js"></script>
     <script src="/client/vendor/infinite-scroll.js"></script>
     <script src="/client/vendor/material-scrolltop.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
 
     <!--Import jQuery before materialize.js-->
     <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
     <script src="/client/assets/js/materialize.min.js"></script>
 
-        <!-- Application Code -->
+    <!-- Application Code -->
     <script src="/client/app.js"></script>
 
     <script src="/client/directives/passwordStrength.js"></script>
