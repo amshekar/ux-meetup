@@ -14,6 +14,10 @@
     font-family: "Avenir Next Italic";
     src: url(../fonts/AvenirNextLTPro-It.otf) format("woff")
 }
+@font-face {
+    font-family: "Geometos Rounded";
+    src: url('../fonts/Geometos Rounded.ttf') format("woff")
+}
 
 html, body {
     font-family: "Avenir Next","Roboto",sans-serif;
@@ -200,6 +204,7 @@ nav {
 }
 
 .design-fav {
+    font-family: "Geometos Rounded",sans-serif;
     text-transform: uppercase;
     font-size: 40px;
     color: #000;

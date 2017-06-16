@@ -8,24 +8,26 @@
     <link href="/favicon.ico" rel="shortcut icon">
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/client/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link rel="stylesheet" href="/client/assets/css/fav.css">
     <link rel="stylesheet" href="/client/assets/css/login.css">
 
 </head>
 <body>
     <div class="site-container" ng-controller="NavbarCtrl" id="top">
-        <div class="progress" if-loading>
-            <div class="indeterminate"></div>
-        </div>
         <nav>
+            <div class="progress" if-loading>
+                <div class="indeterminate"></div>
+            </div>
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo fav-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <input type="text" class="search-header hide-on-med-and-down" placeholder="Search">
                 <ul class="">
-                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>                    
+                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
@@ -55,6 +57,9 @@
             &copy;All rights reserved 2017
         </div>
     </div>
+    <link href="/client/stylesheets/material-scrolltop.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
+
     <!--<script src="/client/vendor/jquery.js"></script>-->
     <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
     <script type="text/javascript" src="/client/assets/js/jquery-2.1.1.min.js"></script>
@@ -65,9 +70,8 @@
     <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">-->
     <!-- ui-select files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
-    <link href="/client/stylesheets/material-scrolltop.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+
 
 
     <!-- Third-party Libraries -->
