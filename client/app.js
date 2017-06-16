@@ -1,6 +1,6 @@
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
     'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 
-    'ngImageInputWithPreview', 'infinite-scroll','ngMaterial'])
+    'ngImageInputWithPreview', 'infinite-scroll', 'ngMaterial','typer'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $uiViewScrollProvider) {
         $uiViewScrollProvider.useAnchorScroll();
 
@@ -49,6 +49,9 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
                 templateUrl: '/client/partials/setting.html',
                 controller: 'SettingCtrl',
                 abstract: true,
+                resolve: {
+                loginRequired: loginRequired
+            }
             }).state('setting.font', {
                 url: '/font',
                 templateUrl: '/client/partials/font.html',

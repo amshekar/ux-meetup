@@ -57,7 +57,8 @@
     "gulp-util": "^3.0.8",
     "gulp-uglify": "^2.1.2",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0"
+    "gulp-connect": "^5.0.0",
+    "angular-typer": "^0.5.5"
 
 
   },

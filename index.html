@@ -27,7 +27,8 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <input type="text" class="search-header hide-on-med-and-down" placeholder="Search">
                 <ul class="">
-                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About Us</a></li>
+                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About&nbsp;Us</a></li>
+
                     <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
@@ -47,10 +48,7 @@
         </nav>
         <div class="clear"></div>
         <div ui-view autoscroll="true"></div>
-        <!-- material-scrolltop button -->
-        <button class="material-scrolltop" type="button">
-            <!--<span>↑</span>-->
-        </button>
+        
 
 
         <div class="footer">
@@ -85,6 +83,7 @@
     <script src="/client/vendor/ng-image-input-with-preview.js"></script>
     <script src="/client/vendor/infinite-scroll.js"></script>
     <script src="/client/vendor/material-scrolltop.js"></script>
+    <script src="/client/vendor/typer.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
@@ -109,9 +108,7 @@
     <script src="/client/controllers/setting.js"></script>
     <!--<script src="/client/vendor/html5kellyhlpicker.js"></script>-->
     <script src="/client/directives/ifLoading.directive.js"></script>
-    <script>
-        $('body').materialScrollTop();
-    </script>
+   
 </body>
 </html>
 
