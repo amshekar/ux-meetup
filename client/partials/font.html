@@ -16,25 +16,23 @@
             <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
             <div class="row">
                 <div class="input-field col s8 offset-s2">
-                    <md-chips ng-model="selectedItem.fonts" 
-                        md-autocomplete-snap
-                        md-transform-chip="transformChip($chip)"
-                         md-max-chips="2"
-                        md-require-match flex>
-                        <md-autocomplete flex
-                                md-selected-item="student"
-                                md-search-text="searchText"
-                                md-items="font in Fonts"
-                                md-item-text="font"
-                               >
-                                    <span md-highlight-text="searchText">{{font}}</span>
-                        </md-autocomplete>
-                        <md-chip-template>
-                                    <span>
-                                        <strong>{{$chip}}</strong><em></em>
-                                    </span>
-                        </md-chip-template>
-                    </md-chips>
+                    <md-chips ng-model="selectedItem.fonts" md-autocomplete-snap md-require-match="true">
+                    <md-autocomplete
+                                    md-search-text="searchText"
+                                    md-items="item in querySearch(searchText)"
+                                    md-item-text="item"
+                                    md-autoselect="true"
+                                    md-select-on-match="true"
+                                    md-max-chips="2"
+                                    md-no-cache="true"
+                                    md-require-match="true"
+                                    placeholder="Search a font..">
+                        <span md-highlight-text="searchText">{{item}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                        <span>{{$chip}}</span>
+                    </md-chip-template>
+                </md-chips>
                     <!--<ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled">
                         <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
                         <ui-select-choices repeat="font in Fonts | filter:$select.search">

@@ -1,5 +1,5 @@
 angular.module('MyApp')
-  .controller('SettingCtrl', function($scope, $auth, toastr, Account, $state) {
+  .controller('SettingCtrl', function($scope, $auth, toastr, Account, $state,$filter) {
     $scope.getFont = function() {
       Account.getFont()
         .then(function(response) {
@@ -18,6 +18,21 @@ angular.module('MyApp')
       $scope.cl1 = color1Value.value;
       $scope.cl2 = color2Value.value;
     };
+
+     $scope.filterSelected = true;
+            
+      $scope.querySearch = function (query) {
+          var results = query ?
+          $scope.Fonts.filter(createFilterFor(query)) : [];
+          return results;
+      }
+
+       function createFilterFor(query) {
+          var lowercaseQuery = angular.lowercase(query);
+          return function filterFn(contact) {
+            return (contact.indexOf(lowercaseQuery) != -1);;
+          };
+      }
 
     $scope.updateProfile = function() {
      
