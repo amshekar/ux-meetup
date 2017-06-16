@@ -16,14 +16,13 @@
             <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
             <div class="row">
                 <div class="input-field col s8 offset-s2">
-                    <md-chips ng-model="selectedItem.fonts" md-autocomplete-snap md-require-match="true">
+                    <md-chips ng-model="selectedItem.fonts" md-autocomplete-snap md-require-match="true" md-max-chips="2">
                     <md-autocomplete
                                     md-search-text="searchText"
                                     md-items="item in querySearch(searchText)"
                                     md-item-text="item"
                                     md-autoselect="true"
                                     md-select-on-match="true"
-                                    md-max-chips="2"
                                     md-no-cache="true"
                                     md-require-match="true"
                                     placeholder="Search a font..">
