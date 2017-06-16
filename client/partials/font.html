@@ -1,3 +1,12 @@
+
+<style>
+
+    input[type=search]:focus:not([readonly])
+    {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+</style>
 <div class="body-container">
     <div class="row">
         &nbsp;
@@ -15,9 +24,9 @@
 
             <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <md-chips ng-model="selectedItem.fonts" md-autocomplete-snap md-require-match="true" md-max-chips="2">
-                    <md-autocomplete
+                <div class="col s8 offset-s2">
+                    <md-chips ng-model="selectedItem.fonts"  md-autocomplete-snap md-require-match="true" md-max-chips="2">
+                    <md-autocomplete 
                                     md-search-text="searchText"
                                     md-items="item in querySearch(searchText)"
                                     md-item-text="item"
