@@ -20,7 +20,7 @@ var userSchema = {
         type: String, default: 'To be or not to be, this is my awesome motto!'
     },
     jobDescription: {
-        type: String, default: 'I m a creative geek from India.I enjoy creating eye candy solutions for web and mobile app'
+        type: String, default: 'I m a creative geek from DesignerFav.I enjoy creating eye candy solutions for web and mobile app'
     },
 
     bitbucket: String,
@@ -40,7 +40,10 @@ var userSchema = {
     created_at: { type: Date, default: Date.now },
     updated_by: String,
     updated_at: { type: Date, default: Date.now },
-    loggedInCount: { type: Number, default: 0 }
+    loggedInCount: { type: Number, default: 0 },
+    active: { type: Boolean, default: true },
+    mobile: String,
+    birthday:Date
     //want to link other schema first import that schema with require and link like below
    // ,complextype:ComplexTypeSchema
 };
