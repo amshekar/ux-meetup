@@ -69,7 +69,7 @@ if (app.get('env') === 'production') {
     protocol == 'https' ? next() : res.redirect('https://' + req.hostname + req.url);
   });
 }
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static('client'));
 
 /*
  |--------------------------------------------------------------------------
@@ -111,6 +111,15 @@ function createJWT(user) {
   return jwt.encode(payload, config.TOKEN_SECRET);
 }
 
+/*
+ |--------------------------------------------------------------------------
+ | GET / Landing Page of the APP
+ |--------------------------------------------------------------------------
+ */
+app.get('/',function(req, res){
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname,'index.html'));
+});
 
 /*
  |--------------------------------------------------------------------------

@@ -10,10 +10,10 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="/client/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link rel="stylesheet" href="/client/assets/css/fav.css">
-    <link rel="stylesheet" href="/client/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/fav.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
 
 </head>
 <body>
@@ -23,7 +23,7 @@
                 <div class="indeterminate"></div>
             </div>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo fav-brand-logo"><img src="client/assets/images/logo.png" class="responsive-img"></a>
+                <a href="#!" class="brand-logo fav-brand-logo"><img src="/assets/images/logo.png" class="responsive-img"></a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <input type="text" class="search-header hide-on-med-and-down" placeholder="Search">
                 <ul class="">
@@ -33,7 +33,7 @@
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
                         <a class="waves-effect waves-light profile-dp-box">
-                            <img src="{{currentUser.picture?currentUser.picture:'client/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
+                            <img src="{{currentUser.picture?currentUser.picture:'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
                         </a>
                         <div class="edit-profile-div">
                             <!--<i class="material-icons">&#xE5C7;</i>-->
@@ -55,14 +55,14 @@
             &copy;All rights reserved 2017
         </div>
     </div>
-    <link href="/client/stylesheets/material-scrolltop.css" rel="stylesheet" />
+    <link href="/stylesheets/material-scrolltop.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
 
-    <!--<script src="/client/vendor/jquery.js"></script>-->
+    <!--<script src="/vendor/jquery.js"></script>-->
     <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
-    <script type="text/javascript" src="/client/assets/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-    <script src="/client/vendor/angular-resource.js"></script>
+    <script src="/vendor/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
     <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">-->
@@ -73,41 +73,41 @@
 
 
     <!-- Third-party Libraries -->
-    <script src="/client/vendor/angular-animate.js"></script>
-    <script src="/client/vendor/angular-messages.js"></script>
-    <script src="/client/vendor/angular-resource.js"></script>
-    <!--<script src="/client/vendor/angular-sanitize.js"></script>-->
-    <script src="/client/vendor/angular-ui-router.js"></script>
-    <script src="/client/vendor/angular-toastr.tpls.js"></script>
-    <script src="/client/vendor/satellizer.js"></script>
-    <script src="/client/vendor/ng-image-input-with-preview.js"></script>
-    <script src="/client/vendor/infinite-scroll.js"></script>
-    <script src="/client/vendor/material-scrolltop.js"></script>
-    <script src="/client/vendor/typer.min.js"></script>
+    <script src="/vendor/angular-animate.js"></script>
+    <script src="/vendor/angular-messages.js"></script>
+    <script src="/vendor/angular-resource.js"></script>
+    <!--<script src="/vendor/angular-sanitize.js"></script>-->
+    <script src="/vendor/angular-ui-router.js"></script>
+    <script src="/vendor/angular-toastr.tpls.js"></script>
+    <script src="/vendor/satellizer.js"></script>
+    <script src="/vendor/ng-image-input-with-preview.js"></script>
+    <script src="/vendor/infinite-scroll.js"></script>
+    <script src="/vendor/material-scrolltop.js"></script>
+    <script src="/vendor/typer.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
 
     <!--Import jQuery before materialize.js-->
     <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
-    <script src="/client/assets/js/materialize.min.js"></script>
+    <script src="/assets/js/materialize.min.js"></script>
 
     <!-- Application Code -->
-    <script src="/client/app.js"></script>
+    <script src="/app.js"></script>
 
-    <script src="/client/directives/passwordStrength.js"></script>
+    <script src="/directives/passwordStrength.js"></script>
 
-    <script src="/client/directives/passwordMatch.js"></script>
-    <script src="/client/controllers/home.js"></script>
-    <script src="/client/controllers/login.js"></script>
-    <script src="/client/controllers/signup.js"></script>
-    <script src="/client/controllers/logout.js"></script>
-    <script src="/client/controllers/profile.js"></script>
-    <script src="/client/controllers/navbar.js"></script>
-    <script src="/client/services/account.js"></script>
-    <script src="/client/controllers/setting.js"></script>
-    <!--<script src="/client/vendor/html5kellyhlpicker.js"></script>-->
-    <script src="/client/directives/ifLoading.directive.js"></script>
+    <script src="/directives/passwordMatch.js"></script>
+    <script src="/controllers/home.js"></script>
+    <script src="/controllers/login.js"></script>
+    <script src="/controllers/signup.js"></script>
+    <script src="/controllers/logout.js"></script>
+    <script src="/controllers/profile.js"></script>
+    <script src="/controllers/navbar.js"></script>
+    <script src="/services/account.js"></script>
+    <script src="/controllers/setting.js"></script>
+    <!--<script src="/vendor/html5kellyhlpicker.js"></script>-->
+    <script src="/directives/ifLoading.directive.js"></script>
    
 </body>
 </html>
