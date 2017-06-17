@@ -23,13 +23,14 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     cursor: hand;
     border-radius: 50%;
-    background: #00bfd8;
+    background: #e0e0e0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
     -ms-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
     -moz-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
     -o-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
     transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+    
 }
 
 .material-scrolltop:hover {
@@ -64,8 +65,8 @@
 }
 
 .material-scrolltop.reveal {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
 }
 
 .material-scrolltop span {

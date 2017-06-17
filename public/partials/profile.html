@@ -25,7 +25,7 @@
                             <!--<label class="control-label">Profile Picture</label>-->
                             <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
                                    accept="image/jpeg,image/png" dimensions="height > 150  && width > 1.5 * height">
-                            <img class="responsive-img" ng-src="{{user.picture || 'client/assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
+                            <img class="responsive-img" ng-src="{{user.picture || 'assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
                         </div>
                     </div>
                 </div>

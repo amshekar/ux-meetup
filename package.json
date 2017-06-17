@@ -19,6 +19,14 @@
     "morgan": "^1.7.0",
     "request": "^2.69.0",
     "http-status": "^1.0.1",
-    "wagner-core": "^0.2.0"
-  }
+    "wagner-core": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "gulp-uglify": "^2.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "angular-typer": "^0.5.5"
+  },
+  "engines": { "node": "6.9.1 || 8.1.x" }
+ 
 }
