@@ -54,22 +54,14 @@ mongoose.connection.on('error', function(err) {
 
 var app = express();
 
-app.set('port', process.env.NODE_PORT || 3000);
-app.set('host', process.env.NODE_IP || 'localhost');
-//app.set('host', process.env.NODE_IP || 'http://favfont.azurewebsites.net'); 
+app.set('port', process.env.PORT || 1377);
+
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Force HTTPS on Heroku
-if (app.get('env') === 'production') {
-  app.use(function(req, res, next) {
-    var protocol = req.get('x-forwarded-proto');
-    protocol == 'https' ? next() : res.redirect('https://' + req.hostname + req.url);
-  });
-}
-app.use(express.static('public'));
+app.use('/',express.static(path.join(__dirname,'public')));
 
 /*
  |--------------------------------------------------------------------------
