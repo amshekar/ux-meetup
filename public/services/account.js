@@ -1,6 +1,6 @@
 angular.module('MyApp')
     .factory('Account', function ($http) {
-        var API_URL = 'http://designerfav-single.azurewebsites.net';
+        var API_URL = 'http://favfont.azurewebsites.net';
     return {
       getProfile: function() {
           return $http.get(API_URL+'/api/me');
