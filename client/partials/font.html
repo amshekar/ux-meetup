@@ -6,98 +6,59 @@
         border-bottom: none !important;
         box-shadow: none !important;
     }
+
+    .md-focused{
+        box-shadow: none !important;
+    }
+
+    .md-chips{
+        border-bottom: 1px solid #000 !important;
+        box-shadow: 0 1px 0 0 #000 !important;
+    }
+    .white-box{
+        padding: 20px;
+        margin: 15px 10px;
+        width: 100%;
+        background-color: #fff;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: left;
+        border-radius: 1px;
+    }
 </style>
 <div class="body-container">
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div>
-        <div class="container" style="font-size:25px;">
-            <p class="text-muted">Select your fav fonts</p>
+    <div class="white-box">
+        <div class="col s8 offset-s2" style="font-size:25px;">
+        <span class="text-muted">Select your fav fonts</span>
         </div>
-
-        <div class="grid-continer">
-
-
-            <!--<h1 class="login-with text-lg-left">Select your fav fonts</h1>-->
-            <div class="row">
-                <div class="col s8 offset-s2">
-                    <md-chips ng-model="selectedItem.fonts"  md-autocomplete-snap md-require-match="true" md-max-chips="2">
-                    <md-autocomplete 
-                                    md-search-text="searchText"
-                                    md-items="item in querySearch(searchText)"
-                                    md-item-text="item"
-                                    md-autoselect="true"
-                                    md-select-on-match="true"
-                                    md-no-cache="true"
-                                    md-require-match="true"
-                                    placeholder="Search a font..">
-                        <span md-highlight-text="searchText">{{item}}</span>
-                    </md-autocomplete>
-                    <md-chip-template>
-                        <span>{{$chip}}</span>
-                    </md-chip-template>
+        <div class="col s12">
+            <div class="col s8 offset-s2">
+                <md-chips ng-model="selectedItem.fonts"  md-autocomplete-snap md-require-match="true" md-max-chips="2">
+                <md-autocomplete 
+                                md-search-text="searchText"
+                                md-items="item in querySearch(searchText)"
+                                md-item-text="item"
+                                md-autoselect="true"
+                                md-select-on-match="true"
+                                md-no-cache="true"
+                                md-require-match="true"
+                                placeholder="Search a font..">
+                    <span md-highlight-text="searchText">{{item}}</span>
+                </md-autocomplete>
+                <md-chip-template>
+                    <span>{{$chip}}</span>
+                </md-chip-template>
                 </md-chips>
-                    <!--<ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled">
-                        <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
-                        <ui-select-choices repeat="font in Fonts | filter:$select.search">
-                            {{font}}
-                        </ui-select-choices>
-                    </ui-select>-->
-                </div>
             </div>
-            <div class="row">
-                &nbsp;
-            </div>
-            <div class="row">
-                &nbsp;
-            </div>
-            <div class="row">
-                &nbsp;
-            </div>
-            <div class="row">
-                &nbsp;
-            </div>
+        </div>
+        <div class="col s10">
             <div class="input-field">
                 <a class="waves-effect waves-light btn login-button" style="float:right;" ng-click="updateProfile()">Submit</a>
             </div>
-
         </div>
-
     </div>
 </div>
 
 
-
-
-<!--<div class="container-fluid bg-gray">
-    <div class="container" style="font-size:25px;">
-        <p class="text-muted">Select your fav fonts</p>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-
-        <div class="col-sm-8 col-sm-offset-2">
-
-            <ui-select multiple ng-model="selectedItem.fonts" ng-disabled="disabled" style="width: 450px;height:35px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 2px;">
-                <ui-select-match placeholder="Select your favourite two fonts...">{{$item}}</ui-select-match>
-                <ui-select-choices repeat="font in Fonts | filter:$select.search">
-                    {{font}}
-                </ui-select-choices>
-            </ui-select>
-            <p>Selected: {{selectedItem.fonts}}</p>
-            <button style="float:right;border-radius:20px;width:125px;height:50px;color:white;background-color: black;" ng-click="updateProfile()">PrSubmitut</button>
-
-        </div>
-    </div>
-</div>-->
