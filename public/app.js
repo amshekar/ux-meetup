@@ -34,19 +34,19 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             .state('home', {
                 url: '/',
                 controller: 'HomeCtrl',
-                templateUrl: 'client/partials/home.html',
+                templateUrl: '/partials/home.html',
                 controllerAs: 'vm'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: '/client/partials/login.html',
+                templateUrl: '/partials/login.html',
                 controller: 'LoginCtrl',
                 resolve: {
                     skipIfLoggedIn: skipIfLoggedIn
                 }
             }).state('setting', {
                 url: '/setting',
-                templateUrl: '/client/partials/setting.html',
+                templateUrl: '/partials/setting.html',
                 controller: 'SettingCtrl',
                 abstract: true,
                 resolve: {
@@ -54,14 +54,14 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             }
             }).state('setting.font', {
                 url: '/font',
-                templateUrl: '/client/partials/font.html',
+                templateUrl: '/partials/font.html',
             }).state('setting.color', {
                 url: '',
-                templateUrl: '/client/partials/color.html',
+                templateUrl: '/partials/color.html',
             })
             .state('signup', {
                 url: '/signup',
-                templateUrl: '/client/partials/signup.html',
+                templateUrl: '/partials/signup.html',
                 controller: 'SignupCtrl',
                 resolve: {
                     skipIfLoggedIn: skipIfLoggedIn
@@ -74,7 +74,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             })
             .state('profile', {
                 url: '/profile',
-                templateUrl: '/client/partials/profile.html',
+                templateUrl: '/partials/profile.html',
                 controller: 'ProfileCtrl',
                 resolve: {
                     loginRequired: loginRequired

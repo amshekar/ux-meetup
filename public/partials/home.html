@@ -9,9 +9,9 @@
             <div class="carousel-fixed-item center">
                 <!--<a class="btn waves-effect white grey-text darken-text-2"></a>-->
             </div>
-            <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/client/assets/images/banner2.png"></a>
-            <a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/client/assets/images/banner1.png"></a>
-            <a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/client/assets/images/banner3.png"></a>
+            <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/assets/images/banner2.png"></a>
+            <a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/assets/images/banner1.png"></a>
+            <a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/assets/images/banner3.png"></a>
 
         </div>
     </div>
@@ -23,7 +23,7 @@
              infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
             <div class="box" ng-repeat="profile in vm.profiles">
                 <div class="box-dp">
-                    <img src="{{profile.picture ? profile.picture:'/client/assets/images/image.png'}}" alt="favepic" class="responsive-img">
+                    <img src="{{profile.picture ? profile.picture:'/assets/images/image.png'}}" alt="favepic" class="responsive-img">
                 </div>
                 <div class="box-name">{{profile.displayName}}</div>
                 <div class="box-location">{{profile.location?profile.location:" location"}}</div>
