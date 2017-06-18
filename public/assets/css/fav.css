@@ -14,6 +14,7 @@
     font-family: "Avenir Next Italic";
     src: url(../fonts/AvenirNextLTPro-It.otf) format("woff")
 }
+
 @font-face {
     font-family: "Geometos Rounded";
     src: url('../fonts/Geometos Rounded.ttf') format("woff")
@@ -51,11 +52,16 @@ nav {
     z-index: 2;
     position: fixed;
     top: 0;
+    height: 70px;
     left: 0;
 }
 
+    nav.fixed {
+        box-shadow: 0 0 3px 1px #999;
+    }
+
 .site-container nav ul {
-    margin: 10px 0;
+    margin: 3px 0 10px;
     float: right
 }
 
@@ -67,6 +73,11 @@ nav {
         font-size: 14px;
         box-shadow: none;
     }
+
+        .site-container nav ul li > a.btn-flat {
+            width: auto;
+            margin: 0 7px;
+        }
 
     .site-container nav ul li a.profile-dp-box {
         width: auto;
@@ -130,7 +141,7 @@ nav {
     background-color: transparent;
 }
 
-.site-container nav ul img, .site-container nav ul span {
+.site-container nav ul img {
     display: inline-block;
     vertical-align: middle;
     width: 40px;
@@ -138,8 +149,14 @@ nav {
 }
 
 .site-container nav ul span {
+    display: inline-block;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
     margin: 0 15px;
-    width: auto;
+    width: 110px;
     vertical-align: top;
 }
 
@@ -178,7 +195,7 @@ nav {
     color: #fff
 }
 
-    .login-button:hover {
+    .login-button:hover, .login-button:visited, .login-button:active, .login-button:focus {
         background-color: #393939 !important;
         box-shadow: none;
     }
@@ -191,7 +208,7 @@ nav {
     color: #fff
 }
 
-    .signup-button:hover {
+    .signup-button:hover, .signup-button:visited, .signup-button:active, .signup-button:focus {
         background-color: #09d9f4;
         box-shadow: none;
     }
@@ -352,12 +369,21 @@ nav a.button-collapse {
 
 input.search-header, input.search-header:hover, input.search-header:focus {
     padding: 3px 25px;
-    margin: 15px 0 0 80px;
+    margin: 13px 0 0 80px;
     background-color: #fff;
-    width: 600px;
+    width: 575px; /*width: 375px; if header has 5 menu items along with register and login*/
+    /*width: 515px;*/ /* if header has 4 menu items along with register and login*/
+    /*width: 575px;*/ /* if header has 3 menu items along with register and login*/
     border-radius: 25px;
     box-shadow: none !important;
     border: 1px solid #eae5e5 !important;
+}
+
+.site-container .progress {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
 }
 
 @media only screen and (max-width: 600px) {

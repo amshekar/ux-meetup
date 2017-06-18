@@ -158,7 +158,9 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             }
         });
         if ($auth.isAuthenticated()) {
-            $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+            if (typeof localStorage["currentUser"] !== "undefined") {
+                $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+            }
         }
        
     });

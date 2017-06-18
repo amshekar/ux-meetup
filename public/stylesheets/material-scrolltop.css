@@ -32,6 +32,10 @@
     transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
     
 }
+    .material-scrolltop:hover, .material-scrolltop:visited, .material-scrolltop:active, .material-scrolltop:focus {
+        background-color: #e0e0e0 !important;
+        box-shadow: none;
+    }
 
 .material-scrolltop:hover {
     background-color: #000;

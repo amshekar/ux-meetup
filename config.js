@@ -5,8 +5,8 @@ module.exports = {
    //mlab connetion  
    //MONGO_URI: process.env.MONGO_URI || 'mongodb://designerfavadmin:Compaq@123@ds129402.mlab.com:29402/designerfav',
    MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
-  //TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
-   TOKEN_SECRET: process.env.TOKEN_SECRET || 'Fascia_Bytes_2_Bots_DesignerFav',
+  TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
+   //TOKEN_SECRET: process.env.TOKEN_SECRET || 'Fascia_Bytes_2_Bots_DesignerFav',
 
   // OAuth 2.0
   FACEBOOK_SECRET: process.env.FACEBOOK_SECRET || '43c20daf1acf54f5eaf318049b076353',//'866f6a5ce37468148de22017fb76200b'

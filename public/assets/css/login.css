@@ -228,3 +228,29 @@ html, body {
     display: inline-block;
     width: 90%
 }
+
+.input-field span.message {
+    position: absolute;
+    bottom: 7px;
+    text-align: left;
+    display: none;
+    width: 100%;
+    left: 0;
+    font-weight: bold;
+}
+
+    .input-field span.message.error {
+        color: #ff5700;
+    }
+
+    .input-field span.message.info {
+        color: #00bfd8;
+    }
+
+.input-field.terms-conditions span.message {
+    /*    bottom: -14px;*/
+    right: -100px;
+    left: auto;
+    width: auto;
+    top: 3px;
+}

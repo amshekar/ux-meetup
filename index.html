@@ -28,6 +28,8 @@
                 <input type="text" class="search-header hide-on-med-and-down" placeholder="Search">
                 <ul class="">
                     <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About&nbsp;Us</a></li>
+                    <!--<li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Team</a></li>
+                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Contact Us</a></li>-->
 
                     <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
@@ -36,6 +38,7 @@
                             <img src="{{currentUser.picture?currentUser.picture:'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
                         </a>
                         <div class="edit-profile-div">
+                            <!--<i class="material-icons">&#xE5C7;</i>-->
                             <div>
                                 <a ui-sref="profile">Profile</a>
                                 <a ui-sref="logout">Logout</a>
@@ -48,6 +51,8 @@
         <div class="clear"></div>
         <div ui-view autoscroll="true"></div>
 
+
+
         <div class="footer">
             &copy;All rights reserved 2017
         </div>
@@ -55,14 +60,19 @@
     <link href="/stylesheets/material-scrolltop.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
 
+    <!--<script src="/client/vendor/jquery.js"></script>-->
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
     <script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="/vendor/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-
+    
     <!-- ui-select files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
+
+
+
 
     <!-- Third-party Libraries -->
     <script src="/vendor/angular-animate.js"></script>
@@ -79,7 +89,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
+
     <!--Import jQuery before materialize.js-->
+    <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
     <script src="/assets/js/materialize.min.js"></script>
 
     <!-- Application Code -->
@@ -96,8 +108,9 @@
     <script src="/controllers/navbar.js"></script>
     <script src="/services/account.js"></script>
     <script src="/controllers/setting.js"></script>
+    <!--<script src="/vendor/html5kellyhlpicker.js"></script>-->
     <script src="/directives/ifLoading.directive.js"></script>
-   
+
 </body>
 </html>
 
