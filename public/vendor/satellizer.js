@@ -13,9 +13,9 @@
     var Config = (function () {
         function Config() {
             //local
-            //this.baseUrl = 'http://localhost:3000';
+            //this.baseUrl = 'http://localhost:3000';http://www.designerfav.com
             //server
-            this.baseUrl = 'http://fontservice.azurewebsites.net'; 
+            this.baseUrl = 'http://favfont.azurewebsites.net'; 
             this.loginUrl = '/auth/login';
             this.signupUrl = '/auth/signup';
             this.unlinkUrl = '/auth/unlink/';
