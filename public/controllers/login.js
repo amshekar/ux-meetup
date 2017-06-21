@@ -29,9 +29,20 @@ angular.module('MyApp')
         $scope.authenticate = function (provider) {
             $auth.authenticate(provider)
                 .then(function (response) {
-                    $window.localStorage.currentUser = JSON.stringify(response.data);
-                    $location.path('/');
-                    $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+                    Account.getProfile()
+                        .then(function (response) {
+                            $window.localStorage.currentUser = JSON.stringify(response.data);
+                            $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+                            $scope.user = response.data;
+                            if ($scope.user.font.length == 0 || $scope.user.color.length == 0) {
+                                //$location.path('/setting');
+                                $state.go('setting.color');
+                            }
+                            else
+                                $state.go('home');
+                            //toastr.success('You have successfully signed in!');
+                        })
+
                     //toastr.success('You have successfully signed in with ' + provider + '!');
 
                 })

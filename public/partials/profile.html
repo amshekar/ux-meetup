@@ -11,20 +11,20 @@
 
                 <div class="row">
                     <p style="text-align:center">
-                        <span class="error" ng-show="editprofileform.myImage.$error.image">
+                        <span class="message error" style="color:#ff5700" ng-show="editprofileform.myImage.$error.image">
                             Not a JPEG or a PNG!
                         </span>
-                        <span class="error" ng-show="editprofileform.myImage.$error.dimensions">
-                            Image height should be greater than 150 and width should be greater than 1.5 time of height !
+                        <span class="message error" style="color:#ff5700" ng-show="editprofileform.myImage.$error.dimensions">
+                            Please upload your profile picture 290px X 180px size.
                         </span>
                     </p>
 
 
-                    <div class="col s6 offset-s3 tooltipped" data-position="top" data-delay="50" data-tooltip="Upload Picture">
+                    <div class="col s6 offset-s3 tooltipped" data-position="top" style="color:#00bfd8" data-delay="50" data-tooltip="Upload Picture 290px X 180px">
                         <div class="box-dp">
-                            <!--<label class="control-label">Profile Picture</label>-->
+                            <!--<label class="control-label">Profile Picture</label> dimensions="height > 150  && width > 1.5 * height"-->
                             <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
-                                   accept="image/jpeg,image/png" dimensions="height > 150  && width > 1.5 * height">
+                                   accept="image/jpeg,image/png" dimensions="height > 179 && height <181 && width > 289 && width < 291">
                             <img class="responsive-img" ng-src="{{user.picture || 'assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
                         </div>
                     </div>

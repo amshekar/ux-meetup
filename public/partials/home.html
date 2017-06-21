@@ -1,4 +1,7 @@
 <div class="body-container">
+    <div class="row">
+        &nbsp;
+    </div>
     <h1 class="design-fav">Designerfav. <span><typer words="['Color', 'font']" type-time='300' backspace-time='150' start-delay='1500' start-typing="true" highlight-background="#fbfbfb" pause="1500"></typer></span></h1>
     <h1 class="fav-color-font-head">Creative Designers favourite colors & fonts</h1>
     <div class="center-align">
@@ -10,13 +13,14 @@
                 <!--<a class="btn waves-effect white grey-text darken-text-2"></a>-->
             </div>
             <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/assets/images/banner2.png"></a>
+            <a class="carousel-item responsive-img" href="http://www.bytes2bots.com/" target="_blank"><img src="/assets/images/banner4.jpg"></a>            
             <a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/assets/images/banner1.png"></a>
-            <a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/assets/images/banner3.png"></a>
+            <!--<a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/assets/images/banner3.png"></a>-->
 
         </div>
     </div>
     <div class="row">
-
+        &nbsp;
     </div>
     <div id="list-container" class="grid-continer">
         <div infinite-scroll='vm.getAllProfiles()' infinite-scroll-distance='0'
@@ -32,19 +36,19 @@
                     <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
                 </div>
                 <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>
-                <div class="box-social">
-                    <!--Phase 2
-                <a class="box-social-dribble"><i></i></a>-->
+                <div class="box-social">                   
+                    <a class="box-social-dribble" ng-if="profile.dribble"><i></i></a>
+                    <a class="box-social-facebook" ng-if="profile.facebook"><i></i></a>
                 </div>
             </div>
         </div>
-       
-        </div>
+
+    </div>
     <div class="space-200"></div>
-    <!-- material-scrolltop button -->
+    <!-- material-scrolltop button 
     <button class="material-scrolltop" type="button">
-        <!--<span></span>-->
-    </button>
+        <span></span>
+    </button>-->
     <script>
         $(function () {
             $('.carousel.carousel-slider').carousel({ fullWidth: true });
