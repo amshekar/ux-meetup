@@ -25,7 +25,8 @@
     "gulp-uglify": "^2.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
-    "angular-typer": "^0.5.5"
+    "angular-typer": "^0.5.5",
+    "serve-favicon": "^2.4.3"
   },
   "engines": { "node": "6.9.1 || 8.1.x" }
  

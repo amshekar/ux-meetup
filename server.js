@@ -6,7 +6,6 @@
 
 var path = require('path');
 var qs = require('querystring');
-
 var async = require('async');
 var bcrypt = require('bcryptjs');
 var bodyParser = require('body-parser');
@@ -23,6 +22,7 @@ var status = require('http-status');
 var file = require('./fonts.json');
 var config = require('./config');
 var userSchema = require('./user');
+var favicon = require('serve-favicon')
 
 
 userSchema.pre('save', function(next) {
@@ -61,7 +61,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/',express.static(path.join(__dirname,'public')));
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public','assets', 'images', 'favicon.ico')));
 
 /*
  |--------------------------------------------------------------------------
