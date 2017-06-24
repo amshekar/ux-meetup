@@ -45,6 +45,14 @@
             </div>
         </div>
         <div class="col s12">
+            <div class="col s6">
+                &nbsp;
+            </div>
+            <div class="col s6" style="float:right" ng-if="isColorError">
+                <span class="error" style="float:right">Please select 2 colors!</span>
+            </div>
+        </div>
+        <div class="col s12">
             <div class="col s8 offset-s2">
                 <section class="chart ">
                     <div class="chart-content">
@@ -673,7 +681,7 @@
         </div>
         <div class="col s12">
             <div class="col s10">
-                <a ui-sref="setting.font" style="float:right;width: 120px;" ng-click="setColor()" class="waves-effect waves-light btn login-button">Next</a>
+                <a href="" style="float:right;width: 120px;" ng-click="setColor()" class="waves-effect waves-light btn login-button">Next</a>
             </div>
         </div>
     </div>
@@ -712,18 +720,24 @@
 
                 if (!assigned) {
                     if (input1.val() == "") {
-                        input1.val(color);
-                         $(this).toggleClass("blueRectangle");
-                        $('.favcolor-first').css('backgroundColor', color);
-                        assigned = true;
+                        if(input2.val() != color)
+                        {
+                            input1.val(color);
+                            $(this).toggleClass("blueRectangle");
+                            $('.favcolor-first').css('backgroundColor', color);
+                            assigned = true;
+                        }
                     }
                 }
                 if (!assigned) {
                     if (input2.val() == "") {
-                        input2.val(color);
-                         $(this).toggleClass("blueRectangle");
-                        $('.favcolor-second').css('backgroundColor', color);
-                        assigned = true;
+                        if(input1.val() != color)
+                        {
+                            input2.val(color);
+                            $(this).toggleClass("blueRectangle");
+                            $('.favcolor-second').css('backgroundColor', color);
+                            assigned = true;
+                        }
                     }
                 }
             });
