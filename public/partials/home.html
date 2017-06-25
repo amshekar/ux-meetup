@@ -14,7 +14,7 @@
             </div>
             <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/assets/images/banner2.png"></a>
             <a class="carousel-item responsive-img" href="http://www.bytes2bots.com/" target="_blank"><img src="/assets/images/banner4.jpg"></a>            
-            <a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/assets/images/banner1.png"></a>
+            <!--<a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/assets/images/banner1.png"></a>-->
             <!--<a class="carousel-item responsive-img" href="https://unsplash.com/" target="_blank"><img src="/assets/images/banner3.png"></a>-->
 
         </div>
@@ -51,7 +51,11 @@
     </button>-->
     <script>
         $(function () {
-            $('.carousel.carousel-slider').carousel({ fullWidth: true });
+            $('.carousel.carousel-slider').carousel({ fullWidth: true }, setTimeout(autoplay, 4500));
+            function autoplay() {
+                $('.carousel').carousel('next');
+                setTimeout(autoplay, 4500);
+            }
             $('body').materialScrollTop();
         });
     </script>
