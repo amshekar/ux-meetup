@@ -1,5 +1,5 @@
 angular.module('MyApp')
-    .controller('ProfileCtrl', function ($scope, $auth, toastr, Account, $state) {
+    .controller('ProfileCtrl', function ($scope, $auth, toastr, Account, $state, $window, $rootScope) {
     $scope.getProfile = function () {
       Account.getProfile()
         .then(function (response) {
@@ -17,13 +17,22 @@ angular.module('MyApp')
 
     $scope.updateProfile = function () {
       Account.updateProfile($scope.user)
-        .then(function (response) {
+          .then(function (response) {
+              Account.getProfile()
+                  .then(function (response) {
+                      $window.localStorage.currentUser = JSON.stringify(response.data);
+                      $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+                      $scope.user = response.data;
+                      if ($scope.user.font.length == 0 || $scope.user.color.length == 0) {
+                          //$location.path('/setting');
+                          $state.go('setting.color');
+                      }
+                      else
+                          $state.go('home');
+                      //toastr.success('You have successfully signed in!');
+                  })
             //toastr.success('Profile has been updated');
-            //shekar need to relook
-           // delete $window.localStorage.currentUser;
-            //$window.localStorage.currentUser = JSON.stringify($scope.user);
-           // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);            
-            $state.go('home');
+            //$state.go('home');
         })
         .catch(function (response) {
           toastr.error(response.data.message, response.status);
