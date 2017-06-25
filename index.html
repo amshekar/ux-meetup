@@ -34,7 +34,7 @@
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
                         <a class="waves-effect waves-light profile-dp-box">
-                            <img src="{{currentUser.picture?currentUser.picture:'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
+                            <img ng-src="{{currentUser.picture ||'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
                         </a>
                         <div class="edit-profile-div">
                             <!--<i class="material-icons">&#xE5C7;</i>-->
