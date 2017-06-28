@@ -8,7 +8,7 @@ angular.module('MyApp')
                             $window.localStorage.currentUser = JSON.stringify(response.data);
                             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
                             $scope.user = response.data;
-                            if ($scope.user.font.length == 0 && $scope.user.color.length == 0) {
+                            if ($scope.user.font.length < 2 || $scope.user.color.length < 2) {
                                 //$location.path('/setting');
                                 $state.go('setting.color');
                             }
@@ -34,7 +34,7 @@ angular.module('MyApp')
                             $window.localStorage.currentUser = JSON.stringify(response.data);
                             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
                             $scope.user = response.data;
-                            if ($scope.user.font.length == 0 || $scope.user.color.length == 0) {
+                            if ($scope.user.font.length < 2 || $scope.user.color.length < 2) {
                                 //$location.path('/setting');
                                 $state.go('setting.color');
                             }
