@@ -1,3 +1,11 @@
+/* --------------------------------------------------------------------------------------------------------------------
+<copyright file="signup.js" company="Bytes2Bots">
+   (c) Copyright 2017
+ </copyright>
+ <summary>
+ 
+ </summary>
+ --------------------------------------------------------------------------------------------------------------------*/
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
     'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 
     'ngImageInputWithPreview', 'infinite-scroll', 'ngMaterial','typer'])

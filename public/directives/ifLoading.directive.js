@@ -1,4 +1,12 @@
-﻿(function (module) {
+﻿/* --------------------------------------------------------------------------------------------------------------------
+<copyright file="ifLoading.js" company="Bytes2Bots">
+   (c) Copyright 2017
+ </copyright>
+ <summary>
+ 
+ </summary>
+ --------------------------------------------------------------------------------------------------------------------*/
+(function (module) {
     'use strict';
 
     function ifLoading($http) {

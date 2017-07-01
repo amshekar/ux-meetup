@@ -1,9 +1,11 @@
-/**
- * Satellizer Node.js Example
- * (c) 2015 Sahat Yalkabov
- * License: MIT
- */
-
+/* --------------------------------------------------------------------------------------------------------------------
+<copyright file="server.js" company="Bytes2Bots">
+   (c) Copyright 2017
+ </copyright>
+ <summary>
+ Express service
+ </summary>
+ --------------------------------------------------------------------------------------------------------------------*/
 var path = require('path');
 var qs = require('querystring');
 var async = require('async');
@@ -637,6 +639,7 @@ app.post('/auth/facebook', function (req, res) {
             user.facebook = profile.id;
             user.picture = user.picture || 'https://graph.facebook.com/v2.3/' + profile.id + '/picture?type=large';
             user.displayName = user.displayName || profile.name;
+            user.email = user.email || profile.email;
             user.save(function() {
               var token = createJWT(user);
               res.send({ token: token });
@@ -654,6 +657,7 @@ app.post('/auth/facebook', function (req, res) {
           user.facebook = profile.id;
           user.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.displayName = profile.name;
+          user.email = profile.email || profile.id + '@facebook.com';
           user.save(function() {
             var token = createJWT(user);
             res.send({ token: token });
