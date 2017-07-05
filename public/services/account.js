@@ -8,8 +8,9 @@
  --------------------------------------------------------------------------------------------------------------------*/
 (function (module) {
     function Account($http) {
-        var API_URL = 'http://favfont.azurewebsites.net';
+        //var API_URL = 'http://favfont.azurewebsites.net';
         // var API_URL = 'http://www.designerfav.com';
+        var API_URL = 'https://designerfav.herokuapp.com';
         return {
             getProfile: getProfile,
             updateProfile: updateProfile,
