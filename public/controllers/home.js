@@ -26,20 +26,22 @@
             }
             
             vm.noMorePossibleResults = false;
-            //return result.data;
+            vm.randomImage = Math.floor(Math.random() * 12 + 1) + '.jpg';
+            //return result.data;            
         }
         function HandleSaveFailure(result) {
             toastr.error(result.message, result.status);
             //need to remove alert or implent logging
             //window.alert("error" + result);
         }
-
+        
         vm.currentPage = 0;
-        vm.noMorePossibleResults = false;
+        vm.noMorePossibleResults = false;        
         vm.getAllProfiles = function () {
             vm.noMorePossibleResults = true;
             Account.getAllProfiles(vm.currentPage).then(HandleSaveSuccess, HandleSaveFailure);   
-            vm.currentPage += 1;       
+            vm.currentPage += 1;   
+            
         };
         
 
@@ -49,7 +51,7 @@
         }
 
         function init() {
-            vm.profiles = [];
+            vm.profiles = [];            
             //vm.rotateCard = RotateCard;
         }
 

@@ -26,7 +26,8 @@
              infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
             <div class="box" ng-repeat="profile in vm.profiles">
                 <div class="box-dp">
-                    <img ng-src="{{profile.picture ||'/assets/images/image.png'}}" alt="favepic" class="responsive-img">
+                    <!--<img ng-src="{{profile.picture ||'/assets/images/image.png'}}" alt="favepic" class="responsive-img">-->
+                    <img ng-src="{{profile.picture ||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
                 </div>
                 <div class="box-name">{{profile.displayName}}</div>
                 <div class="box-location">{{profile.location?profile.location:" location"}}</div>
