@@ -2,11 +2,9 @@ module.exports = {
   // App Settings
     //local mongodb connetion 
    //MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/font',
-   //mlab connetion  
-   //MONGO_URI: process.env.MONGO_URI || 'mongodb://designerfavadmin:Compaq@123@ds129402.mlab.com:29402/designerfav',
-   MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
-  TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET',
-   //TOKEN_SECRET: process.env.TOKEN_SECRET || 'Fascia_Bytes_2_Bots_DesignerFav',
+   //mlab connetion     
+  MONGO_URI: process.env.MONGO_URI || 'mongodb://fontadmin:admin123@ds062889.mlab.com:62889/font',
+  TOKEN_SECRET: process.env.TOKEN_SECRET || 'YOUR_UNIQUE_JWT_TOKEN_SECRET', 
 
   // OAuth 2.0
   FACEBOOK_SECRET: process.env.FACEBOOK_SECRET || '43c20daf1acf54f5eaf318049b076353',//'dd2e7a39dba5755be46ec8201cec8a0f'
@@ -29,6 +27,6 @@ module.exports = {
   DRIBBLE_KEY: process.env.DRIBBLE_KEY || 'cafe9492c5296869dff75f1a89cc452c1dd085712b9a47fb303d6f9305be35c2',
   DRIBBLE_SECRET: process.env.DRIBBLE_SECRET || '50babf348ae40d291d2fa43fa2801292fa190b77284b1714c360e55d6c18c63c',  
   //BaseURI: 'http://favfont.azurewebsites.net'
-  //BaseURI: 'http://www.designerfav.com'
-   BaseURI:'https://designerfav.herokuapp.com'
+  BaseURI: 'http://www.designerfav.com'
+   //BaseURI:'https://designerfav.herokuapp.com'
 };

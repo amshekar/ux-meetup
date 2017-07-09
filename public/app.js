@@ -96,8 +96,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
          *  Satellizer config
          */
         $authProvider.facebook({
-            /*clientId: '1709052202456232'*/
-            clientId: '278082065966761',
+            clientId: '1709052202456232',
+            //clientId: '278082065966761',
             url: 'auth/facebook'
 
         });
