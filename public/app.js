@@ -1,3 +1,11 @@
+/* --------------------------------------------------------------------------------------------------------------------
+<copyright file="signup.js" company="Bytes2Bots">
+   (c) Copyright 2017
+ </copyright>
+ <summary>
+ 
+ </summary>
+ --------------------------------------------------------------------------------------------------------------------*/
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
     'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 
     'ngImageInputWithPreview', 'infinite-scroll', 'ngMaterial','typer'])
@@ -88,8 +96,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
          *  Satellizer config
          */
         $authProvider.facebook({
-            /*clientId: '1709052202456232'*/
-            clientId: '278082065966761',
+            clientId: '1709052202456232',
+            //clientId: '278082065966761',
             url: 'auth/facebook'
 
         });

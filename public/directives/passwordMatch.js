@@ -1,3 +1,11 @@
+/* --------------------------------------------------------------------------------------------------------------------
+<copyright file="ifLoading.js" company="Bytes2Bots">
+   (c) Copyright 2017
+ </copyright>
+ <summary>
+ 
+ </summary>
+ --------------------------------------------------------------------------------------------------------------------*/
 angular.module('MyApp')
   .directive('passwordMatch', function() {
     return {
