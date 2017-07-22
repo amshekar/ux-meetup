@@ -26,7 +26,7 @@
             }
             
             vm.noMorePossibleResults = false;
-            vm.randomImage = Math.floor(Math.random() * 12 + 1) + '.jpg';
+           // vm.randomImage = Account.getRandomNumber();
             //return result.data;            
         }
         function HandleSaveFailure(result) {
@@ -41,6 +41,8 @@
             vm.noMorePossibleResults = true;
             Account.getAllProfiles(vm.currentPage).then(HandleSaveSuccess, HandleSaveFailure);   
             vm.currentPage += 1;   
+            //vm.randomImage = Math.floor(Math.random() * 12 + 1) + '.jpg';
+            vm.randomImage = Account.getRandomNumber();
             
         };
         

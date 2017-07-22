@@ -15,7 +15,8 @@
             getProfile: getProfile,
             updateProfile: updateProfile,
             getFont: getFont,
-            getAllProfiles: getAllProfiles
+            getAllProfiles: getAllProfiles,
+            getRandomNumber: getRandomNumber
 
         };
 
@@ -32,6 +33,9 @@
         }
         function getAllProfiles(pageSize) {
             return $http.get(API_URL + '/api/users?pagesize=' + pageSize);
+        }
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 12 + 1) + '.jpg';
         }
 
     }
