@@ -8,12 +8,15 @@
  --------------------------------------------------------------------------------------------------------------------*/
 (function (module) {
 
-    function NavbarCtrl($scope, $auth) {
+    function NavbarCtrl($scope, $auth, Account) {
+        //var vm = this;
         $scope.isAuthenticated = function () {
             return $auth.isAuthenticated();
+            
         };
+        $scope.randomImage = Account.getRandomNumber(); 
     }
-    NavbarCtrl.$inject = ["$scope", "$auth"];
+    NavbarCtrl.$inject = ["$scope", "$auth","Account"];
     module.controller('NavbarCtrl', NavbarCtrl);
 })(angular.module('MyApp'));
 

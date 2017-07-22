@@ -34,7 +34,8 @@
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
                     <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
                         <a class="waves-effect waves-light profile-dp-box">
-                            <img ng-src="{{currentUser.picture ||'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
+                            <img ng-src="{{currentUser.picture ||'/assets/images/profile/'+randomImage}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
+                            <!--<img ng-src="{{currentUser.picture ||'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>-->
                         </a>
                         <div class="edit-profile-div">
                             <!--<i class="material-icons">&#xE5C7;</i>-->
@@ -49,7 +50,7 @@
         </nav>
         <div class="clear"></div>
         <div ui-view autoscroll="true"></div>
-        <div class="footer">
+        <div class="footer text-muted">
             &copy;All rights reserved 2017
         </div>
     </div>
@@ -87,17 +88,15 @@
 
     <!-- Application Code -->
     <script src="/app.js"></script>
-
+    <script src="/services/account.js"></script>
     <script src="/directives/passwordStrength.js"></script>
-
     <script src="/directives/passwordMatch.js"></script>
     <script src="/controllers/home.js"></script>
     <script src="/controllers/login.js"></script>
     <script src="/controllers/signup.js"></script>
     <script src="/controllers/logout.js"></script>
     <script src="/controllers/profile.js"></script>
-    <script src="/controllers/navbar.js"></script>
-    <script src="/services/account.js"></script>
+    <script src="/controllers/navbar.js"></script>    
     <script src="/controllers/setting.js"></script>
     <!--<script src="/vendor/html5kellyhlpicker.js"></script>-->
     <script src="/directives/ifLoading.directive.js"></script>
