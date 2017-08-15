@@ -33,9 +33,9 @@ var userSchema = {
     live: String,
     yahoo: String,
     twitter: String,
-    behance: { type: String, lowercase: true, default: 'www.bahance.com' },
+    behance: { type: String, lowercase: true },
     spotify: String,
-    dribble: { type: String, lowercase: true, default: 'www.dribble.com' },
+    dribble: { type: String, lowercase: true },
     created_by: String,
     created_at: { type: Date, default: Date.now },
     updated_by: String,
@@ -44,7 +44,7 @@ var userSchema = {
     active: { type: Boolean, default: true },
     mobile: String,
     birthday: Date,
-    designation: { type: String, default: 'Creative geek' }
+    designation: { type: String }
     //want to link other schema first import that schema with require and link like below
    // ,complextype:ComplexTypeSchema
 };

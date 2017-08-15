@@ -301,6 +301,19 @@ nav {
         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
         filter: grayscale(100%);
     }
+.box-dp-circle {
+    overflow: hidden;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #e0e0e0;   
+}
+
+    .box-dp-circle img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
 
 .box-name {
     font-size: 18px;
@@ -432,6 +445,10 @@ input.search-header, input.search-header:hover, input.search-header:focus {
         height: 140px
     }
 
+    .box-dp-circle {
+        width: 100%;
+        height: 100%
+    }
     .box-name {
         margin-top: 15px
     }
