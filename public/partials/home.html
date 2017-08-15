@@ -35,10 +35,11 @@
                     <div class="color-one" ng-style="{'background-color':profile.color[0]}"></div>
                     <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
                 </div>
-                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>
-                <!--<div class="box-social">                   
-                    <a class="box-social-dribble" ng-if="profile.dribble"><i></i></a>
-                    <a class="box-social-facebook" ng-if="profile.facebook"><i></i></a>
+                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>               
+                <!--<div class="box-social"> 
+                    <hr>
+                    <a class="box-social-dribble" target="_blank" ng-href="{{profile.dribble}}" ng-if="profile.dribble"><i></i></a>&nbsp;&nbsp;
+                    <a class="box-social-facebook" target="_blank" ng-href="{{profile.behance}}" ng-if="profile.behance"><i></i></a>
                 </div>-->
             </div>
         </div>

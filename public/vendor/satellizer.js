@@ -15,8 +15,8 @@
             //local
             //this.baseUrl = 'http://localhost:3000';http://www.designerfav.com
             //server
-            //this.baseUrl = 'http://www.designerfav.com';
-            this.baseUrl = 'https://designerfavdev.herokuapp.com';
+            this.baseUrl = 'http://www.designerfav.com';
+            //this.baseUrl = 'https://designerfavdev.herokuapp.com';
             this.loginUrl = '/auth/login';
             this.signupUrl = '/auth/signup';
             this.unlinkUrl = '/auth/unlink/';
