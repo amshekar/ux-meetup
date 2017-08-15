@@ -515,3 +515,10 @@ ul {
     background: #fff;
     border-color: #ea4c89;
 }
+/* profile crop and upload button class*/
+ .cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
+ }

@@ -8,6 +8,21 @@
  --------------------------------------------------------------------------------------------------------------------*/
 (function (module) {
     function ProfileCtrl($scope, $auth, toastr, Account, $state, $window, $rootScope) {
+        $scope.myImage='';
+        $scope.myCroppedImage='';
+         $scope.blockingObject = {block:true};   
+        var handleFileSelect=function(evt) {
+          var file=evt.currentTarget.files[0];
+          var reader = new FileReader();
+          reader.onload = function (evt) {
+            $scope.$apply(function($scope){
+              $scope.myImage=evt.target.result;              
+            });
+          };
+          reader.readAsDataURL(file);
+        };
+        angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
+
         $scope.getProfile = function () {
             Account.getProfile()
                 .then(function (response) {
@@ -18,12 +33,14 @@
                 });
         };
 
-        $scope.picture = '';
+       // $scope.picture = '';
         $scope.updatePreview = function () {
-            $scope.user.picture = $scope.picture.src;
+            //$scope.user.picture = $scope.picture.src;
         };
 
-        $scope.updateProfile = function () {
+        $scope.updateProfile = function () { 
+               
+          $scope.user.picture=  $scope.myCroppedImage;
             Account.updateProfile($scope.user)
                 .then(function (response) {
                     Account.getProfile()

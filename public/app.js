@@ -8,7 +8,7 @@
  --------------------------------------------------------------------------------------------------------------------*/
 angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
     'ui.router', 'satellizer', 'ui.select', 'ngSanitize', 'ui.bootstrap', 
-    'ngImageInputWithPreview', 'infinite-scroll', 'ngMaterial','typer'])
+    'ngImageInputWithPreview', 'infinite-scroll', 'ngMaterial','typer','ngImgCrop'])
     .config(function ($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $uiViewScrollProvider) {
         $uiViewScrollProvider.useAnchorScroll();
 
