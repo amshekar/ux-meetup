@@ -1,52 +1,71 @@
-<div class="body-container">
+<style>
+    .cropArea {
+        background-image: url("assets/images/update_default2.jpg");
+        /*background: #E4E4E4;*/
+        overflow: hidden;
+        width: 250px;
+        height: 250px;
+    }</style>
+<div class="body-container">       
     <div class="grid-continer">
         <!--<div class="clear"></div>-->
-        <h1 class="login-with text-muted">My Profile</h1>
-        <div class="edit-profile editprofilebox">
-
+         <h1 class="login-with text-muted">My Profile</h1>
+        <div class="row edit-profile editprofilebox">
+            <div class="col s3" >
+                     <p style="text-align:center">
+                        <span> 
+                         <input type="file" id="fileInput" name="change photo" accept="image/*" />
+                        </span>                       
+                    </p>
+                    <div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">
+                        
+                        <div class="cropArea"> 
+                            <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                        </div>
+                        
+                    </div>
+            </div>
+        <div class="col s9 ">
             <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
                 <div class="row">
-                    &nbsp;
+                   <img class="responsive-img editdp" ng-src="{{myCroppedImage || (user.picture || 'assets/images/upload.png')}}" />
                 </div>
-
-                <div class="row">
-                    <p style="text-align:center">
-                        <span class="message error" style="color:#ff5700" ng-show="editprofileform.myImage.$error.image">
-                            Not a JPEG or a PNG!
-                        </span>
-                        <span class="message error" style="color:#ff5700" ng-show="editprofileform.myImage.$error.dimensions">
-                            Please upload your profile picture 290px X 180px size.
-                        </span>
-                    </p>
-
-
-                    <div class="col s6 offset-s3 tooltipped" data-position="top" style="color:#00bfd8" data-delay="50" data-tooltip="Upload Picture 290px X 180px">
-                        <div class="box-dp">
-                            <!--<label class="control-label">Profile Picture</label> dimensions="height > 150  && width > 1.5 * height"-->
-                            <input type="file" ng-change="updatePreview()" style="display:none" id="myFile" name="myImage" image-with-preview ng-model="picture"
-                                   accept="image/jpeg,image/png" dimensions="height > 179 && height <181 && width > 289 && width < 291">
-                            <img class="responsive-img" ng-src="{{user.picture || 'assets/images/upload.png'}}" alt="favepic" onclick="document.getElementById('myFile').click();">
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
                         <input id="displayname" type="text" class="form-control" ng-model="user.displayName" />
-
-                    </div>
+                    </div>                    
                 </div>
                 <div class="row">
-                    <div class="form-group input-field col s12">
+                    <div class="form-group input-field col s6">
                         <label class="active">Email Address</label>
                         <input type="text" class="form-control" ng-model="user.email" />
                     </div>
+                    <div class="form-group input-field col s6">
+                        <label class="active">Personal Website</label>
+                        <input type="url" class="form-control" ng-model="user.website" />
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="form-group input-field col s12">
+                    <div class="form-group input-field col s6">
+                        <label class="active" for="designation">Designation</label>
+                        <input id="displayname" type="text" class="form-control" ng-model="user.designation" />
+                    </div>
+                    <div class="form-group input-field col s6">
                         <label class="active">Location</label>
                         <input type="text" class="form-control" ng-model="user.location" />
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="form-group input-field col s6">
+                        <label class="active" for="dribble">Dribble Link</label>
+                        <input id="displayname" type="url" class="form-control" ng-model="user.dribble" />
+
+                    </div>
+                    <div class="form-group input-field col s6">
+                        <label class="active" for="behance">Behance Link</label>
+                        <input id="displayname" type="url" class="form-control" ng-model="user.behance" />
+
                     </div>
                 </div>
                 <div class="row">
@@ -104,6 +123,7 @@
                     <button type="submit" class="waves-effect waves-light btn login-button">Update Information</button>
                 </div>
             </form>
+        </div>
         </div>
         <!-- Phase 2
             <div class="center-align">
