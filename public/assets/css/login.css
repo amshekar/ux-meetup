@@ -254,3 +254,9 @@ html, body {
     width: auto;
     top: 3px;
 }
+.text-error{
+   color: #ff5700; 
+}
+.text-info{
+  color: #00bfd8;
+}

@@ -30,41 +30,70 @@
                 <div class="row">
                    <img class="responsive-img editdp" ng-src="{{myCroppedImage || (user.picture || 'assets/images/upload.png')}}" />
                 </div>
+                 <div class="row">
+                     <div class="form-group input-field col s9">
+                        &nbsp;                    
+                    </div> 
+                    <div class="form-group input-field col s3">
+                        <label class="active " for="info"> &nbsp;* All fields are mandatory</label>                        
+                    </div>                    
+                </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
-                        <input id="displayname" type="text" class="form-control" ng-model="user.displayName" />
+                        <input id="displayname" name="displayname" type="text" class="form-control" ng-model="user.displayName" required />
+                        <div class="help-block text-error" ng-if="editprofileform.displayname.$dirty" ng-messages="editprofileform.displayname.$error">
+                        <div ng-message="required">You must enter your display name.</div>
+                    </div>
                     </div>                    
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s6">
                         <label class="active">Email Address</label>
-                        <input type="text" class="form-control" ng-model="user.email" />
+                        <input id="email" name="email" type="text" class="form-control" ng-model="user.email" required />
+                        <div class="help-block text-error" ng-if="editprofileform.email.$dirty" ng-messages="editprofileform.email.$error">
+                        <div ng-message="required">You must enter your email.</div>
+                    </div>
                     </div>
                     <div class="form-group input-field col s6">
                         <label class="active">Personal Website</label>
-                        <input type="url" class="form-control" ng-model="user.website" />
+                        <input id="website" name="website"  type="url" class="form-control" ng-model="user.website" required/>
+                        <div class="help-block text-error" ng-if="editprofileform.website.$dirty" ng-messages="editprofileform.website.$error">
+                        <div ng-message="required">You must enter your personal website.</div>
+                    </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s6">
                         <label class="active" for="designation">Designation</label>
-                        <input id="displayname" type="text" class="form-control" ng-model="user.designation" />
+                        <input id="designation" type="text" class="validate" name="designation" ng-model="user.designation" required/>
+                        <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
+                        <div ng-message="required">You must enter your designation.</div>
+                    </div>
                     </div>
                     <div class="form-group input-field col s6">
                         <label class="active">Location</label>
-                        <input type="text" class="form-control" ng-model="user.location" />
+                        <input id="location" name="location" type="text" class="form-control" ng-model="user.location" required />
+                        <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
+                        <div ng-message="required">You must enter your Location.</div>
+                    </div>
                     </div>                   
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s6">
                         <label class="active" for="dribble">Dribble Link</label>
-                        <input id="displayname" type="url" class="form-control" ng-model="user.dribble" />
+                        <input id="dribble" name="dribble" type="url" class="form-control" ng-model="user.dribble" required />
+                        <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
+                        <div ng-message="required">You must enter your personal website.</div>
+                    </div>
 
                     </div>
                     <div class="form-group input-field col s6">
                         <label class="active" for="behance">Behance Link</label>
-                        <input id="displayname" type="url" class="form-control" ng-model="user.behance" />
+                        <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance" required />
+                        <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
+                        <div ng-message="required">You must enter your personal website.</div>
+                    </div>
 
                     </div>
                 </div>
@@ -119,9 +148,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
                 <div class="input-field">
-                    <button type="submit" class="waves-effect waves-light btn login-button">Update Information</button>
+                    <button type="submit" style="width: 50%;" class="waves-effect waves-light btn signup-button">Update Information</button>
                 </div>
+                 </div>
             </form>
         </div>
         </div>
