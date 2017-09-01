@@ -10,31 +10,34 @@
     <div class="grid-continer">
         <!--<div class="clear"></div>-->
          <h1 class="login-with text-muted">My Profile</h1>
-        <div class="row edit-profile editprofilebox">
-            <div class="col s3" >
+        <div class="row ">
+            <div class="col s2" >
                      <p style="text-align:center">
                         <span> 
                          <input type="file" id="fileInput" name="change photo" accept="image/*" />
                         </span>                       
                     </p>
-                    <div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">
-                        
+                    <!--<div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">-->
+                        <div>
                         <div class="cropArea"> 
                             <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
                         </div>
                         
                     </div>
             </div>
-        <div class="col s9 ">
+        <div class="col s6 offset-s2 edit-profile editprofilebox ">
             <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
+                 <div class="row">
+                  &nbsp;
+                </div>
                 <div class="row">
                    <img class="responsive-img editdp" ng-src="{{myCroppedImage || (user.picture || 'assets/images/upload.png')}}" />
                 </div>
                  <div class="row">
-                     <div class="form-group input-field col s9">
+                     <div class="form-group input-field col s8">
                         &nbsp;                    
                     </div> 
-                    <div class="form-group input-field col s3">
+                    <div class="form-group input-field col s4">
                         <label class="active " for="info"> &nbsp;* All fields are mandatory</label>                        
                     </div>                    
                 </div>
@@ -48,30 +51,32 @@
                     </div>                    
                 </div>
                 <div class="row">
-                    <div class="form-group input-field col s6">
+                    <div class="form-group input-field col s12">
                         <label class="active">Email Address</label>
                         <input id="email" name="email" type="text" class="form-control" ng-model="user.email" required />
                         <div class="help-block text-error" ng-if="editprofileform.email.$dirty" ng-messages="editprofileform.email.$error">
                         <div ng-message="required">You must enter your email.</div>
                     </div>
                     </div>
-                    <div class="form-group input-field col s6">
+                    <!--<div class="form-group input-field col s6">
                         <label class="active">Personal Website</label>
                         <input id="website" name="website"  type="url" class="form-control" ng-model="user.website" required/>
                         <div class="help-block text-error" ng-if="editprofileform.website.$dirty" ng-messages="editprofileform.website.$error">
                         <div ng-message="required">You must enter your personal website.</div>
                     </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="row">
-                    <div class="form-group input-field col s6">
+                    <div class="form-group input-field col s12">
                         <label class="active" for="designation">Designation</label>
                         <input id="designation" type="text" class="validate" name="designation" ng-model="user.designation" required/>
                         <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
                         <div ng-message="required">You must enter your designation.</div>
                     </div>
                     </div>
-                    <div class="form-group input-field col s6">
+                    </div>
+                <div class="row">
+                    <div class="form-group input-field col s12">
                         <label class="active">Location</label>
                         <input id="location" name="location" type="text" class="form-control" ng-model="user.location" required />
                         <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
@@ -80,19 +85,21 @@
                     </div>                   
                 </div>
                 <div class="row">
-                    <div class="form-group input-field col s6">
+                    <div class="form-group input-field col s12">
                         <label class="active" for="dribble">Dribble Link</label>
                         <input id="dribble" name="dribble" type="url" class="form-control" ng-model="user.dribble" required />
                         <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
-                        <div ng-message="required">You must enter your personal website.</div>
+                        <div ng-message="required">You must enter your dribble website.</div>
                     </div>
 
                     </div>
-                    <div class="form-group input-field col s6">
+                    </div>
+                <div class="row">
+                    <div class="form-group input-field col s12">
                         <label class="active" for="behance">Behance Link</label>
                         <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance" required />
                         <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
-                        <div ng-message="required">You must enter your personal website.</div>
+                        <div ng-message="required">You must enter your behance website.</div>
                     </div>
 
                     </div>
@@ -150,7 +157,7 @@
                 </div>
                 <div class="row">
                 <div class="input-field">
-                    <button type="submit" style="width: 50%;" class="waves-effect waves-light btn signup-button">Update Information</button>
+                    <button type="submit" style="width: 80%;" class="waves-effect waves-light btn signup-button">Update Information</button>
                 </div>
                  </div>
             </form>
