@@ -14,8 +14,8 @@
         function Config() {
             //local            
             //server
-            this.baseUrl = 'http://www.designerfav.com';
-            //this.baseUrl = 'https://designerfavdev.herokuapp.com';
+            //this.baseUrl = 'http://www.designerfav.com';
+            this.baseUrl = 'https://designerfavdev.herokuapp.com';
             this.loginUrl = '/auth/login';
             this.signupUrl = '/auth/signup';
             this.unlinkUrl = '/auth/unlink/';
