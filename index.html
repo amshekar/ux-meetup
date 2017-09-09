@@ -1,113 +1,113 @@
 ﻿<!DOCTYPE html>
 <html ng-app="MyApp">
-<head>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/">
-    <title>Designerfav</title>
-    <link href="/assets/images/favicon.ico" rel="shortcut icon">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="/assets/css/materialize.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link rel="stylesheet" href="/assets/css/fav.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <head>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <base href="/">
+        <title>Designerfav</title>
+        <link href="/assets/images/favicon.ico" rel="shortcut icon">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link rel="stylesheet" href="/assets/css/materialize.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link rel="stylesheet" href="/assets/css/fav.css">
+        <link rel="stylesheet" href="/assets/css/login.css">
 
-</head>
-<body>
-    <div class="site-container" ng-controller="NavbarCtrl" id="top">
-        <nav>
-            <div class="progress" if-loading>
-                <div class="indeterminate"></div>
-            </div>
-            <div class="nav-wrapper">
-                <a ui-sref="home" class="brand-logo fav-brand-logo"><img src="/assets/images/logo.png" class="responsive-img"></a>
-                <a ui-sref="home" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <!--<input type="text" class="search-header hide-on-med-and-down" placeholder="Search">-->
-                <ul class="">
-                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About&nbsp;Us</a></li>
-                    <!--<li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Team</a></li>
-                    <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Contact Us</a></li>-->
+    </head>
+    <body>
+        <div class="site-container" ng-controller="NavbarCtrl" id="top">
+            <nav>
+                <div class="progress" if-loading>
+                    <div class="indeterminate"></div>
+                </div>
+                <div class="nav-wrapper">
+                    <a ui-sref="home" class="brand-logo fav-brand-logo"><img src="/assets/images/logo.png" class="responsive-img"></a>
+                    <a ui-sref="home" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <!--<input type="text" class="search-header hide-on-med-and-down" placeholder="Search">-->
+                    <ul class="">
+                        <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">About&nbsp;Us</a></li>
+                        <!--<li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Team</a></li>
+                        <li><a ui-sref="home" class="waves-effect waves-light btn-flat about-button">Contact Us</a></li>-->
 
-                    <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
-                    <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
-                    <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
-                        <a class="waves-effect waves-light profile-dp-box">
-                            <img ng-src="{{currentUser.picture ||'/assets/images/profile/'+randomImage}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
-                            <!--<img ng-src="{{currentUser.picture ||'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>-->
-                        </a>
-                        <div class="edit-profile-div">
-                            <!--<i class="material-icons">&#xE5C7;</i>-->
-                            <div>
-                                <a ui-sref="profile">Profile</a>
-                                <a ui-sref="logout">Logout</a>
+                        <li ng-if="!isAuthenticated()"><a ui-sref="login" class="waves-effect waves-light btn login-button">Login</a></li>
+                        <li ng-if="!isAuthenticated()"><a ui-sref="signup" class="waves-effect waves-light btn signup-button">Register</a></li>
+                        <li class="profile-edit-li" ng-if="isAuthenticated()" ng-cloak>
+                            <a class="waves-effect waves-light profile-dp-box">
+                                <img ng-src="{{currentUser.picture||'/assets/images/profile/'+randomImage}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>
+                                <!--<img ng-src="{{currentUser.picture ||'/assets/images/profile-pic.png'}}" class="responsive-img dp" alt="profile"> <span>{{currentUser.displayName?currentUser.displayName:currentUser.email}}</span>-->
+                            </a>
+                            <div class="edit-profile-div">
+                                <!--<i class="material-icons">&#xE5C7;</i>-->
+                                <div>
+                                    <a ui-sref="profile">Profile</a>
+                                    <a ui-sref="logout">Logout</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="clear"></div>
+            <div ui-view autoscroll="true"></div>
+            <div class="footer text-muted">
+                &copy;All rights reserved 2017
             </div>
-        </nav>
-        <div class="clear"></div>
-        <div ui-view autoscroll="true"></div>
-        <div class="footer text-muted">
-            &copy;All rights reserved 2017
         </div>
-    </div>
-    <link href="/stylesheets/material-scrolltop.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/ng-img-crop.css">
-    <!--<link rel="stylesheet" type="text/css" href="//cdn.rawgit.com/CrackerakiUA/ui-cropper/master/compile/minified/ui-cropper.css">-->
-
-     
-
-    <!--<script src="/client/vendor/jquery.js"></script>-->
-    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
-    <script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-    <script src="/vendor/angular-resource.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>    
-    <!-- ui-select files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
-    <!-- Third-party Libraries -->
-    <script src="/vendor/angular-animate.js"></script>
-    <script src="/vendor/angular-messages.js"></script>
-    <script src="/vendor/angular-resource.js"></script>
-    <!--<script src="/vendor/angular-sanitize.js"></script>-->
-    <script src="/vendor/angular-ui-router.js"></script>
-    <script src="/vendor/angular-toastr.tpls.js"></script>
-    <script src="/vendor/satellizer.js"></script>
-    <script src="/vendor/ng-image-input-with-preview.js"></script>
-    <script src="/vendor/infinite-scroll.js"></script>
-    <script src="/vendor/material-scrolltop.js"></script>
-    <script src="/vendor/typer.min.js"></script>
-    <script src="/vendor/ng-img-crop.js"></script>     
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-    <!--<script src="//rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"></script>-->
-    
+        <link href="/stylesheets/material-scrolltop.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/ng-img-crop.css">
+        <!--<link rel="stylesheet" type="text/css" href="//cdn.rawgit.com/CrackerakiUA/ui-cropper/master/compile/minified/ui-cropper.css">-->
 
 
-    <!--Import jQuery before materialize.js-->
-    <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
-    <script src="/assets/js/materialize.min.js"></script>
 
-    <!-- Application Code -->
-    <script src="/app.js"></script>
-    <script src="/services/account.js"></script>
-    <script src="/directives/passwordStrength.js"></script>
-    <script src="/directives/passwordMatch.js"></script>
-    <script src="/controllers/home.js"></script>
-    <script src="/controllers/login.js"></script>
-    <script src="/controllers/signup.js"></script>
-    <script src="/controllers/logout.js"></script>
-    <script src="/controllers/profile.js"></script>
-    <script src="/controllers/navbar.js"></script>    
-    <script src="/controllers/setting.js"></script>
-    <!--<script src="/vendor/html5kellyhlpicker.js"></script>-->
-    <script src="/directives/ifLoading.directive.js"></script>
+        <!--<script src="/client/vendor/jquery.js"></script>-->
+        <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+        <script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script src="/vendor/angular-resource.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>    
+        <!-- ui-select files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
+        <!-- Third-party Libraries -->
+        <script src="/vendor/angular-animate.js"></script>
+        <script src="/vendor/angular-messages.js"></script>
+        <script src="/vendor/angular-resource.js"></script>
+        <!--<script src="/vendor/angular-sanitize.js"></script>-->
+        <script src="/vendor/angular-ui-router.js"></script>
+        <script src="/vendor/angular-toastr.tpls.js"></script>
+        <script src="/vendor/satellizer.js"></script>
+        <script src="/vendor/ng-image-input-with-preview.js"></script>
+        <script src="/vendor/infinite-scroll.js"></script>
+        <script src="/vendor/material-scrolltop.js"></script>
+        <script src="/vendor/typer.min.js"></script>
+        <script src="/vendor/ng-img-crop.js"></script>     
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        <!--<script src="//rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"></script>-->
 
-</body>
+
+
+        <!--Import jQuery before materialize.js-->
+        <!--<script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>-->
+        <script src="/assets/js/materialize.min.js"></script>
+
+        <!-- Application Code -->
+        <script src="/app.js"></script>
+        <script src="/services/account.js"></script>
+        <script src="/directives/passwordStrength.js"></script>
+        <script src="/directives/passwordMatch.js"></script>
+        <script src="/controllers/home.js"></script>
+        <script src="/controllers/login.js"></script>
+        <script src="/controllers/signup.js"></script>
+        <script src="/controllers/logout.js"></script>
+        <script src="/controllers/profile.js"></script>
+        <script src="/controllers/navbar.js"></script>    
+        <script src="/controllers/setting.js"></script>
+        <!--<script src="/vendor/html5kellyhlpicker.js"></script>-->
+        <script src="/directives/ifLoading.directive.js"></script>
+
+    </body>
 </html>
 
