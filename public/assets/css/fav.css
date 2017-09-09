@@ -25,7 +25,7 @@ html, body {
     font-size: 12px;
     color: #2b2b2b;
     font-weight: 400;
-    background-color: #fbfbfb;
+    background-color: #F7F7F7;
 }
 
 .clear {
@@ -39,56 +39,58 @@ html, body {
     padding: 0;
     position: relative;
     min-height: 100vh;
-    background-color: #fbfbfb
+    background-color: #F7F7F7;
 }
 
 nav {
     color: inherit;
-    background-color: #fbfbfb;
+    background-color: #F7F7F7;
     width: 100%;
     box-shadow: none;
     margin: 0 auto;
-    background-color: #fbfbfb;
     z-index: 2;
     position: fixed;
     top: 0;
-    height: 70px;
+    height: 120px;
     left: 0;
+    padding-top: 35px;
 }
 
-    nav.fixed {
-        box-shadow: 0 0 3px 1px #999;
-    }
+nav.fixed {
+    box-shadow: 0 0 3px 1px #999;
+    padding-top: 0;
+    height: 70px;
+}
 
 .site-container nav ul {
     margin: 3px 0 10px;
     float: right
 }
 
-    .site-container nav ul li > a {
-        text-transform: capitalize;
-        margin: 0 5px;
-        width: 120px;
-        font-family: "Avenir Next Bold","Roboto",sans-serif;
-        font-size: 14px;
-        box-shadow: none;
-    }
+.site-container nav ul li > a {
+    text-transform: capitalize;
+    margin: 0 5px;
+    width: 120px;
+    font-family: "Avenir Next Bold","Roboto",sans-serif;
+    font-size: 14px;
+    box-shadow: none;
+}
 
-        .site-container nav ul li > a.btn-flat {
-            width: auto;
-            margin: 0 7px;
-        }
+.site-container nav ul li > a.btn-flat {
+    width: auto;
+    margin: 0 7px;
+}
 
-    .site-container nav ul li a.profile-dp-box {
-        width: auto;
-        color: #2b2b2b;
-        font-family: "Avenir Next","Roboto",sans-serif;
-        font-size: 18px;
-    }
+.site-container nav ul li a.profile-dp-box {
+    width: auto;
+    color: #2b2b2b;
+    font-family: "Avenir Next","Roboto",sans-serif;
+    font-size: 18px;
+}
 
-    .site-container nav ul li > a.profile-dp-box:hover {
-        background-color: transparent;
-    }
+.site-container nav ul li > a.profile-dp-box:hover {
+    background-color: transparent;
+}
 
 .profile-edit-li {
     position: relative;
@@ -104,22 +106,22 @@ nav {
     z-index: 2;
 }
 
-    .edit-profile-div i {
-        position: absolute;
-        top: 67px;
-        left: 10px;
-        color: #fff;
-        font-size: 58px !important;
-        line-height: 60px !important;
-        height: auto !important;
-    }
+.edit-profile-div i {
+    position: absolute;
+    top: 67px;
+    left: 10px;
+    color: #fff;
+    font-size: 58px !important;
+    line-height: 60px !important;
+    height: auto !important;
+}
 
-    .edit-profile-div div {
-        background-color: #fff;
-        box-shadow: 0 3px 7px 0 #ddd;
-        padding: 5px 0;
-        z-index: 99;
-    }
+.edit-profile-div div {
+    background-color: #fff;
+    box-shadow: 0 3px 7px 0 #ddd;
+    padding: 5px 0;
+    z-index: 99;
+}
 
 .profile-edit-li:hover .edit-profile-div {
     display: block;
@@ -166,8 +168,8 @@ nav {
     border-radius: 50%;
 }
 .editdp {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
 }
 
@@ -175,11 +177,12 @@ nav {
     margin: 0 auto;
     width: 90%;
     height: 70px;
-    background-color: #fbfbfb;
+    background-color: #F7F7F7;
 }
 
 .fav-brand-logo img {
-    width: 50px;
+    height: 35px;
+    max-width: 100%;
     margin: 10px 0 0
 }
 
@@ -188,9 +191,9 @@ nav {
     font-size: 20px
 }
 
-    .about-button:hover {
-        background-color: transparent
-    }
+.about-button:hover {
+    background-color: transparent
+}
 
 .login-button {
     border-radius: 25px;
@@ -200,10 +203,10 @@ nav {
     color: #fff
 }
 
-    .login-button:hover, .login-button:visited, .login-button:active, .login-button:focus {
-        background-color: #393939 !important;
-        box-shadow: none;
-    }
+.login-button:hover, .login-button:visited, .login-button:active, .login-button:focus {
+    background-color: #393939 !important;
+    box-shadow: none;
+}
 
 .signup-button {
     border-radius: 25px;
@@ -213,10 +216,10 @@ nav {
     color: #fff
 }
 
-    .signup-button:hover, .signup-button:visited, .signup-button:active, .signup-button:focus {
-        background-color: #09d9f4;
-        box-shadow: none;
-    }
+.signup-button:hover, .signup-button:visited, .signup-button:active, .signup-button:focus {
+    background-color: #09d9f4;
+    box-shadow: none;
+}
 
 .body-container {
     max-width: 1100px;
@@ -226,30 +229,38 @@ nav {
 }
 
 .design-fav {
-    font-family: "Geometos Rounded",sans-serif;
-    text-transform: uppercase;
+    /*font-family: "Geometos Rounded",sans-serif;*/
+    text-transform: capitalize;
     font-size: 40px;
     color: #000;
-    font-weight: bolder;
+    font-weight: bold;
     text-align: center;
 }
 
-    .design-fav span {
-        color: green;
-    }
+.design-fav span {
+    color: #FF0065;
+}
 
 .fav-color-font-head {
-    font-size: 28px;
+    font-size: 26px;
     text-align: center;
-    line-height: 18px;
+    line-height: 36px;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .submit-color-font {
     font-family: "Avenir Next Bold","Roboto",sans-serif;
-    color: #000;
+    color: #fff;
     display: inline-block;
-    text-decoration: underline;
-    font-size: 22px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 20px;
+    background-color: #000;
+    padding: 10px 30px;
+    font-weight: normal;
+    margin: 30px 0 20px;
 }
 
 .banner {
@@ -259,11 +270,11 @@ nav {
     overflow: hidden
 }
 
-    .banner .carousel.carousel-slider {
-        max-width: 1022px;
-        height: 100% !important;
-        margin: 0 auto;
-    }
+.banner .carousel.carousel-slider {
+    max-width: 1022px;
+    height: 100% !important;
+    margin: 0 auto;
+}
 
 .grid-continer {
     position: relative;
@@ -277,7 +288,7 @@ nav {
     margin: 15px 10px;
     width: 325px;
     background-color: #fff;
-    height: 440px;
+    height: 480px;
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
@@ -285,22 +296,26 @@ nav {
     border-radius: 1px;
 }
 
-    .box:hover, .box.active {
-        box-shadow: 0 0 7px 0 #bbb;
-    }
+.box:hover, .box.active {
+    box-shadow: 0 0 7px 0 #bbb;
+}
 
 .box-dp {
     overflow: hidden;
     text-align: center;
     width: 285px;
-    height: 156px;
-    background-color: #e0e0e0;
+    height: 185px;
+    background-color: #fff;
 }
 
-    .box-dp img {
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-    }
+.box-dp img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    width: 130px;
+    height: 130px;
+    margin-top: 30px;
+    border-radius: 50%;
+}
 .box-dp-circle {
     overflow: hidden;
     text-align: center !important;
@@ -312,40 +327,43 @@ nav {
     vertical-align:top;
 }
 
-    .box-dp-circle img {
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-    }
+.box-dp-circle img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
 
 .box-name {
     font-size: 18px;
     line-height: 24px;
-    padding-left: 15px;
     color: #000;
-    margin-top: 20px;
-    font-weight: 500
+    font-weight: 500;
+    text-align: center;
 }
 
 .box-location {
     color: #A09B9B;
     font-size: 16px;
-    padding-left: 15px
+    text-align: center;
 }
 
 .box-colors {
     margin: 20px 0;
+    float: left;
+    padding: 7px;
+    background-color: #EAEFF0;
+}
+
+.box-colors div {
+    height: 60px;
+    width: 135px;
     float: left
 }
 
-    .box-colors div {
-        height: 60px;
-        width: 142px;
-        float: left
-    }
-
 .box-fonts {
     font-size: 18px;
-    font-weight: 500
+    font-weight: 500;
+    padding-bottom: 15px;
+    border-bottom: #F1F1F1 solid 1px;
 }
 
 .box-social {
@@ -353,21 +371,31 @@ nav {
     padding: 5px
 }
 
-    .box-social a {
-        margin: 30px 0 0;
-        display: inline-block;
-        cursor: pointer
-    }
+.box-social a {
+    margin: 15px 0 0;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
 
-        .box-social a i {
-            width: 33px;
-            height: 33px;
-            display: inline-block
-        }
+.box-social a i {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.box-social a span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #867C7D;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 14px;
+}
 
 .box-social-dribble i {
-    width: 33px;
-    height: 33px;
+    width: 28px;
+    height: 28px;
     background: url(../images/login-with-dribble.png) no-repeat center center transparent;
     background-size: contain;
 }
@@ -375,7 +403,28 @@ nav {
 .box-social-facebook i {
     background: url(../images/facebook.png) no-repeat center center transparent
 }
-
+.box-views i{
+    background: url(../images/eye.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.box-social a.box-likes i{
+    width: 22px;
+    background: url(../images/likes.png) no-repeat center center transparent;
+    background-size: contain;
+}
+.box-social a.box-dribble i{
+    width: 25px;
+    height: 25px;
+    background: url(../images/dribble-icon.png) no-repeat center center transparent;
+    background-size: contain;
+    margin-right: 20px;
+}
+.box-social a.box-behace i{
+    width: 25px;
+    height: 25px;
+    background: url(../images/behace.png) no-repeat center center transparent;
+    background-size: contain;
+}
 .footer {
     padding: 30px 0 100px;
     text-align: center;
@@ -406,19 +455,26 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     z-index: 3;
 }
 
+
 @media only screen and (max-width: 600px) {
     .site-container nav ul {
         float: none;
         display: block;
-        width: 400px;
+        max-width: 400px;
         clear: both;
         margin: 20px auto 0
     }
-
-        .site-container nav ul li {
-            float: none;
-            display: inline-block
-        }
+    .site-container nav ul{
+        text-align: center;
+    }
+    .site-container nav ul li:first-of-type{
+        display: block;
+        width: 100%;
+    }
+    .site-container nav ul li {
+        float: none;
+        display: inline-block;
+    }
 
     nav .brand-logo {
         text-align: center;
@@ -427,7 +483,7 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     }
 
     .body-container {
-        margin-top: 50px
+        margin-top:120px
     }
 
     nav {
@@ -459,31 +515,94 @@ input.search-header, input.search-header:hover, input.search-header:focus {
         float: none
     }
 
-        .box-colors div {
-            height: 60px;
-            width: 49%;
-            float: left;
-            margin-bottom: 15px;
-        }
+    .box-colors div {
+        height: 60px;
+        width: 49%;
+        float: left;
+        margin-bottom: 15px;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 992px) {
     nav .brand-logo {
-        left: 5%
+        left: 12%;
+        top: 6px;
     }
 }
 
 .editprofilebox {
-    padding: 20px;
-    margin: 15px 10px;
-    /*width: 1100px;*/
+    margin: 15px auto;
+    width: 500px;
     background-color: #fff;
-    height: 1100px;
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
     text-align: center;
     border-radius: 1px;
+    padding-bottom: 30px;
+}
+.editprofilebox .input-field input:focus{
+    border-bottom: 1px solid #FF0055 !important;
+    box-shadow: 0 1px 0 0 #FF0055 !important
+}
+.editprofilebox .box-colors{
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+.editprofilebox .box-colors div{
+    width: 50%;
+}
+.editprofilebox .dp-box{
+    padding: 50px 0;
+    text-align: center;
+}
+.editprofilebox .dp-box a{
+    color: #FF0055;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+}
+#edit-image{
+    max-width:550px;
+    width: 95%;
+}
+.modal .modal-footer a, .modal .modal-footer a:hover {
+    text-transform: none !important;
+    font-size: 18px;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    line-height: 20px;
+    padding: 7px 30px;
+    margin: 20px 0 0 30px !important;
+}
+.cropnsave{
+    box-shadow: none;
+    background-color: #00DEF7 !important;
+    padding: 7px 25px !important;
+    border-radius: 20px;
+    color: #fff;
+    float:right;
+    font-weight: bold;
+    font-size: 14px  !important;
+}
+.cropArea{
+    /*background: url("../images/update_default2.jpg") no-repeat center transparent;*/
+    height: 300px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.cropdiv{
+    background-color: #000;
+    margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
 }
 
 .edit-font {
@@ -526,6 +645,33 @@ input.search-header, input.search-header:hover, input.search-header:focus {
 .responsive-img-box {
     max-width: 100%;
     height: 100%;
+}
+#thankyou-modal{
+    width: 320px;
+    padding: 40px 20px;
+    text-align: center;
+    
+}
+#thankyou-modal img{
+    max-width: 100px;
+    margin-bottom: 5px;
+}
+#thankyou-modal p.name{
+    color: #000;
+    font-size: 16px;
+}
+#thankyou-modal p.text{
+    color: #666;
+    font-size: 16px;
+    margin: 20px 0;
+}
+#thankyou-modal .update-profile-button{
+    background-color: #FF0055;
+    padding: 10px 40px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
 }
 
 
