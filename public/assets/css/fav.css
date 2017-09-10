@@ -580,7 +580,7 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     height: auto;
     line-height: 20px;
     padding: 7px 30px;
-    margin: 20px 0 0 30px !important;
+    margin: 0 0 0 30px !important;
 }
 .cropnsave{
     box-shadow: none;
@@ -600,7 +600,7 @@ input.search-header, input.search-header:hover, input.search-header:focus {
 }
 .cropdiv{
     background-color: #000;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     height: 300px;
     width: 100%;
 }

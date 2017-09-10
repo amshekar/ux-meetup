@@ -24,7 +24,7 @@
 
                 <div class="dp-box">
                     <img class="editdp" ng-src="{{myCroppedImage|| (user.picture || 'assets/images/upload.png')}}" />
-                    <a href="javascript:void(0);" onclick="$('#edit-image').modal('open')" class="modal-trigger">Edit Image</a>
+                    <a href="javascript:void(0);" onclick="open_edit_image_popup()" class="modal-trigger">Edit Image</a>
                 </div>
 
                 <div class="row">
@@ -120,7 +120,7 @@
                     <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
                 </div>
             </div>
-            <input type="file" id="fileInput" name="change photo" accept="image/*" />
+            <input type="file" id="fileInput" name="change photo" accept="image/*" style="opacity: 0;" />
         </div>
         <div class="modal-footer">
             <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green cropnsave ">Crop &amp; Save</a>
@@ -144,4 +144,9 @@
         $('.tooltipped').tooltip({delay: 50});
         $('.modal').modal({dismissible: false});
     });
+    
+    function open_edit_image_popup(){
+        $('#edit-image').modal('open');
+        $('#fileInput').trigger('click');
+    }
 </script>
