@@ -21,7 +21,7 @@
                     <img  ng-src="{{profile.picture ||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
                 </div>
                 <div class="box-name">{{profile.displayName}}</div>
-                <div class="box-location">{{profile.designation}}{{profile.designation?", ":" "}}{{profile.location?profile.location:" location"}}</div>
+                <div class="box-location">{{profile.designation}}{{profile.designation?", ":" "}}{{profile.location?profile.location:" "}}</div>
                 <div class="box-colors">
                     <div class="color-one" ng-style="{'background-color':profile.color[0]}"></div>
                     <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
@@ -31,8 +31,8 @@
                   
                     <a class="box-views left" target="_blank"><i></i> <span>124</span></a> 
                     <a class="box-likes left" target="_blank"><i></i> <span>23456</span></a>
-                    <a class="box-behace right" target="_blank"><i></i></a>
-                    <a class="box-dribble right" target="_blank" ><i></i></a>
+                    <a class="box-behace right" target="_blank" ng-href="{{profile.behance}}" ng-if="profile.behance"><i></i></a>
+                    <a class="box-dribble right" target="_blank" ng-href="{{profile.dribble}}" ng-if="profile.dribble"><i></i></a>
                 </div>
             </div>
         </div>
