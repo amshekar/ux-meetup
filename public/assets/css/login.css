@@ -33,7 +33,7 @@ html, body {
     padding: 0;
     position: relative;
     min-height: 100vh;
-    background-color: #fbfbfb
+    background-color: #F7F7F7;
 }
 
 .login-brand-logo {
@@ -44,10 +44,10 @@ html, body {
     padding: 70px 0 0
 }
 
-    .login-brand-logo img {
-        width: 75px;
-        height: 75px
-    }
+.login-brand-logo img {
+    width: 75px;
+    height: 75px
+}
 
 .login-with, .register {
     font-size: 30px;
@@ -65,25 +65,25 @@ html, body {
     cursor: pointer
 }
 
-    .login-with-social i {
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        -moz-transition: all .3s;
-        -webkit-transition: all .3s;
-        transition: all .3s
-    }
+.login-with-social i {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s
+}
 
-    .login-with-social:hover i {
-        -moz-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1)
-    }
+.login-with-social:hover i {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
 
-    .login-with-social .dribble {
-        background: url(../images/login-with-dribble.png) no-repeat center center transparent;
-        background-size: contain
-    }
+.login-with-social .dribble {
+    background: url(../images/login-with-dribble.png) no-repeat center center transparent;
+    background-size: contain
+}
 
 .fb-button, .fb-button:hover {
     background: #4c66a4;
@@ -95,10 +95,10 @@ html, body {
     box-shadow: none;
 }
 
-    .fb-button span, .fb-button i {
-        display: inline-block;
-        vertical-align: middle;
-    }
+.fb-button span, .fb-button i {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 .login-with-social .facebook {
     background: url(../images/fb.png) no-repeat center center transparent;
@@ -120,12 +120,12 @@ html, body {
     text-align: center
 }
 
-    .login-directly .login-form, .login-directly .sign-form {
-        max-width: 390px;
-        margin: 0 auto;
-        display: inline-block;
-        width: 90%
-    }
+.login-directly .login-form, .login-directly .sign-form {
+    max-width: 390px;
+    margin: 0 auto;
+    display: inline-block;
+    width: 90%
+}
 
 .login-form label:not(.active) {
     font-size: 16px;
@@ -203,20 +203,20 @@ html, body {
     box-shadow: 0 1px 0 0 #ccc !important
 }
 
-    .input-field input, .input-field input:focus {
-        border-bottom: 1px solid #000 !important;
-        box-shadow: 0 1px 0 0 #000 !important
-    }
+.input-field input, .input-field input:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important
+}
 
-        .input-field input.valid {
-            border-bottom: 1px solid #000 !important;
-            box-shadow: 0 1px 0 0 #000 !important
-        }
+.input-field input.valid {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important
+}
 
-        .input-field input.invalid {
-            border-bottom: 1px solid red !important;
-            box-shadow: 0 1px 0 0 red !important
-        }
+.input-field input.invalid {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important
+}
 
 .input-field .prefix.active {
     color: #000;
@@ -239,13 +239,13 @@ html, body {
     font-weight: bold;
 }
 
-    .input-field span.message.error {
-        color: #ff5700;
-    }
+.input-field span.message.error {
+    color: #ff5700;
+}
 
-    .input-field span.message.info {
-        color: #00bfd8;
-    }
+.input-field span.message.info {
+    color: #00bfd8;
+}
 
 .input-field.terms-conditions span.message {
     /*    bottom: -14px;*/
@@ -255,8 +255,8 @@ html, body {
     top: 3px;
 }
 .text-error{
-   color: #ff5700; 
+    color: #ff5700; 
 }
 .text-info{
-  color: #00bfd8;
+    color: #00bfd8;
 }

@@ -7,36 +7,40 @@
         height: 250px;
     }</style>
 <div class="body-container">       
-    <div class="grid-continer">        
-         <h1 class="login-with text-muted">My Profile</h1>
-        <div class="row ">
-            <div class="col s2" >
-                     <p style="text-align:center">
-                        <span> 
-                         <input type="file" id="fileInput" name="change photo" accept="image/*" />
-                        </span>                       
-                    </p>                    
+    <div class="grid-continer">
+
+        <!--<div class="row ">-->
+        <!--            <div class="col s2" >
+                        <p style="text-align:center">
+                            <span> 
+                                <input type="file" id="fileInput" name="change photo" accept="image/*" />
+                            </span>                       
+                        </p>
+                        <div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">
                         <div>
-                        <div class="cropArea"> 
-                            <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
-                        </div>                        
-                    </div>
-            </div>
-        <div class="col s6 offset-s2 edit-profile editprofilebox ">
+                            <div class="cropArea"> 
+                                <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                            </div>
+        
+                        </div>
+                    </div>-->
+        <div class="edit-profile editprofilebox ">
+            <a class=" modal-trigger" href="javascript:void(0)" onclick="$('#thankyou-modal').modal('open')">Thankyou modal</a>
+
             <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
-                 <div class="row">
-                  &nbsp;
+
+                <div class="dp-box">
+                    <img class="editdp" ng-src="{{myCroppedImage|| (user.picture || 'assets/images/upload.png')}}" />
+                    <a href="javascript:void(0);" onclick="open_edit_image_popup()" class="modal-trigger">Edit Image</a>
                 </div>
-                <div class="row">
-                   <img class="responsive-img editdp" ng-src="{{myCroppedImage || (user.picture || 'assets/images/upload.png')}}" />
-                </div>                 
+
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
                         <input id="displayname" name="displayname" type="text" class="form-control" ng-model="user.displayName" required />
                         <div class="help-block text-error" ng-if="editprofileform.displayname.$dirty" ng-messages="editprofileform.displayname.$error">
-                        <div ng-message="required">You must enter your display name.</div>
-                    </div>
+                            <div ng-message="required">You must enter your display name.</div>
+                        </div>
                     </div>                    
                 </div>
                 <div class="row">
@@ -44,27 +48,27 @@
                         <label class="active">Email Address</label>
                         <input id="email" name="email" type="text" class="form-control" ng-model="user.email" required />
                         <div class="help-block text-error" ng-if="editprofileform.email.$dirty" ng-messages="editprofileform.email.$error">
-                        <div ng-message="required">You must enter your email.</div>
+                            <div ng-message="required">You must enter your email.</div>
+                        </div>
                     </div>
-                    </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="designation">Designation</label>
                         <input id="designation" type="text" class="validate" name="designation" ng-model="user.designation" required/>
                         <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
-                        <div ng-message="required">You must enter your designation.</div>
+                            <div ng-message="required">You must enter your designation.</div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active">Location</label>
                         <input id="location" name="location" type="text" class="form-control" ng-model="user.location" required />
                         <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
-                        <div ng-message="required">You must enter your Location.</div>
-                    </div>
+                            <div ng-message="required">You must enter your Location.</div>
+                        </div>
                     </div>                   
                 </div>
                 <div class="row">
@@ -72,18 +76,18 @@
                         <label class="active" for="dribble">Dribble Link</label>
                         <input id="dribble" name="dribble" type="url" class="form-control" ng-model="user.dribble"  />
                         <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
-                        <div ng-message="required">You must enter your dribble website.</div>
-                    </div>
+                            <div ng-message="required">You must enter your dribble website.</div>
+                        </div>
 
                     </div>
-                    </div>
+                </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="behance">Behance Link</label>
                         <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  />
                         <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
-                        <div ng-message="required">You must enter your behance website.</div>
-                    </div>
+                            <div ng-message="required">You must enter your behance website.</div>
+                        </div>
 
                     </div>
                 </div>
@@ -93,7 +97,8 @@
                         <label for="profilefont" class="active">Favourite Fonts</label>
                         <a ui-sref="setting.color" class="edit-font"><i class="small material-icons">mode_edit</i></a>
                     </div>
-                </div>                
+                </div>
+
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active"> Favourite Colors</label>
@@ -105,22 +110,50 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="input-field">
-                    <button type="submit" style="width: 80%;" class="waves-effect waves-light btn signup-button">Update Information</button>
+                    <div class="input-field">
+                        <button type="submit" style="width: 95%;margin-top: 15px;" class="waves-effect waves-light btn signup-button">Update Information</button>
+                    </div>
                 </div>
-                 </div>
             </form>
-        </div>
-        </div>
-       
 
+        </div>
     </div>
+</div>
+<div id="edit-image" class="modal">
+    <div class="modal-content">
+        <div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">
+            <div class="cropdiv">
+                <div class="cropArea"> 
+                    <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                </div>
+            </div>
+            <input type="file" id="fileInput" name="change photo" accept="image/*" style="opacity: 0;" />
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green cropnsave ">Crop &amp; Save</a>
+            <a href="javascript:void(0);" class="modal-action modal-close btn-flat ">Cancel</a>
+        </div>
+    </div>
+</div>
 
-
+<div id="thankyou-modal" class="modal">
+    <div class="modal-content">
+        <img src="../assets/images/logo-icon.png" alt="designfav">
+        <p class="name">Hi, Srinivasulu Palle</p>
+        <p class="text">Thankyou for submitting your favourite color and fonts</p>
+        
+         <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
+    </div>
 </div>
 
 <script>
     $(document).ready(function () {
-        $('.tooltipped').tooltip({ delay: 50 });
+        $('.tooltipped').tooltip({delay: 50});
+        $('.modal').modal({dismissible: false});
     });
+    
+    function open_edit_image_popup(){
+        $('#edit-image').modal('open');
+        $('#fileInput').trigger('click');
+    }
 </script>
