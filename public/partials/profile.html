@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
-                        <input id="displayname" name="displayname" type="text" class="form-control" ng-model="user.displayName" required />
+                        <input id="displayname" name="displayname" type="text" class="form-control mandatory" ng-model="user.displayName" required />
                         <div class="help-block text-error" ng-if="editprofileform.displayname.$dirty" ng-messages="editprofileform.displayname.$error">
                             <div ng-message="required">You must enter your display name.</div>
                         </div>
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="designation">Designation</label>
-                        <input id="designation" type="text" class="validate" name="designation" ng-model="user.designation" required/>
+                        <input id="designation" type="text" class="validate mandatory" name="designation" ng-model="user.designation" required/>
                         <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
                             <div ng-message="required">You must enter your designation.</div>
                         </div>
@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active">Location</label>
-                        <input id="location" name="location" type="text" class="form-control" ng-model="user.location" required />
+                        <input id="location" name="location" type="text" class="form-control mandatory" ng-model="user.location" required />
                         <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
                             <div ng-message="required">You must enter your Location.</div>
                         </div>
@@ -91,13 +91,7 @@
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group input-field col s12">
-                        <input id="profilefont" name="profilefont" type="text" class="form-control" ng-model="user.font" readonly />
-                        <label for="profilefont" class="active">Favourite Fonts</label>
-                        <a ui-sref="setting.color" class="edit-font"><i class="small material-icons">mode_edit</i></a>
-                    </div>
-                </div>
+
 
                 <div class="row">
                     <div class="form-group input-field col s12">
@@ -107,6 +101,13 @@
                             <div class="color-one" ng-style="{'background-color':user.color[0]}"></div>
                             <div class="color-two" ng-style="{'background-color':user.color[1]}"></div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group input-field col s12">
+                        <input id="profilefont" name="profilefont" type="text" class="form-control" ng-model="user.font" readonly />
+                        <label for="profilefont" class="active">Favourite Fonts</label>
+                        <a ui-sref="setting.color" class="edit-font"><i class="small material-icons">mode_edit</i></a>
                     </div>
                 </div>
                 <div class="row">
@@ -141,18 +142,19 @@
         <img src="../assets/images/logo-icon.png" alt="designfav">
         <p class="name">Hi, Srinivasulu Palle</p>
         <p class="text">Thankyou for submitting your favourite color and fonts</p>
-        
-         <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
+
+        <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
     </div>
 </div>
 
 <script>
     $(document).ready(function () {
         $('.tooltipped').tooltip({delay: 50});
-        $('.modal').modal({dismissible: false});
+        $('.modal').modal();
+        $('#edit-image').modal({dismissible: false});
     });
-    
-    function open_edit_image_popup(){
+
+    function open_edit_image_popup() {
         $('#edit-image').modal('open');
         $('#fileInput').trigger('click');
     }
