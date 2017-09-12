@@ -344,9 +344,11 @@ nav.fixed {
     color: #A09B9B;
     font-size: 16px;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /*    white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;*/
+    min-height: 24px;
+    margin-bottom: 5px;
 }
 
 .box-colors {
