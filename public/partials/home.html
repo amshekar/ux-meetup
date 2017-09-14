@@ -5,7 +5,7 @@
     <h1 class="design-fav">Hello <span>Designers!</span></h1>
     <!--<typer words="['Designers!', 'Designers!']" type-time='300' backspace-time='150' start-delay='1500' start-typing="true" highlight-background="#fbfbfb" pause="1500"></typer>-->
     <h1 class="fav-color-font-head">Designerfav is a place to share your<br/> favourite color &amp; fonts to all your designer mates!</h1>
-    <div class="center-align">
+    <div ng-if="!isAuthenticated()" class="center-align">
         <a ui-sref="profile" class="submit-color-font">Submit your fav color &amp; font</a>
     </div>
 
