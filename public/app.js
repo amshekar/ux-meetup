@@ -45,6 +45,12 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
                 templateUrl: '/partials/home.html',
                 controllerAs: 'vm'
             })
+            .state('about', {
+                url: '/about',
+                controller: 'AboutCtrl',
+                templateUrl: '/partials/about.html',
+                controllerAs: 'vm'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: '/partials/login.html',
