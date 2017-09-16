@@ -7,14 +7,16 @@
  </summary>
  --------------------------------------------------------------------------------------------------------------------*/
 (function (angular) {
-    function HomeCtrl($scope, $http, $auth, toastr, Account) {
+    function HomeCtrl($scope, $http, $auth,$window, toastr, Account) {
         angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
         var vm = this;
         init();  
         vm.profiles =[];
+
         function HandleSaveSuccess(result) {
             //ResetForm();
             //debugger;
+
             if(result.data.length == 0 )
             {
                 vm.noMorePossibleResults = true;
@@ -26,34 +28,55 @@
             }
             
             vm.noMorePossibleResults = false;
-           // vm.randomImage = Account.getRandomNumber();
-            //return result.data;            
+             
         }
         function HandleSaveFailure(result) {
             toastr.error(result.message, result.status);
             //need to remove alert or implent logging
-            //window.alert("error" + result);
+            console.log("error" + result);
         }
         
         vm.currentPage = 0;
         vm.noMorePossibleResults = false;        
-        vm.getAllProfiles = function () {
+        vm.getAllProfiles = function () {           
             vm.noMorePossibleResults = true;
             Account.getAllProfiles(vm.currentPage).then(HandleSaveSuccess, HandleSaveFailure);   
-            vm.currentPage += 1;   
-            //vm.randomImage = Math.floor(Math.random() * 12 + 1) + '.jpg';
-            vm.randomImage = Account.getRandomNumber();
+            vm.currentPage += 1;  
+            vm.randomImage = Account.getRandomNumber();   
             
         };
         
-
+        function openThankyouPopup() {
+            $('#thankyou-modal').modal('open');
+            
+        }
+      
 
         function ResetForm() {
             vm.profiles = [];            
         }
+        function IsProfileUpdated()
+        {  
+                     
+            if((typeof localStorage["currentUser"] !== "undefined")){
+                var profile=JSON.parse($window.localStorage.currentUser);
+                
+                if(typeof profile.designation === "undefined" || typeof profile.dribble==="undefined")
+                    isProfileUpdated=false;
+                else
+                    isProfileUpdated=true;
+            }
+            else
+                isProfileUpdated=true;  
+            return isProfileUpdated;
+        }
 
         function init() {
-            vm.profiles = [];            
+            vm.profiles = [];   
+            if(!IsProfileUpdated())
+                {
+                    openThankyouPopup();
+                }         
             //vm.rotateCard = RotateCard;
         }
 
@@ -63,7 +86,7 @@
 
     }
 
-    HomeCtrl.$inject = ["$scope", "$http", "$auth", "toastr", "Account"];
+    HomeCtrl.$inject = ["$scope", "$http", "$auth","$window", "toastr", "Account"];
     angular.module('MyApp').controller("HomeCtrl", HomeCtrl);
 
 })(angular);
