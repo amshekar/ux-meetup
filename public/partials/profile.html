@@ -17,7 +17,7 @@
                         </div>
                     </div>-->
         <div class="edit-profile editprofilebox ">
-            <a class=" modal-trigger" href="javascript:void(0)" onclick="$('#thankyou-modal').modal('open')">Thankyou modal</a>
+            <!-- <a class=" modal-trigger" href="javascript:void(0)" onclick="$('#thankyou-modal').modal('open')">Thankyou modal</a> -->
 
             <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
 
@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="dribble">Dribble Link</label>
-                        <input id="dribble" name="dribble" type="url" class="form-control" ng-model="user.dribble"  />
+                        <input id="dribble" name="dribble" type="url" class="form-control mandatory" ng-model="user.dribble"  required/>
                         <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
                             <div ng-message="required">You must enter your dribble website.</div>
                         </div>

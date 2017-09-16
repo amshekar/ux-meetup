@@ -40,6 +40,15 @@
 
     </div>
     <div class="space-200"></div>
+    <div id="thankyou-modal" class="modal">
+        <div class="modal-content">
+            <img src="../assets/images/logo-icon.png" alt="designfav">
+            <p class="name">Hi, {{currentUser.displayName?currentUser.displayName:currentUser.email}}</p>
+            <p class="text">Thankyou for submitting your favourite color and fonts</p>
+    
+            <a href="javascript:void(0);" ui-sref="profile" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
+        </div>
+    </div>
     <!-- material-scrolltop button 
     <button class="material-scrolltop" type="button">
         <span></span>
@@ -52,6 +61,7 @@
                 setTimeout(autoplay, 80000);
             }
             $('body').materialScrollTop();
+            $('.modal').modal();
         });
     </script>
 </div>
