@@ -61,7 +61,9 @@
             if((typeof localStorage["currentUser"] !== "undefined")){
                 var profile=JSON.parse($window.localStorage.currentUser);
                 
-                if(typeof profile.designation === "undefined" || typeof profile.dribble==="undefined")
+                if(typeof profile.designation === "undefined")
+                    isProfileUpdated=false;
+                else if(!(typeof profile.dribble==="undefined" || typeof profile.behance==="undefined"))
                     isProfileUpdated=false;
                 else
                     isProfileUpdated=true;

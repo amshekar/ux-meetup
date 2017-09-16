@@ -66,9 +66,9 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="dribble">Dribble Link</label>
-                        <input id="dribble" name="dribble" type="url" class="form-control mandatory" ng-model="user.dribble"  required/>
+                        <input id="dribble" name="dribble" type="url" class="form-control mandatory" ng-model="user.dribble"  ng-required="!(user.dribble.length ||user.behance.length)"/>
                         <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
-                            <div ng-message="required">You must enter your dribble website.</div>
+                            <div ng-message="required">You must enter your dribble or behance website.</div>
                         </div>
 
                     </div>
@@ -76,9 +76,9 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="behance">Behance Link</label>
-                        <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  />
+                        <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  ng-required="!(user.dribble.length ||user.behance.length)"/>
                         <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
-                            <div ng-message="required">You must enter your behance website.</div>
+                            <div ng-message="required">You must enter your behance or dribble website.</div>
                         </div>
 
                     </div>
