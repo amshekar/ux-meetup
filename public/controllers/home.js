@@ -12,6 +12,7 @@
         var vm = this;
         init();
         vm.profiles = [];
+        vm.isAllowLikes = false;
 
         function HandleSaveSuccess(result) {
             //ResetForm();
@@ -21,19 +22,22 @@
                 vm.noMorePossibleResults = true;
                 return;
             }
+            if(typeof $window.localStorage.currentUser != 'undefined')
+                vm.isAllowLikes = true;
+
             for (i = 0; i < result.data.length; i++) {
                 var currentUser = result.data[i];
                 currentUser.viewsCount = (currentUser.views != 'undefined') ? currentUser.views.length : 0;
                 currentUser.likesCount = (currentUser.likes != 'undefined') ? currentUser.likes.length : 0;
                 currentUser.isLiked = false;
 
-                if (currentUser.likes != 'undefined') {
+                if (currentUser.likes != 'undefined' && typeof $window.localStorage.currentUser != 'undefined') {
                     var profile = JSON.parse($window.localStorage.currentUser);
 
                     var index = currentUser.likes.indexOf(profile.email);
-                    if(index != -1)
+                    if (index != -1)
                         currentUser.isLiked = true;
-                    }
+                }
 
                 vm.profiles.push(currentUser);
             }
@@ -57,18 +61,31 @@
 
         };
 
-        vm.like = function (username) {
-            var currentUser = JSON.parse($window.localStorage.currentUser);
-            Account.like(username, { email: currentUser.email }).then(function (result) {
+        vm.updateLike = function (user) {
+            if (typeof $window.localStorage.currentUser != 'undefined') {
+                var currentUser = JSON.parse($window.localStorage.currentUser);
+                if (user.isLiked) {
+                    user.likesCount = user.likesCount - 1;
+                    user.isLiked = false;
+                    unLike(user.email, currentUser.email);
+                } else {
+                    user.likesCount = user.likesCount + 1;
+                    user.isLiked = true;
+                    like(user.email, currentUser.email);
+                }
+            }
+        }
+
+        function like(username, email) {
+            Account.like(username, { email: email }).then(function (result) {
                 var test = result;
             }, function (result) {
                 var test = result;
             });
         }
 
-        vm.unLike = function (username) {
-            var currentUser = JSON.parse($window.localStorage.currentUser);
-            Account.unLike(username, { email: currentUser.email }).then(function (result) {
+        function unLike(username, email) {
+            Account.unLike(username, { email: email }).then(function (result) {
                 var test = result;
             }, function (result) {
                 var test = result;
@@ -93,7 +110,6 @@
         function ResetForm() {
             vm.profiles = [];
         }
-<<<<<<< HEAD
         function IsProfileUpdated() {
 
             if ((typeof localStorage["currentUser"] !== "undefined")) {
@@ -101,20 +117,8 @@
 
                 if (typeof profile.designation === "undefined")
                     isProfileUpdated = false;
-                else if (!(typeof profile.dribble === "undefined" || typeof profile.behance === "undefined"))
+                else if ((typeof profile.dribble === "undefined" && typeof profile.behance === "undefined"))
                     isProfileUpdated = false;
-=======
-        function IsProfileUpdated()
-        {  
-                     
-            if((typeof localStorage["currentUser"] !== "undefined")){
-                var profile=JSON.parse($window.localStorage.currentUser);
-                
-                if(typeof profile.designation === "undefined")
-                    isProfileUpdated=false;
-                else if((typeof profile.dribble==="undefined" && typeof profile.behance==="undefined"))
-                    isProfileUpdated=false;
->>>>>>> 114b76fc4fd1bf772148b55a031ac6ee80c15ef6
                 else
                     isProfileUpdated = true;
             }
