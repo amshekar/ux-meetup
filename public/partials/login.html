@@ -14,7 +14,7 @@
         </div>
         <div class="or-text">OR</div>
         <div class="login-directly">
-            <form class="login-form" method="post" ng-submit="login()" name="loginForm">
+            <form class="login-form" method="post" ng-submit="loginForm.$valid && login()" name="loginForm" novalidate>
                 <div class="input-field">
                     <input id="email" type="email" class="validate" name="email" ng-model="user.email" required autofocus>
                     <label for="email">Email Address</label>

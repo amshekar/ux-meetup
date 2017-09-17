@@ -19,13 +19,13 @@
         <div class="edit-profile editprofilebox ">
             <!-- <a class=" modal-trigger" href="javascript:void(0)" onclick="$('#thankyou-modal').modal('open')">Thankyou modal</a> -->
 
-            <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
+            <form class="profile-form col s12" method="post" ng-submit="editprofileform.$valid && updateProfile()" name="editprofileform" novalidate>
 
                 <div class="dp-box">
                     <img class="editdp" ng-src="{{myCroppedImage|| (user.picture || 'assets/images/upload.png')}}" />
                     <a href="javascript:void(0);" onclick="open_edit_image_popup()" class="modal-trigger">Edit Image</a>
                 </div>
-
+                <span class="error_message">All fields are mandatory</span>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
@@ -48,8 +48,8 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="designation">Designation</label>
-                        <input id="designation" type="text" class="validate mandatory" name="designation" ng-model="user.designation" required/>
-                        <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
+                        <input id="designation" type="text" class="validate mandatory" name="designation" ng-model="user.designation" ng-required="true"/>
+                        <div class="help-block text-error" role="alert" ng-if="editprofileform.$submitted" ng-messages="editprofileform.designation.$error">
                             <div ng-message="required">You must enter your designation.</div>
                         </div>
                     </div>
@@ -57,9 +57,9 @@
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active">Location</label>
-                        <input id="location" name="location" type="text" class="form-control mandatory" ng-model="user.location" required />
-                        <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
-                            <div ng-message="required">You must enter your Location.</div>
+                        <input id="location" placeholder="Ex: Hyderabad, Bangalore" name="location" type="text" class="form-control mandatory" ng-model="user.location" required />
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.location.$error">
+                            <div ng-message="required">You must enter your Location. Ex: Hyderabad, Bangalore etc.,</div>
                         </div>
                     </div>                   
                 </div>
@@ -67,8 +67,8 @@
                     <div class="form-group input-field col s12">
                         <label class="active" for="dribble">Dribble Link</label>
                         <input id="dribble" name="dribble" type="url" class="form-control mandatory" ng-model="user.dribble"  ng-required="!(user.dribble.length ||user.behance.length)"/>
-                        <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
-                            <div ng-message="required">You must enter your dribble or behance website.</div>
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.dribble.$error">
+                            <div ng-message="required">You must enter your <b>dribble</b> or <b>behance</b> link.</div>
                         </div>
 
                     </div>
@@ -77,8 +77,8 @@
                     <div class="form-group input-field col s12">
                         <label class="active" for="behance">Behance Link</label>
                         <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  ng-required="!(user.dribble.length ||user.behance.length)"/>
-                        <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
-                            <div ng-message="required">You must enter your behance or dribble website.</div>
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.behance.$error">
+                            <div ng-message="required">You must enter your <b>behance</b> or <b>dribble</b> link.</div>
                         </div>
 
                     </div>

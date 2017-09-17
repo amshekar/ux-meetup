@@ -26,7 +26,7 @@
                         })
                 })
                 .catch(function (error) {
-                    toastr.error(error.data.message, error.status);
+                    toastr.error("We couldn’t find an account matching the email and password you entered. Please check your email and password and try again.");
                 });
         };
 
@@ -60,7 +60,8 @@
                         toastr.error(error.message);
                     } else if (error.data) {
                         // HTTP response error from server
-                        toastr.error(error.data.message, error.status);
+                        toastr.error(error.data.message);
+                       // toastr.error(error.data.message, error.status);
                     } else {
                         toastr.error(error);
                     }

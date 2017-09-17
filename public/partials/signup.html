@@ -6,13 +6,13 @@
     <div class="body-container">
         <h1 class="register">Register</h1>
         <div class="login-directly">
-            <form class="sign-form" method="post" ng-submit="signup()" name="signupForm">
+            <form class="sign-form" method="post" ng-submit="signupForm.$valid && signup()" name="signupForm" novalidate>
                 <div class="input-field" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
                     <input id="name" type="text" class="validate" name="displayName" ng-model="user.displayName" required autofocus>
                     <label for="name">Name</label>
                     <span class="message info">Your Good name?</span>
                     <span class="ion-person form-control-feedback"></span>
-                    <div class="help-block text-error" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+                    <div class="help-block text-error" ng-if="signupForm.$submitted" ng-messages="signupForm.displayName.$error">
                         <div ng-message="required">You must enter your name.</div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <input id="location" type="text" class="validate" name="location" ng-model="user.location" required autofocus>
                     <label for="location">Location</label>
                     <span class="ion-person form-control-feedback"></span>
-                    <div class="help-block text-error" ng-if="signupForm.location.$dirty" ng-messages="signupForm.location.$error">
+                    <div class="help-block text-error" ng-if="signupForm.$submitted" ng-messages="signupForm.location.$error">
                         <div ng-message="required">You must enter your location.</div>
                     </div>
                     <span class="message error">Enter your location</span>
@@ -29,7 +29,7 @@
                     <input id="email" type="email" class="validate" name="email" ng-model="user.email" required>
                     <label for="email">Email Address</label>
                     <span class="ion-at form-control-feedback"></span>
-                    <div class="help-block text-error" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+                    <div class="help-block text-error" ng-if="signupForm.$submitted" ng-messages="signupForm.email.$error">
                         <div ng-message="required">Your email address is required.</div>
                         <div ng-message="pattern">Your email address is invalid.</div>
                     </div>
@@ -39,7 +39,7 @@
                     <input id="password" type="password" class="validate" name="password" ng-model="user.password" required>
                     <label for="password">Password</label>
                     <span class="ion-key form-control-feedback"></span>
-                    <div class="help-block text-error" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+                    <div class="help-block text-error" ng-if="signupForm.$submitted" ng-messages="signupForm.password.$error">
                         <div ng-message="required">Password is required.</div>
                     </div>
                     <span class="message error">Enter your password</span>
