@@ -641,7 +641,23 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     font-size: 16px;
     color: #9a9a9a
 }
-.toast {
+.toast{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    width:100%;
+    height: 10px;
+    background-color:#f55;
+    padding:0 25px;
+    color: #fff;
+    text-align:center;
+    font-size:14px;
+    font-weight: 300;    
+    font-family: "Avenir Next","Roboto",sans-serif;
+    border-radius: 5px;
+}
+.toast-old {
     border-radius: 2px;
     top: 35px;
     width: auto;
@@ -669,7 +685,7 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     justify-content: space-between;
 }
 .toast {
-    box-shadow: 0 2px 2px 0 rgba(251,251,251, 0.8), 0 1px 5px 0 rgba(251,251,251, 0.8), 0 3px 1px -2px rgba(251,251,251, 0.8);
+    box-shadow: 0 0 0 0 rgba(251,251,251, 0.8), 0 1px 5px 0 rgba(251,251,251, 0.8), 0 3px 1px -2px rgba(251,251,251, 0.8);
 }
 .responsive-img-box {
     max-width: 100%;
