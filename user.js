@@ -9,13 +9,15 @@ var userSchema = {
     website: String,
     picture: String,
     book: String,
-    favdesigner:String,
+    favdesigner: String,
     //picture:[{type:String,match:/^http:\/\//i}],
-    font: { type : Array, default: [] },
-    color: { type : Array, default : [] },
+    font: { type: Array, default: [] },
+    color: { type: Array, default: [] },
     followers: { type: Number, default: 0 },
     following: { type: Number, default: 0 },
     projects: { type: Number, default: 0 },
+    views: { type: Array, default: [] },
+    likes: { type: Array, default: [] },
     status: {
         type: String, default: 'To be or not to be, this is my awesome motto!'
     },
@@ -46,7 +48,7 @@ var userSchema = {
     birthday: Date,
     designation: { type: String }
     //want to link other schema first import that schema with require and link like below
-   // ,complextype:ComplexTypeSchema
+    // ,complextype:ComplexTypeSchema
 };
 
 

@@ -28,6 +28,7 @@
     "angular-typer": "^0.5.5",
     "serve-favicon": "^2.4.3"
   },
-  "engines": { "node": "6.9.1 || 8.1.x" }
- 
+  "engines": {
+    "node": "6.9.1 || 8.1.x"
+  }
 }
