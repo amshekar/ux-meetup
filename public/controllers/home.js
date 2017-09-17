@@ -110,20 +110,7 @@
         function ResetForm() {
             vm.profiles = [];
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        function IsProfileUpdated() {
 
-            if ((typeof localStorage["currentUser"] !== "undefined")) {
-                var profile = JSON.parse($window.localStorage.currentUser);
-
-                if (typeof profile.designation === "undefined")
-                    isProfileUpdated = false;
-                else if ((typeof profile.dribble === "undefined" && typeof profile.behance === "undefined"))
-                    isProfileUpdated = false;
-=======
-=======
->>>>>>> f0fccfed9285885bded43172c88f342a962f0507
         function IsProfileUpdated()
         {  
                      
@@ -134,10 +121,6 @@
                     isProfileUpdated=false;
                 else if((typeof profile.dribble==="undefined" && typeof profile.behance==="undefined"))
                     isProfileUpdated=false;
-<<<<<<< HEAD
->>>>>>> f0fccfed9285885bded43172c88f342a962f0507
-=======
->>>>>>> f0fccfed9285885bded43172c88f342a962f0507
                 else
                     isProfileUpdated = true;
             }
