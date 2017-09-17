@@ -18,11 +18,18 @@
                 <div class="input-field">
                     <input id="email" type="email" class="validate" name="email" ng-model="user.email" required autofocus>
                     <label for="email">Email Address</label>
-                    <span class="message error">Please enter a valid email address</span>
+                    <div class="help-block text-error" ng-if="loginForm.$submitted" ng-messages="loginForm.email.$error">
+                        <div ng-message="required">Please enter a valid email address.</div>
+                        <div ng-message="email">Your email address is invalid.</div>
+                    </div>
+                    <!-- <span class="message error">Please enter a valid email address</span> -->
                 </div>
                 <div class="input-field">
                     <input id="password" type="password" class="validate" name="password" ng-model="user.password" required>
                     <label for="password">Password</label>
+                    <div class="help-block text-error" ng-if="loginForm.$submitted" ng-messages="loginForm.password.$error">
+                        <div ng-message="required">Please enter a password.</div>
+                    </div>
                     <span class="message error">Please enter a password</span>
                     <!--phase 2 <a href="" class="forgot-password">Forgot?</a>-->
                 </div>
