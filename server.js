@@ -285,8 +285,10 @@ app.put('/api/me', ensureAuthenticated, function (req, res) {
     user.mobile = req.body.mobile || user.mobile;
     user.birthday = req.body.birthday || user.birthday;
     user.designation = req.body.designation || user.designation;
-    user.behance = req.body.behance || user.behance;
-    user.dribble = req.body.dribble || user.dribble;
+    user.behance = req.body.behance;
+    user.dribble = req.body.dribble;
+    // user.behance = req.body.behance || user.behance;
+    // user.dribble = req.body.dribble || user.dribble;
     user.updated_at = new Date();
 
     user.save(function (err) {

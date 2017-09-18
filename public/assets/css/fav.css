@@ -623,7 +623,7 @@ input.search-header, input.search-header:hover, input.search-header:focus {
 }
 .cropArea{
     /*background: url("../images/update_default2.jpg") no-repeat center transparent;*/
-    height: 150px;    
+    height: 250px;    
     border-radius: 50%;
     margin: 0 auto;
 }
