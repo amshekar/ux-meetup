@@ -13,12 +13,11 @@
         &nbsp;
     </div>
     <div id="list-container" class="grid-continer">
-        <div infinite-scroll='vm.getAllProfiles()' infinite-scroll-distance='0'
-             infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
+        <div infinite-scroll='vm.getAllProfiles()' infinite-scroll-distance='0' infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
             <div class="box" ng-repeat="profile in vm.profiles">
                 <div class="box-dp">
                     <!--<img ng-src="{{profile.picture ||'/assets/images/image.png'}}" alt="favepic" class="responsive-img">-->
-                    <img  ng-src="{{profile.picture||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
+                    <img ng-src="{{profile.picture||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
                 </div>
                 <div class="box-name">{{profile.displayName}}</div>
                 <div class="box-location">{{profile.designation}}</div>
@@ -27,11 +26,11 @@
                     <div class="color-one" ng-style="{'background-color':profile.color[0]}"></div>
                     <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
                 </div>
-                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>               
-                <div class="box-social"> 
+                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>
+                <div class="box-social">
 
-                    <a class="box-views left" target="_blank"><i></i> <span>124</span></a> 
-                    <a class="box-likes left" target="_blank"><i></i> <span>23456</span></a>
+                    <a class="box-views left" ng-click="vm.view(profile.email)"><i></i> <span>{{profile.viewsCount}}</span></a>
+                    <a class="box-likes left" ng-click="vm.isAllowLikes ? vm.updateLike(profile):''"><i></i> <span>{{profile.likesCount}}</span></a>
                     <a class="box-behace right" target="_blank" ng-href="{{profile.behance}}" ng-if="profile.behance"><i></i></a>
                     <a class="box-dribble right" target="_blank" ng-href="{{profile.dribble}}" ng-if="profile.dribble"><i></i></a>
                 </div>
@@ -45,7 +44,7 @@
             <img src="../assets/images/logo-icon.png" alt="designfav">
             <p class="name">Hi, {{currentUser.displayName?currentUser.displayName:currentUser.email}}</p>
             <p class="text">Thankyou for submitting your favourite color and fonts</p>
-    
+
             <a href="javascript:void(0);" ui-sref="profile" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
         </div>
     </div>
@@ -55,7 +54,7 @@
     </button>-->
     <script>
         $(function () {
-            $('.carousel.carousel-slider').carousel({fullWidth: true}, setTimeout(autoplay, 4500));
+            $('.carousel.carousel-slider').carousel({ fullWidth: true }, setTimeout(autoplay, 4500));
             function autoplay() {
                 $('.carousel').carousel('next');
                 setTimeout(autoplay, 80000);
@@ -65,4 +64,3 @@
         });
     </script>
 </div>
-
