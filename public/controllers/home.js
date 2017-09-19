@@ -7,7 +7,7 @@
  </summary>
  --------------------------------------------------------------------------------------------------------------------*/
 (function (angular) {
-    function HomeCtrl($scope, $http, $auth, $window, toastr, Account) {
+    function HomeCtrl($scope, $http, $auth, $window,$state, toastr, Account) {
         angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
         var vm = this;
         init();
@@ -74,6 +74,10 @@
                     like(user.email, currentUser.email);
                 }
             }
+        }
+        vm.redirectLogin=function(route)
+        {
+            $state.go('login');
         }
 
         function like(username, email) {
@@ -143,7 +147,7 @@
 
     }
 
-    HomeCtrl.$inject = ["$scope", "$http", "$auth", "$window", "toastr", "Account"];
+    HomeCtrl.$inject = ["$scope", "$http", "$auth", "$window","$state", "toastr", "Account"];
     angular.module('MyApp').controller("HomeCtrl", HomeCtrl);
 
 })(angular);

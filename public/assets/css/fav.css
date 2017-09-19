@@ -421,6 +421,11 @@ nav.fixed {
     background: url(../images/likes.png) no-repeat center center transparent;
     background-size: contain;
 }
+.box-social a.box-unlikes i{
+    width: 22px;
+    background: url(../images/unlike.png) no-repeat center center transparent;
+    background-size: contain;
+}
 .box-social a.box-dribble i{
     width: 25px;
     height: 25px;
@@ -717,6 +722,19 @@ input.search-header, input.search-header:hover, input.search-header:focus {
     text-align: center;
     font-size: 16px;
     color: #fff;
+}
+
+.boxabout {
+    padding: 5px; 
+    margin: 15px 10px;
+    width: 975px;
+    background-color: #fff;
+    /* height: 480px; */
+    display: inline-block;
+    vertical-align: top;
+    /* cursor: pointer; */
+    text-align: left;
+    border-radius: 1px;
 }
 
 
