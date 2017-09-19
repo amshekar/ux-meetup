@@ -2,50 +2,53 @@
     <div class="row">
         &nbsp;
     </div>
-    <h1 class="design-fav">Designerfav. <span><typer words="['Color', 'font']" type-time='300' backspace-time='150' start-delay='1500' start-typing="true" highlight-background="#fbfbfb" pause="1500"></typer></span></h1>
-    <h1 class="fav-color-font-head">Creative Designers favourite colors & fonts</h1>
-    <div class="center-align">
+    <h1 class="design-fav">Hello <span>Designers!</span></h1>
+    <!--<typer words="['Designers!', 'Designers!']" type-time='300' backspace-time='150' start-delay='1500' start-typing="true" highlight-background="#fbfbfb" pause="1500"></typer>-->
+    <h1 class="fav-color-font-head">Designerfav is a place to share your<br/> favourite color &amp; fonts to all your designer mates!</h1>
+    <div ng-if="!isAuthenticated()" class="center-align">
         <a ui-sref="profile" class="submit-color-font">Submit your fav color &amp; font</a>
     </div>
-    <div class="banner">
-        <div class="carousel carousel-slider " data-indicators="true">
-            <div class="carousel-fixed-item center">
-                <!--<a class="btn waves-effect white grey-text darken-text-2"></a>-->
-            </div>
-            <a class="carousel-item responsive-img" href="https://www.aligndpic.com/" target="_blank"><img src="/assets/images/banner2.png"></a>
-            <a class="carousel-item responsive-img" href="http://www.bytes2bots.com/" target="_blank"><img src="/assets/images/banner4.jpg"></a>            
-            <!--<a class="carousel-item responsive-img" href="https://allevents.in/org/designfirst/10989276#" target="_blank"><img src="/assets/images/banner1.png"></a>-->            
 
-        </div>
-    </div>
     <div class="row">
         &nbsp;
     </div>
     <div id="list-container" class="grid-continer">
-        <div infinite-scroll='vm.getAllProfiles()' infinite-scroll-distance='0'
-             infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
+        <div infinite-scroll='vm.getAllProfiles()' infinite-scroll-distance='0' infinite-scroll-container="'#list-container'" infinite-scroll-disabled='vm.noMorePossibleResults'>
             <div class="box" ng-repeat="profile in vm.profiles">
                 <div class="box-dp">
                     <!--<img ng-src="{{profile.picture ||'/assets/images/image.png'}}" alt="favepic" class="responsive-img">-->
-                    <img  ng-src="{{profile.picture ||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
+                    <img ng-src="{{profile.picture||'/assets/images/profile/'+vm.randomImage}}" alt="favepic" class="responsive-img">
                 </div>
                 <div class="box-name">{{profile.displayName}}</div>
-                <div class="box-location">{{profile.designation}}{{profile.designation?", ":" "}}{{profile.location?profile.location:" location"}}</div>
+                <div class="box-location">{{profile.designation}}</div>
+                <div class="box-location">{{profile.location?profile.location:" "}}</div>
                 <div class="box-colors">
                     <div class="color-one" ng-style="{'background-color':profile.color[0]}"></div>
                     <div class="color-two" ng-style="{'background-color':profile.color[1]}"></div>
                 </div>
-                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>               
-                <!--<div class="box-social"> 
-                    <hr>
-                    <a class="box-social-dribble" target="_blank" ng-href="{{profile.dribble}}" ng-if="profile.dribble"><i></i></a>&nbsp;&nbsp;
-                    <a class="box-social-facebook" target="_blank" ng-href="{{profile.behance}}" ng-if="profile.behance"><i></i></a>
-                </div>-->
+                <div class="box-fonts">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</div>
+                <div class="box-social">
+
+                    <a class="box-views left" ng-click="vm.view(profile.email)"><i></i> <span>{{profile.viewsCount}}</span></a>
+                    <!-- <a class="box-likes left" ng-click="vm.isAllowLikes ? vm.updateLike(profile):''"><i></i> <span>{{profile.likesCount}}</span></a> -->
+                    <a ng-class="profile.likesCount>0 ?'box-likes left':'box-unlikes left'" ng-click="isAuthenticated() ? vm.updateLike(profile):vm.redirectLogin(login)"><i></i> <span>{{profile.likesCount}}</span></a>
+                    <a class="box-behace right" target="_blank" ng-href="{{profile.behance}}" ng-if="profile.behance"><i></i></a>
+                    <a class="box-dribble right" target="_blank" ng-href="{{profile.dribble}}" ng-if="profile.dribble"><i></i></a>
+                </div>
             </div>
         </div>
 
     </div>
     <div class="space-200"></div>
+    <div id="thankyou-modal" class="modal">
+        <div class="modal-content">
+            <img src="../assets/images/logo-icon.png" alt="designfav">
+            <p class="name">Hi, {{currentUser.displayName?currentUser.displayName:currentUser.email}}</p>
+            <p class="text">Thankyou for submitting your favourite color and fonts</p>
+
+            <a href="javascript:void(0);" ui-sref="profile" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
+        </div>
+    </div>
     <!-- material-scrolltop button 
     <button class="material-scrolltop" type="button">
         <span></span>
@@ -58,135 +61,7 @@
                 setTimeout(autoplay, 80000);
             }
             $('body').materialScrollTop();
+            $('.modal').modal();
         });
     </script>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="container">
-    <section id="intro" class="intro-section">
-        <div class="container" style="padding:50px;">
-            <div class="row">
-                <div class="col-lg-12 ">
-                    <h1 class="introTxt">Deisgners favourite colors & fonts</h1>
-                    <a class="btn" ui-sref="home" style="background-color: #fff;"><u><b>Submit you fav colors & fonts</b></u></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br>
-    <br>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <img class="img-responsive" src="client/images/18077155_1867408986834305_3339422281253607258_o.png" alt="">
-        </div>
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        <p class="text-center text-muted" if-loading>
-            <span class="fa fa-spinner fa-spin fa-5x"></span>
-        </p>
-    </div>
-    <div class="row">
-
-        <div class="col-md-4 col-sm-6" ng-repeat="profile in vm.profiles">
-
-            <div class="card-container manual-flip">
-                <div class="card">
-                    <div class="front">
-                        <div class="cover">
-
-                        </div>
-                        <div class="user">
-                            <img class="img-circle" src="{{profile.picture?profile.picture:'public/images/gravtar.PNG'}}" />
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h3 class="name">{{profile.displayName}}</h3>
-                                <p>&nbsp;<span class="profession">{{profile.location?profile.location:" location"}}</span></p>
-                                <div class="fav-color">
-                                    <div class="favcolor-first" ng-style="{'background-color':profile.color[0]}"></div>
-                                    <div class="favcolor-second" ng-style="{'background-color':profile.color[1]}"></div>
-                                </div>
-                                <p class="text-center">{{profile.font?profile.font[0]+', ' + profile.font[1]:"select your font" }}</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="header">
-                            <h5 class="motto">{{profile.status}}</h5>
-                        </div>
-                        <div class="content">
-                            <div class="main">
-                                <h4 class="text-center">Job Description</h4>
-                                <p class="text-center">{{profile.jobDescription}}</p>
-                                <div class="stats-container">
-                                    <div class="stats">
-                                        <h4>{{profile.followers}}</h4>
-                                        <p>
-                                            Followers
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>{{profile.following}}</h4>
-                                        <p>
-                                            Following
-                                        </p>
-                                    </div>
-                                    <div class="stats">
-                                        <h4>{{profile.projects}}</h4>
-                                        <p>
-                                            Projects
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer">
-                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
-                                <i class="fa fa-reply"></i> Back
-                            </button>
-                            <div class="social-links text-center">
-                                <a href="http://www.bytes2bots.com/" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                                <a href="http://www.bytes2bots.com/" class="google" target="_blank"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                <a href="http://www.bytes2bots.com/" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
-    <div class="space-200"></div>
-</div>-->

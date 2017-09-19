@@ -1,53 +1,38 @@
-<style>
-    .cropArea {
-        background-image: url("assets/images/update_default2.jpg");
-        /*background: #E4E4E4;*/
-        overflow: hidden;
-        width: 250px;
-        height: 250px;
-    }</style>
 <div class="body-container">       
     <div class="grid-continer">
-        <!--<div class="clear"></div>-->
-         <h1 class="login-with text-muted">My Profile</h1>
-        <div class="row ">
-            <div class="col s2" >
-                     <p style="text-align:center">
-                        <span> 
-                         <input type="file" id="fileInput" name="change photo" accept="image/*" />
-                        </span>                       
-                    </p>
-                    <!--<div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">-->
+
+        <!--<div class="row ">-->
+        <!--            <div class="col s2" >
+                        <p style="text-align:center">
+                            <span> 
+                                <input type="file" id="fileInput" name="change photo" accept="image/*" />
+                            </span>                       
+                        </p>
+                        <div class="tooltipped" data-position="left" style="color:#00bfd8" data-delay="50" data-tooltip="Choose file, crop &update">
                         <div>
-                        <div class="cropArea"> 
-                            <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                            <div class="cropArea"> 
+                                <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                            </div>
+        
                         </div>
-                        
-                    </div>
-            </div>
-        <div class="col s6 offset-s2 edit-profile editprofilebox ">
-            <form class="profile-form col s12" method="post" ng-submit="updateProfile()" name="editprofileform">
-                 <div class="row">
-                  &nbsp;
+                    </div>-->
+        <div class="edit-profile editprofilebox ">
+            <!-- <a class=" modal-trigger" href="javascript:void(0)" onclick="$('#thankyou-modal').modal('open')">Thankyou modal</a> -->
+
+            <form class="profile-form col s12" method="post" ng-submit="editprofileform.$valid && updateProfile()" name="editprofileform" novalidate>
+
+                <div class="dp-box">
+                    <img class="editdp" ng-src="{{myCroppedImage|| (user.picture || 'assets/images/upload.png')}}" />
+                    <a href="javascript:void(0);" onclick="open_edit_image_popup()" class="modal-trigger">Edit Image</a>
                 </div>
-                <div class="row">
-                   <img class="responsive-img editdp" ng-src="{{myCroppedImage || (user.picture || 'assets/images/upload.png')}}" />
-                </div>
-                 <div class="row">
-                     <div class="form-group input-field col s8">
-                        &nbsp;                    
-                    </div> 
-                    <div class="form-group input-field col s4">
-                        <label class="active " for="info"> &nbsp;* All fields are mandatory</label>                        
-                    </div>                    
-                </div>
+                <span class="error_message">All fields are mandatory</span>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="displayname">Display Name</label>
-                        <input id="displayname" name="displayname" type="text" class="form-control" ng-model="user.displayName" required />
+                        <input id="displayname" name="displayname" type="text" class="form-control mandatory" ng-model="user.displayName" required />
                         <div class="help-block text-error" ng-if="editprofileform.displayname.$dirty" ng-messages="editprofileform.displayname.$error">
-                        <div ng-message="required">You must enter your display name.</div>
-                    </div>
+                            <div ng-message="required">You must enter your display name.</div>
+                        </div>
                     </div>                    
                 </div>
                 <div class="row">
@@ -55,96 +40,51 @@
                         <label class="active">Email Address</label>
                         <input id="email" name="email" type="text" class="form-control" ng-model="user.email" required />
                         <div class="help-block text-error" ng-if="editprofileform.email.$dirty" ng-messages="editprofileform.email.$error">
-                        <div ng-message="required">You must enter your email.</div>
+                            <div ng-message="required">You must enter your email.</div>
+                        </div>
                     </div>
-                    </div>
-                    <!--<div class="form-group input-field col s6">
-                        <label class="active">Personal Website</label>
-                        <input id="website" name="website"  type="url" class="form-control" ng-model="user.website" required/>
-                        <div class="help-block text-error" ng-if="editprofileform.website.$dirty" ng-messages="editprofileform.website.$error">
-                        <div ng-message="required">You must enter your personal website.</div>
-                    </div>
-                    </div>-->
+
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="designation">Designation</label>
-                        <input id="designation" type="text" class="validate" name="designation" ng-model="user.designation" required/>
-                        <div class="help-block text-error" ng-if="editprofileform.designation.$dirty" ng-messages="editprofileform.designation.$error">
-                        <div ng-message="required">You must enter your designation.</div>
+                        <input id="designation" type="text" class="validate mandatory" name="designation" ng-model="user.designation" ng-required="true"/>
+                        <div class="help-block text-error" role="alert" ng-if="editprofileform.$submitted" ng-messages="editprofileform.designation.$error">
+                            <div ng-message="required">You must enter your designation.</div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active">Location</label>
-                        <input id="location" name="location" type="text" class="form-control" ng-model="user.location" required />
-                        <div class="help-block text-error" ng-if="editprofileform.location.$dirty" ng-messages="editprofileform.location.$error">
-                        <div ng-message="required">You must enter your Location.</div>
-                    </div>
+                        <input id="location" placeholder="Ex: Hyderabad, Bangalore" name="location" type="text" class="form-control mandatory" ng-model="user.location" required />
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.location.$error">
+                            <div ng-message="required">You must enter your Location. Ex: Hyderabad, Bangalore etc.,</div>
+                        </div>
                     </div>                   
                 </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="dribble">Dribble Link</label>
-                        <input id="dribble" name="dribble" type="url" class="form-control" ng-model="user.dribble"  />
-                        <div class="help-block text-error" ng-if="editprofileform.dribble.$dirty" ng-messages="editprofileform.dribble.$error">
-                        <div ng-message="required">You must enter your dribble website.</div>
-                    </div>
+                        <input id="dribble" name="dribble" type="url" class="form-control mandatory" ng-model="user.dribble"  ng-required="!(user.dribble.length ||user.behance.length)"/>
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.dribble.$error">
+                            <div ng-message="required">You must enter your <b>dribble</b> or <b>behance</b> link.</div>
+                        </div>
 
                     </div>
-                    </div>
+                </div>
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active" for="behance">Behance Link</label>
-                        <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  />
-                        <div class="help-block text-error" ng-if="editprofileform.behance.$dirty" ng-messages="editprofileform.behance.$error">
-                        <div ng-message="required">You must enter your behance website.</div>
-                    </div>
+                        <input id="behance" name="behance" type="url" class="form-control" ng-model="user.behance"  ng-required="!(user.dribble.length ||user.behance.length)"/>
+                        <div class="help-block text-error" ng-if="editprofileform.$submitted" ng-messages="editprofileform.behance.$error">
+                            <div ng-message="required">You must enter your <b>behance</b> or <b>dribble</b> link.</div>
+                        </div>
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group input-field col s12">
-                        <input id="profilefont" name="profilefont" type="text" class="form-control" ng-model="user.font" readonly />
-                        <label for="profilefont" class="active">Favourite Fonts</label>
-                        <a ui-sref="setting.color" class="edit-font"><i class="small material-icons">mode_edit</i></a>
-                    </div>
-                </div>
-                <!-- phase 2 <div class="row">
-                    <div class="form-group input-field col s6">
-                        <label class="active">Favourite Book</label>
-                        <input type="text" class="form-control" ng-model="user.book" />
-                    </div>
-                    <div class="form-group input-field col s6">
-                        <label class="active">Favourite Website</label>
-                        <input type="url" class="form-control" ng-model="user.website" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group input-field col s6">
-                        <label class="active">Favourite Designer</label>
-                        <input type="text" class="form-control" ng-model="user.favdesigner" />
-                    </div>
-                    <div class="form-group input-field col s6">
-                        <input id="profilefont" name="profilefont" type="text" class="form-control" ng-model="user.font" readonly />
-                        <label for="profilefont" class="active">Favourite Fonts</label>
-                        <a ui-sref="setting.color" class="edit-font tooltipped" data-position="top" data-delay="50" data-tooltip="Chane fav color & font?"><i class="small material-icons">mode_edit</i></a>
-                    </div>
 
-                </div>
-                <div class="row">
-                    <div class="form-group input-field col s12">
-                        <label class="active">Favourite Status</label>
-                        <input type="text" class="form-control" ng-model="user.status" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group input-field col s12">
-                        <label class="active">Job Description</label>
-                        <input type="text" class="form-control" ng-model="user.jobDescription" />
-                    </div>
-                </div>-->
+
                 <div class="row">
                     <div class="form-group input-field col s12">
                         <label class="active"> Favourite Colors</label>
@@ -156,127 +96,58 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="input-field">
-                    <button type="submit" style="width: 80%;" class="waves-effect waves-light btn signup-button">Update Information</button>
+                    <div class="form-group input-field col s12">
+                        <input id="profilefont" name="profilefont" type="text" class="form-control" ng-model="user.font" readonly />
+                        <label for="profilefont" class="active">Favourite Fonts</label>
+                        <a ui-sref="setting.color" class="edit-font"><i class="small material-icons">mode_edit</i></a>
+                    </div>
                 </div>
-                 </div>
+                <div class="row">
+                    <div class="input-field">
+                        <button type="submit" style="width: 95%;margin-top: 15px;" class="waves-effect waves-light btn signup-button">Update Information</button>
+                    </div>
+                </div>
             </form>
-        </div>
-        </div>
-        <!-- Phase 2
-            <div class="center-align">
-            <div class="or-text">Linked Accounts</div>
-            <a class="login-with-social" ng-if="user.facebook" ng-click="unlink('facebook')"> Unlink Facebook Account<i class="facebook"></i></a>
-            <a class="login-with-social" ng-if="!user.facebook" ng-click="link('facebook')">Link Facebook <i class="facebook"></i></a>
-            <a class="login-with-social" ng-if="user.twitter" ng-click="unlink('twitter')"> Unlink twitter Account<i class="twitter"></i></a>
-            <a class="login-with-social" ng-if="!user.twitter" ng-click="link('twitter')">Link twitter <i class="twitter"></i></a>
 
-        </div>-->
-
+        </div>
     </div>
-
-
+</div>
+<div id="edit-image" class="modal">
+    <div class="modal-content">
+        <div>
+            <div class="cropdiv">
+                <div class="cropArea"> 
+                    <img-crop  image="myImage" result-image="myCroppedImage" area-type="circle" result-image-size="200" change-on-fly="false"></img-crop> 
+                </div>
+            </div>
+            <input type="file" id="fileInput" name="change photo" accept="image/*" style="opacity: 0;" />
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green cropnsave ">Crop &amp; Save</a>
+            <a href="javascript:void(0);" class="modal-action modal-close btn-flat ">Cancel</a>
+        </div>
+    </div>
 </div>
 
+<div id="thankyou-modal" class="modal">
+    <div class="modal-content">
+        <img src="../assets/images/logo-icon.png" alt="designfav">
+        <p class="name">Hi, Srinivasulu Palle</p>
+        <p class="text">Thankyou for submitting your favourite color and fonts</p>
 
-
-
-<!--phase 2    <div class="panel panel-default">
-        <div class="panel-heading">Accounts</div>
-        <div class="panel-body">
-            <legend><i class="ion-link"></i> Linked Accounts</legend>
-            <div class="btn-group-vertical">
-                <button class="btn btn-sm btn-danger" ng-if="user.facebook" ng-click="unlink('facebook')">
-                    <i class="ion-social-facebook"></i> Unlink Facebook Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.facebook" ng-click="link('facebook')">
-                    <i class="ion-social-facebook"></i> Link Facebook Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.twitter" ng-click="unlink('twitter')">
-                    <i class="ion-social-twitter"></i> Unlink Twitter Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.twitter" ng-click="link('twitter')">
-                    <i class="ion-social-twitter"></i> Link Twitter Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.google" ng-click="unlink('google')">
-                    <i class="ion-social-googleplus"></i> Unlink Google Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.google" ng-click="link('google')">
-                    <i class="ion-social-googleplus"></i> Link Google Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.linkedin" ng-click="unlink('linkedin')">
-                    <i class="ion-social-linkedin"></i> Unlink LinkedIn Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.linkedin" ng-click="link('linkedin')">
-                    <i class="ion-social-linkedin"></i> Link LinkedIn Account
-                </button>
-
-
-                <button class="btn btn-sm btn-danger" ng-if="user.github" ng-click="unlink('github')">
-                    <i class="ion-social-github"></i> Unlink GitHub Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.github" ng-click="link('github')">
-                    <i class="ion-social-github"></i> Link GitHub Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.instagram" ng-click="unlink('instagram')">
-                    <i class="ion-social-instagram"></i> Unlink Instagram Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.instagram" ng-click="link('instagram')">
-                    <i class="ion-social-instagram"></i> Link Instagram Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.foursquare" ng-click="unlink('foursquare')">
-                    <i class="ion-social-foursquare"></i> Unlink Foursquare Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.foursquare" ng-click="link('foursquare')">
-                    <i class="ion-social-foursquare"></i> Link Foursquare Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.yahoo" ng-click="unlink('yahoo')">
-                    <i class="ion-social-yahoo"></i> Unlink Yahoo Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.yahoo" ng-click="link('yahoo')">
-                    <i class="ion-social-yahoo"></i> Link Yahoo Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.live" ng-click="unlink('live')">
-                    <i class="ion-social-windows"></i> Unlink Windows Live Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.live" ng-click="link('live')">
-                    <i class="ion-social-windows"></i> Link Windows Live Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.twitch" ng-click="unlink('twitch')">
-                    <i class="ion-social-twitch"></i> Unlink Twitch Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.twitch" ng-click="link('twitch')">
-                    <i class="ion-social-twitch"></i> Link Twitch Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.bitbucket" ng-click="unlink('bitbucket')">
-                    <i class="fa fa-bitbucket"></i> Unlink Bitbucket Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.bitbucket" ng-click="link('bitbucket')">
-                    <i class="fa fa-bitbucket"></i> Link Bitbucket Account
-                </button>
-
-                <button class="btn btn-sm btn-danger" ng-if="user.spotify" ng-click="unlink('spotify')">
-                    <i class="fa fa-spotify"></i> Unlink Spotify Account
-                </button>
-                <button class="btn btn-sm btn-primary" ng-if="!user.spotify" ng-click="link('spotify')">
-                    <i class="fa fa-spotify"></i> Link Spotify Account
-                </button>
-
-            </div>
-        </div>
+        <a href="javascript:void(0);" class="modal-action modal-close waves-effect waves-green update-profile-button">Update your Profile</a>
     </div>
-</div>-->
+</div>
+
 <script>
     $(document).ready(function () {
-        $('.tooltipped').tooltip({ delay: 50 });
+        $('.tooltipped').tooltip({delay: 50});
+        $('.modal').modal();
+        $('#edit-image').modal({dismissible: false});
     });
+
+    function open_edit_image_popup() {
+        $('#edit-image').modal('open');
+        $('#fileInput').trigger('click');
+    }
 </script>
