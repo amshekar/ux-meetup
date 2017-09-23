@@ -86,6 +86,12 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
                 template: null,
                 controller: 'LogoutCtrl'
             })
+            .state('error', {
+                url: '/error',
+                controller: 'ErrorCtrl',
+                templateUrl: '/partials/error.html',
+                controllerAs: 'vm'
+            })
             .state('profile', {
                 url: '/profile',
                 templateUrl: '/partials/profile.html',
@@ -96,7 +102,8 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
             });
         $urlRouterProvider.otherwise('/');
         // use the HTML5 History API
-        //$locationProvider.html5Mode(true);
+       //$locationProvider.html5Mode(true);
+       
 
         /**
          *  Satellizer config

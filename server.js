@@ -66,6 +66,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon.ico')));
 
+// app.all('/*', function(req, res, next) {
+//   // Just send the index.html for other files to support HTML5Mode
+//   res.sendFile('index.html', { root: __dirname });
+// });
+
+
 /*
  |--------------------------------------------------------------------------
  | Login Required Middleware
@@ -286,11 +292,8 @@ app.put('/api/me', ensureAuthenticated, function (req, res) {
     user.birthday = req.body.birthday || user.birthday;
     user.designation = req.body.designation || user.designation;
     user.behance = req.body.behance;
-    user.dribble = req.body.dribble;
-    // user.behance = req.body.behance || user.behance;
-    // user.dribble = req.body.dribble || user.dribble;
+    user.dribble = req.body.dribble;    
     user.updated_at = new Date();
-
     user.save(function (err) {
       //res.status(200).end();
       res.status(status.OK).end();
