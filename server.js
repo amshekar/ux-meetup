@@ -172,9 +172,7 @@ app.get('/api/me', ensureAuthenticated, function (req, res) {
  */
 app.get('/api/users', function (req, res) {
   var pageSize = 9;
-  User.find({ $and: [{ color: { $exists: true }, $where: 'this.color.length>1' },
-                     { font: { $exists: true }, $where: 'this.font.length>1' },
-                     { designation: { $exists: true, $ne : null }, $where: 'this.designation.length>0' }] }).sort({ updated_at: -1 }).skip(pageSize * req.query.pagesize).limit(pageSize).exec(function (err, users) {
+  User.find({ $and: [{ color: { $exists: true }, $where: 'this.color.length>1' }, { font: { $exists: true }, $where: 'this.font.length>1' },{ designation: { $exists: true,$ne : null } }] }).sort({ updated_at: -1 }).skip(pageSize * req.query.pagesize).limit(pageSize).exec(function (err, users) {
     if (err) {
       res.send(err);
     }
