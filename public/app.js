@@ -99,10 +99,15 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr',
                 resolve: {
                     loginRequired: loginRequired
                 }
+            })
+            .state('sitemap.xml',{
+                url: 'sitemap.xml',
+                templateUrl: '/sitemap.xml',
             });
+            
         $urlRouterProvider.otherwise('/');
         // use the HTML5 History API
-       //$locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
        
 
         /**

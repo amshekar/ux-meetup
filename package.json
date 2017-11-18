@@ -26,7 +26,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
     "angular-typer": "^0.5.5",
-    "serve-favicon": "^2.4.3"
+    "serve-favicon": "^2.4.3",
+    "path":"^0.12.7"
   },
   "engines": {
     "node": "6.9.1 || 8.1.x"

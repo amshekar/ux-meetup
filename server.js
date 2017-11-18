@@ -24,7 +24,8 @@ var status = require('http-status');
 var file = require('./fonts.json');
 var config = require('./config');
 var userSchema = require('./user');
-var favicon = require('serve-favicon')
+var favicon = require('serve-favicon');
+var expressRoutes = require('./expressroute'); 
 
 
 userSchema.pre('save', function (next) {
@@ -63,13 +64,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/',express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon.ico')));
-
-// app.all('/*', function(req, res, next) {
-//   // Just send the index.html for other files to support HTML5Mode
-//   res.sendFile('index.html', { root: __dirname });
-// });
+app.use(expressRoutes);
 
 
 /*
@@ -124,6 +121,16 @@ app.get('/', function (req, res) {
 
 /*
  |--------------------------------------------------------------------------
+ | GET / Sitemap.xml
+ |--------------------------------------------------------------------------
+ */
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain');
+  res.send("User-agent: *\nDisallow: /");
+});
+
+/*
+ |--------------------------------------------------------------------------
  | GET /api/ping/:Hello  Ping isAlive test method without Authentication
  |--------------------------------------------------------------------------
  */
@@ -157,12 +164,12 @@ app.get('/api/me', ensureAuthenticated, function (req, res) {
 
 /*
  |--------------------------------------------------------------------------
- | GET All /api/me
+ | GET All /api/me 
  |--------------------------------------------------------------------------
  */
 app.get('/api/users', function (req, res) {
   var pageSize = 9;
-  User.find({ $and: [{ color: { $exists: true }, $where: 'this.color.length>1' }, { font: { $exists: true }, $where: 'this.font.length>1' }] }).sort({ updated_at: -1 }).skip(pageSize * req.query.pagesize).limit(pageSize).exec(function (err, users) {
+  User.find({ $and: [{ color: { $exists: true }, $where: 'this.color.length>1' }, { font: { $exists: true }, $where: 'this.font.length>1' },{ designation: { $exists: true}, $where: 'this.designation.length>0' }] }).sort({ updated_at: -1 }).skip(pageSize * req.query.pagesize).limit(pageSize).exec(function (err, users) {
     if (err) {
       res.send(err);
     }
