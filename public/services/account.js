@@ -9,7 +9,7 @@
 (function (module) {
     function Account($http) {
           //var API_URL = 'http://www.designerfav.com';
-          var API_URL = 'https://designerfavdev.herokuapp.com';
+          var API_URL = 'https://designerfavdev.herokuapp.com';          
         return {
             getProfile: getProfile,
             updateProfile: updateProfile,

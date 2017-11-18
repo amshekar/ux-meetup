@@ -25,6 +25,7 @@ var file = require('./fonts.json');
 var config = require('./config');
 var userSchema = require('./user');
 var favicon = require('serve-favicon');
+var expressRoutes = require('./expressroute'); 
 
 
 userSchema.pre('save', function (next) {
@@ -63,13 +64,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/',express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon.ico')));
-
-app.all('/*', function(req, res, next) {
-  // Just send the index.html for other files to support HTML5Mode
-  res.sendFile('index.html', { root: __dirname });
-});
+app.use(expressRoutes);
 
 
 /*
